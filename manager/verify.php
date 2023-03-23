@@ -3,7 +3,7 @@
 
 <?php
 
-include "../server/server.php";
+include "./server/server.php";
 
 if (isset($_GET['designated_manager_id']) && !empty($_GET['designated_manager_id'])) {
     $designated_manager_pass = array(

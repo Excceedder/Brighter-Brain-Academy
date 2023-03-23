@@ -3,7 +3,7 @@
 function send_mail($mail_data)
 {
     include "mail_server.php";
-    $template_file = '../server/templates/verify.php';
+    $template_file = './server/templates/verify.php';
     $swap_var = array(
         "{ORGANISATION}" => "Brighter Brain Academy",
         "{FULL_NAMES}" => $mail_data['full_names'],

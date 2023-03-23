@@ -22,7 +22,7 @@ function create_manager($form_data)
         "reg_date" => date('M jS Y'),
         "last_name" => $form_data["last_name"],
         "first_name" => $form_data["first_name"],
-        "profile_photo" => '../server/data_entries/managers/' . bin2hex(random_bytes(32)) . '.' . pathinfo($_FILES["profile_photo"]["name"], PATHINFO_EXTENSION),
+        "profile_photo" => './server/data_entries/managers/' . bin2hex(random_bytes(32)) . '.' . pathinfo($_FILES["profile_photo"]["name"], PATHINFO_EXTENSION),
     );
 
     $designated_manager_pass = array(
@@ -486,7 +486,7 @@ function new_admission($form_data)
         "query_category" => $form_data["query_category"],
         "registration_date" => date('M jS Y'),
         "admission_status" => "Active",
-        "profile_photo" => '../server/data_entries/students/' . bin2hex(random_bytes(32)) . '.' . pathinfo($_FILES["profile_photo"]["name"], PATHINFO_EXTENSION),
+        "profile_photo" => './server/data_entries/students/' . bin2hex(random_bytes(32)) . '.' . pathinfo($_FILES["profile_photo"]["name"], PATHINFO_EXTENSION),
     );
 
     if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $designated_student_data["profile_photo"])) {
