@@ -8,7 +8,7 @@ function send_mail($mail_data)
         "{ORGANISATION}" => "Brighter Brain Academy",
         "{FULL_NAMES}" => $mail_data['full_names'],
         "{ROLE}" => $mail_data['account_role'],
-        "{URL}" => "http://localhost/school-website/manager/verify?designated_manager_id={$mail_data['designated_manager_id']}",
+        "{URL}" => "https://manager.brighterbrainacademy.com/verify?designated_manager_id={$mail_data['designated_manager_id']}",
     );
 
     $message = file_get_contents($template_file);

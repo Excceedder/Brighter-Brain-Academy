@@ -1,10 +1,10 @@
 <?php
 
 $db_conn_details = [
-    'host' => 'localhost',
-    'user' => 'root',
-    'password' => '',
-    'database' => 'school-website'
+    'host' => 'sql710.main-hosting.eu',
+    'user' => 'u107856230_bba_data',
+    'password' => 'Southecured@072##@!',
+    'database' => 'u107856230_bba_data',
 ];
 
 function connect_to_database()
