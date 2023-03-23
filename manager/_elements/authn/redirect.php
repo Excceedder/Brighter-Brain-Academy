@@ -1,6 +1,6 @@
 <?php
 
-include "../server/server.php";
+include "./server/server.php";
 
 if (isset($_SESSION['authorized'])) {
     header('Location: ./');
