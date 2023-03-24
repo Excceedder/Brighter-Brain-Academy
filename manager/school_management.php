@@ -68,8 +68,8 @@
 
                     <div class="row">
                         <div class="col-12">
-                            <button class="btn btn-outline-success me-auto mb-3" type="button" data-bs-toggle="modal" data-bs-target="#update_sessions_and_terms" style="border: 1px dashed #34c38f;"><i class='bx bx-calendar-plus'></i> Update Sessions & Terms</button>
-                            <div class="card" style="border: 1px dashed #34c38f;">
+                            <button class="btn btn-outline-dark me-auto mb-3" type="button" data-bs-toggle="modal" data-bs-target="#update_sessions_and_terms" style="border: 1px dashed #343a40;"><i class='bx bx-calendar-plus'></i> Update Sessions & Terms</button>
+                            <div class="card" style="border: 1px dashed #343a40;">
                                 <div class="card-body">
                                     <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                         <thead>

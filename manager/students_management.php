@@ -67,12 +67,121 @@
                     ?>
 
                     <?php
-                    if (isset($_GET['query_category']) && !empty($_GET['query_category'])) {
+                    if (isset($_GET['designated_termly_report_id']) && !empty($_GET['designated_termly_report_id'])) {
+                    ?>
+
+                    <?php
+                    } else if (isset($_GET['designated_student_id']) && !empty($_GET['designated_student_id'])) {
                     ?>
                         <div class="row">
+                            <div class="col-auto">
+                                <div class="card" style="border: 1px dashed #343a40;">
+                                    <div class="card-body">
+                                        <img src="../server/data_entries/managers/placeholder.jpg" class="avatar avatar-xl rounded" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-12">
-                                <button class="btn btn-outline-success mb-3" type="button" data-bs-toggle="modal" data-bs-target="#new_admission" style="border: 1px dashed #34c38f;"><i class='bx bxs-school'></i> New Admission</button>
-                                <div class="card" style="border: 1px dashed #34c38f;">
+                                <div class="card" style="border: 1px dashed #343a40;">
+                                    <div class="card-body">
+                                        <label for="profile_photo" class="form-label">Update Profile Photo</label>
+                                        <input type="file" name="profile_photo" id="profile_photo" required class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card" style="border: 1px dashed #343a40;">
+                                    <div class="card-body">
+                                        <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post" enctype="multipart/form-data">
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="mb-1">
+                                                        <h5 style="text-decoration: underline;">Candidate's Credentials:</h5>
+                                                    </div>
+                                                    <div class="col-md-3 mb-3">
+                                                        <label for="surname" class="form-label">Surname</label>
+                                                        <input type="text" id="surname" name="surname" required placeholder="Input value..." class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3 mb-3">
+                                                        <label for="first_name" class="form-label">First Name</label>
+                                                        <input type="text" id="first_name" name="first_name" required placeholder="Input value..." class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3 mb-3">
+                                                        <label for="other_names" class="form-label">Other Names</label>
+                                                        <input type="text" id="other_names" name="other_names" placeholder="Input value..." class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3 mb-3">
+                                                        <label for="date_of_birth" class="form-label">Date of Birth</label>
+                                                        <input type="date" id="date_of_birth" required name="date_of_birth" class="form-control">
+                                                    </div>
+
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="country" class="form-label">Country</label>
+                                                        <select class="form-control" required name="country" id="country">
+                                                            <option value="" selected>-- Select --</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="region" class="form-label">Region</label>
+                                                        <select class="form-control" required name="region" id="region">
+                                                            <option value="" selected>-- Select --</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="city" class="form-label">City</label>
+                                                        <select class="form-control" required name="city" id="city">
+                                                            <option value="" selected>-- Select --</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="gender" class="form-label">Gender</label>
+                                                        <select class="form-control" name="gender" required id="gender">
+                                                            <option value="" disabled selected>-- Select --</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="residential_address" required class="form-label">Residential Address</label>
+                                                        <textarea id="residential_address" name="residential_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                                                    </div>
+
+                                                    <div class="mb-1">
+                                                        <h5 style="text-decoration: underline;">Parent's Credentials:</h5>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="parent_full_names" required class="form-label">Full Names</label>
+                                                        <input type="text" id="parent_full_names" name="parent_full_names" placeholder="Input value..." class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="parent_phone_number" required class="form-label">Phone Number</label>
+                                                        <input type="text" id="parent_phone_number" name="parent_phone_number" placeholder="Input value..." class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="parent_occupation" required class="form-label">Ocupation</label>
+                                                        <input type="text" id="parent_occupation" name="parent_occupation" placeholder="Input value..." class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer d-flex">
+                                                <button type="reset" class="me-auto btn btn-secondary float-start"><i class='bx bx-reset'></i> Cancel</button>
+                                                <button type="submit" class="btn btn-success" name="new_admission"><i class='bx bx-save'></i> Save Changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center pb-2 justify-content-between">
+                                    <h4 class="mb-sm-0">Student's Termly Reports:</h4>
+                                </div>
+                                <div class="card" style="border: 1px dashed #343a40;">
                                     <div class="card-body">
                                         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                             <thead>
@@ -110,8 +219,88 @@
                                                             <td><?php echo $designated_student_data["gender"] ?></td>
                                                             <td><?php echo $designated_student_data["registration_date"] ?></td>
                                                             <td>
-                                                                <button style="border: 1px dashed #34c38f; color: #34c38f; background-color: transparent;border-radius: 5px; " name="" type="submit"><i class='bx bxs-contact'></i> Manage</button>
-                                                                <button style="border: 1px dashed #f46a6a; color: #f46a6a; background-color: transparent;border-radius: 5px; " type="submit" name=""><i class='bx bx-trash bx-tada'></i></button>
+                                                                <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post">
+                                                                    <input type="hidden" name="designated_student_id" value="<?php echo $designated_student_id ?>">
+
+                                                                    <a href="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?designated_student_id=' . $designated_student_id) ?>" style="border: 1px dashed #34c38f; color: #34c38f; background-color: transparent;border-radius: 5px; padding: 1px 6px;" name="" type="submit"><i class='bx bxs-contact'></i> Manage</a>
+
+                                                                    <button style="border: 1px dashed #f46a6a; color: #f46a6a; background-color: transparent;border-radius: 5px; " onclick="return confirm('Do you confirm that you intend to delete this student account?');" type="submit" name="delete_student_account"><i class='bx bx-trash bx-tada'></i></button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    <?php
+                                                    }
+                                                } else {
+                                                    ?>
+                                                    <tr>
+                                                        <td style="font-weight: bold;">No records found!</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                <?php
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->
+                    <?php
+                    } else if (isset($_GET['query_category']) && !empty($_GET['query_category'])) {
+                    ?>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-outline-dark mb-3" type="button" data-bs-toggle="modal" data-bs-target="#new_admission" style="border: 1px dashed #343a40;"><i class='bx bxs-school'></i> New Admission</button>
+                                <div class="card" style="border: 1px dashed #343a40;">
+                                    <div class="card-body">
+                                        <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
+                                            <thead>
+                                                <tr>
+                                                    <th>Admission No.</th>
+                                                    <th>Surname</th>
+                                                    <th>First Name</th>
+                                                    <th>Class Placement</th>
+                                                    <th>Gender</th>
+                                                    <th>Reg. Date</th>
+                                                    <th>Action Buttons</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <?php
+                                                $db_conn = connect_to_database();
+                                                $query_category = htmlspecialchars(hex2bin($_GET['query_category']));
+
+                                                $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE JSON_EXTRACT(UNHEX(`designated_student_data`), '$.query_category') = ?");
+                                                $stmt->bind_param("s", $query_category);
+                                                $stmt->execute();
+                                                $result = $stmt->get_result();
+
+                                                if ($result->num_rows > 0) {
+                                                    while ($row = $result->fetch_assoc()) {
+                                                        $designated_student_id = $row['designated_student_id'];
+                                                        $designated_student_data = json_decode(hex2bin($row['designated_student_data']), true);
+                                                ?>
+                                                        <tr>
+                                                            <td><?php echo $designated_student_data["admission_number"] ?></td>
+                                                            <td><?php echo $designated_student_data["surname"] ?></td>
+                                                            <td><?php echo $designated_student_data["first_name"] ?></td>
+                                                            <td><?php echo $designated_student_data["class_placement"] ?></td>
+                                                            <td><?php echo $designated_student_data["gender"] ?></td>
+                                                            <td><?php echo $designated_student_data["registration_date"] ?></td>
+                                                            <td>
+                                                                <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post">
+                                                                    <input type="hidden" name="designated_student_id" value="<?php echo $designated_student_id ?>">
+
+                                                                    <a href="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?designated_student_id=' . $designated_student_id) ?>" style="border: 1px dashed #34c38f; color: #34c38f; background-color: transparent;border-radius: 5px; padding: 1px 6px;" name="" type="submit"><i class='bx bxs-contact'></i> Manage</a>
+
+                                                                    <button style="border: 1px dashed #f46a6a; color: #f46a6a; background-color: transparent;border-radius: 5px; " onclick="return confirm('Do you confirm that you intend to delete this student account?');" type="submit" name="delete_student_account"><i class='bx bx-trash bx-tada'></i></button>
+                                                                </form>
                                                             </td>
                                                         </tr>
                                                     <?php
@@ -138,7 +327,7 @@
                         </div> <!-- end row -->
                     <?php
                     } else {
-                        $_SESSION['feedback'] = "Error: Invalid query category!";
+                        $_SESSION['feedback'] = "Error: The requested URL is not valid!";
                         $_SESSION['type'] = "warning";
                     }
                     ?>

@@ -45,3 +45,7 @@ if (isset($_POST['delete_session_and_term'])) {
 if (isset($_POST['new_admission'])) {
     new_admission($_POST);
 }
+
+if (isset($_POST['delete_student_account'])) {
+    delete_student_account($_POST);
+}

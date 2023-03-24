@@ -511,3 +511,34 @@ function new_admission($form_data)
         return false;
     }
 }
+
+function delete_student_account($form_data)
+{
+    $db_conn = connect_to_database();
+
+    $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `designated_student_id` = ?");
+    $stmt->bind_param("s", $form_data['designated_student_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $stmt = $db_conn->prepare("DELETE FROM `students_accounts` WHERE `designated_student_id` = ?");
+        $stmt->bind_param("s", $form_data['designated_student_id']);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($stmt->affected_rows > 0) {
+            $_SESSION['feedback'] = "Student account deleted successfully.";
+            $_SESSION['type'] = "success";
+            return true;
+        } else {
+            $_SESSION['feedback'] = "Error: Unable to delete student account.";
+            $_SESSION['type'] = "warning";
+            return false;
+        }
+    } else {
+        $_SESSION['feedback'] = "Error: Invalid student ID!";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+}
