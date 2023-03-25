@@ -135,43 +135,29 @@
                                                     </div>
 
                                                     <div class="col-md-4 mb-3">
-                                                        <label for="country" class="form-label">Country</label>
-                                                        <select class="form-control" required name="country" id="country">
-                                                            <option value="<?php echo $designated_student_data["country"] ?>" selected><?php echo $designated_student_data["country"] ?></option>
+                                                        <label for="country" class="form-label">Country: <span class="fw-bold" style="border-bottom: 1px dashed #343a40;"><?php echo strtoupper($designated_student_data["country"]) ?></span></label>
+                                                        <select class="form-control" name="country" id="country">
+                                                            <option value="" selected disabled>-- Select --</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <label for="region" class="form-label">Region</label>
-                                                        <select class="form-control" required name="region" id="region">
-                                                            <option value="<?php echo $designated_student_data["region"] ?>" selected><?php echo $designated_student_data["region"] ?></option>
+                                                        <label for="region" class="form-label">Region: <span class="fw-bold" style="border-bottom: 1px dashed #343a40;"><?php echo strtoupper($designated_student_data["region"]) ?></span></label>
+                                                        <select class="form-control" name="region" id="region">
+                                                            <option value="" selected disabled>-- Select --</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <label for="city" class="form-label">City</label>
-                                                        <select class="form-control" required name="city" id="city">
-                                                            <option value="<?php echo $designated_student_data["city"] ?>" selected><?php echo $designated_student_data["city"] ?></option>
+                                                        <label for="city" class="form-label">City: <span class="fw-bold" style="border-bottom: 1px dashed #343a40;"><?php echo strtoupper($designated_student_data["city"]) ?></span></label>
+                                                        <select class="form-control" name="city" id="city">
+                                                            <option value="" selected disabled>-- Select --</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-6 mb-3">
-                                                        <label for="gender" class="form-label">Gender</label>
-                                                        <select class="form-control" name="gender" required id="gender">
-                                                            <option value="<?php echo $designated_student_data["gender"] ?>" selected><?php echo $designated_student_data["gender"] ?></option>
-                                                            <?php
-                                                            if ($designated_student_data["gender"] == "Male") {
-                                                            ?>
-                                                                <option value="Female">Female</option>
-                                                            <?php
-                                                            } else if ($designated_student_data["gender"] == "Female") {
-                                                            ?>
-                                                                <option value="Male">Male</option>
-                                                            <?php
-                                                            } else {
-                                                            ?>
-                                                                <option value="Male">Male</option>
-                                                                <option value="Female">Female</option>
-                                                            <?php
-                                                            }
-                                                            ?>
+                                                        <label for="gender" class="form-label">Gender: <span class="fw-bold" style="border-bottom: 1px dashed #343a40;"><?php echo strtoupper($designated_student_data["gender"]) ?></span></label>
+                                                        <select class="form-control" name="gender" id="gender">
+                                                            <option value="" selected disabled>-- Select --</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-6 mb-3">

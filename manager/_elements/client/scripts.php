@@ -22,7 +22,7 @@
 <script>
     $(document).ready(function() {
         var selectedCountry = (selectedRegion = selectedCity = "");
-        var BATTUTA_KEY = "ff4c5becaf871d02c0a40bfa2ff1023d";
+        var BATTUTA_KEY = "00000000000000000000000000000000";
 
         url =
             "https://battuta.medunes.net/api/country/all/?key=" +
