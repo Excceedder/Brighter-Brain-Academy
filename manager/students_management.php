@@ -92,7 +92,7 @@
                             <div class="col-auto">
                                 <div class="card" style="border: 1px dashed #343a40;">
                                     <div class="card-body">
-                                        <img src="<?php echo $designated_student_data["profile_photo"] ?>" class="avatar avatar-xl rounded" alt="">
+                                        <img src="<?php echo $designated_student_data["profile_photo"] ?>" class="avatar avatar-lg rounded" alt="">
                                     </div>
                                 </div>
                             </div>
