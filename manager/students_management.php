@@ -187,11 +187,11 @@
                                             <thead>
                                                 <tr>
                                                     <th>Admission No.</th>
-                                                    <th>Surname</th>
-                                                    <th>First Name</th>
-                                                    <th>Class Placement</th>
-                                                    <th>Gender</th>
-                                                    <th>Reg. Date</th>
+                                                    <th>Main Campus</th>
+                                                    <th>Session Tag</th>
+                                                    <th>Term Tag</th>
+                                                    <th>Overall Score</th>
+                                                    <th>Overrall Grade</th>
                                                     <th>Action Buttons</th>
                                                 </tr>
                                             </thead>
