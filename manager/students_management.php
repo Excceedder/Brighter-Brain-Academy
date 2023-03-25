@@ -72,12 +72,27 @@
 
                     <?php
                     } else if (isset($_GET['designated_student_id']) && !empty($_GET['designated_student_id'])) {
+                        $db_conn = connect_to_database();
+
+                        $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `designated_student_id` = ?");
+                        $stmt->bind_param("s", $_GET['designated_student_id']);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+
+                        if ($result->num_rows > 0) {
+                            $row = $result->fetch_assoc();
+                            $designated_student_data = json_decode(hex2bin($row['designated_student_data']), true);
+                        } else {
+                            $_SESSION['feedback'] = "Error: This student account does not exist in the system.";
+                            $_SESSION['type'] = "warning";
+                            return false;
+                        }
                     ?>
                         <div class="row">
                             <div class="col-auto">
                                 <div class="card" style="border: 1px dashed #343a40;">
                                     <div class="card-body">
-                                        <img src="../server/data_entries/managers/placeholder.jpg" class="avatar avatar-xl rounded" alt="">
+                                        <img src="<?php echo $designated_student_data["profile_photo"] ?>" class="avatar avatar-xl rounded" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -104,15 +119,15 @@
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="surname" class="form-label">Surname</label>
-                                                        <input type="text" id="surname" name="surname" required placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="surname" name="surname" required value="<?php echo $designated_student_data["surname"] ?>" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="first_name" class="form-label">First Name</label>
-                                                        <input type="text" id="first_name" name="first_name" required placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="first_name" name="first_name" required value="<?php echo $designated_student_data["first_name"] ?>" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="other_names" class="form-label">Other Names</label>
-                                                        <input type="text" id="other_names" name="other_names" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="other_names" name="other_names" value="<?php echo $designated_student_data["other_names"] ?>" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="date_of_birth" class="form-label">Date of Birth</label>
@@ -122,32 +137,46 @@
                                                     <div class="col-md-4 mb-3">
                                                         <label for="country" class="form-label">Country</label>
                                                         <select class="form-control" required name="country" id="country">
-                                                            <option value="" selected>-- Select --</option>
+                                                            <option value="<?php echo $designated_student_data["country"] ?>" selected><?php echo $designated_student_data["country"] ?></option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <label for="region" class="form-label">Region</label>
                                                         <select class="form-control" required name="region" id="region">
-                                                            <option value="" selected>-- Select --</option>
+                                                            <option value="<?php echo $designated_student_data["region"] ?>" selected><?php echo $designated_student_data["region"] ?></option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <label for="city" class="form-label">City</label>
                                                         <select class="form-control" required name="city" id="city">
-                                                            <option value="" selected>-- Select --</option>
+                                                            <option value="<?php echo $designated_student_data["city"] ?>" selected><?php echo $designated_student_data["city"] ?></option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-6 mb-3">
                                                         <label for="gender" class="form-label">Gender</label>
                                                         <select class="form-control" name="gender" required id="gender">
-                                                            <option value="" disabled selected>-- Select --</option>
-                                                            <option value="Male">Male</option>
-                                                            <option value="Female">Female</option>
+                                                            <option value="<?php echo $designated_student_data["gender"] ?>" selected><?php echo $designated_student_data["gender"] ?></option>
+                                                            <?php
+                                                            if ($designated_student_data["gender"] == "Male") {
+                                                            ?>
+                                                                <option value="Female">Female</option>
+                                                            <?php
+                                                            } else if ($designated_student_data["gender"] == "Female") {
+                                                            ?>
+                                                                <option value="Male">Male</option>
+                                                            <?php
+                                                            } else {
+                                                            ?>
+                                                                <option value="Male">Male</option>
+                                                                <option value="Female">Female</option>
+                                                            <?php
+                                                            }
+                                                            ?>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-6 mb-3">
                                                         <label for="residential_address" required class="form-label">Residential Address</label>
-                                                        <textarea id="residential_address" name="residential_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                                                        <textarea id="residential_address" name="residential_address" class="form-control" rows="1" placeholder="Input value..."><?php echo $designated_student_data["residential_address"] ?></textarea>
                                                     </div>
 
                                                     <div class="mb-1">
@@ -155,15 +184,15 @@
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <label for="parent_full_names" required class="form-label">Full Names</label>
-                                                        <input type="text" id="parent_full_names" name="parent_full_names" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="parent_full_names" value="<?php echo $designated_student_data["parent_full_names"] ?>" name="parent_full_names" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <label for="parent_phone_number" required class="form-label">Phone Number</label>
-                                                        <input type="text" id="parent_phone_number" name="parent_phone_number" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="parent_phone_number" value="<?php echo $designated_student_data["parent_phone_number"] ?>" name="parent_phone_number" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <label for="parent_occupation" required class="form-label">Ocupation</label>
-                                                        <input type="text" id="parent_occupation" name="parent_occupation" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="parent_occupation" value="<?php echo $designated_student_data["parent_occupation"] ?>" name="parent_occupation" placeholder="Input value..." class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -178,9 +207,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="page-title-box d-sm-flex align-items-center pb-2 justify-content-between">
-                                    <h4 class="mb-sm-0">Student's Termly Reports:</h4>
-                                </div>
+                                <button class="btn btn-outline-dark mb-3" type="button" data-bs-toggle="modal" data-bs-target="#new_admission" style="border: 1px dashed #343a40;"><i class='bx bxs-report'></i> Create Termly Report</button>
                                 <div class="card" style="border: 1px dashed #343a40;">
                                     <div class="card-body">
                                         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
@@ -199,7 +226,6 @@
                                             <tbody>
                                                 <?php
                                                 $db_conn = connect_to_database();
-                                                $query_category = htmlspecialchars(hex2bin($_GET['query_category']));
 
                                                 $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE JSON_EXTRACT(UNHEX(`designated_student_data`), '$.query_category') = ?");
                                                 $stmt->bind_param("s", $query_category);
