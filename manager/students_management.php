@@ -51,6 +51,15 @@
                     </div>
                     <!-- end page title -->
 
+                    <div class="row">
+                        <div class="col-auto">
+                            <div class="card" style="border: 1px dashed #343a40;">
+                                <div class="card-body p-2">
+                                    <img src="<?php echo $designated_student_data["profile_photo"] ?>" class="avatar avatar-lg rounded" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <?php
                     if (isset($_SESSION['feedback'])) {
                         $type = $_SESSION['type'];
@@ -88,15 +97,6 @@
                             return false;
                         }
                     ?>
-                        <div class="row">
-                            <div class="col-auto">
-                                <div class="card" style="border: 1px dashed #343a40;">
-                                    <div class="card-body p-2">
-                                        <img src="<?php echo $designated_student_data["profile_photo"] ?>" class="avatar avatar-lg rounded" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="card" style="border: 1px dashed #343a40;">
