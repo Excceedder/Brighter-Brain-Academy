@@ -49,3 +49,7 @@ if (isset($_POST['new_admission'])) {
 if (isset($_POST['delete_student_account'])) {
     delete_student_account($_POST);
 }
+
+if (isset($_POST['update_student_credentials'])) {
+    update_student_credentials($_POST);
+}

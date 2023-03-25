@@ -506,7 +506,7 @@ function new_admission($form_data)
         $_SESSION['type'] = "success";
         return true;
     } else {
-        $_SESSION['feedback'] = "Error: Admission could not be completed.";
+        $_SESSION['feedback'] = "Error: Admission process could not be completed.";
         $_SESSION['type'] = "danger";
         return false;
     }
@@ -539,6 +539,46 @@ function delete_student_account($form_data)
     } else {
         $_SESSION['feedback'] = "Error: Invalid student ID!";
         $_SESSION['type'] = "warning";
+        return false;
+    }
+}
+
+function update_student_credentials($form_data)
+{
+    $db_conn = connect_to_database();
+
+    $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `designated_student_id` = ?");
+    $stmt->bind_param("s", $form_data['designated_student_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $sql = "UPDATE `students_accounts` SET `designated_student_data` = HEX(JSON_SET(UNHEX(`designated_student_data`), ";
+        $params = array();
+        foreach ($form_data as $key => $value) {
+            $sql .= "'$." . $key . "', ?, ";
+            $params[] = $value;
+        }
+        $sql = rtrim($sql, ", ");
+        $sql .= ")) WHERE `designated_student_id` = ?";
+        $params[] = $form_data['designated_student_id'];
+
+        $stmt = $db_conn->prepare($sql);
+        $stmt->bind_param(str_repeat("s", count($params)), ...$params);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            $_SESSION['feedback'] = "The updates to the student's credentials have been saved successfully.";
+            $_SESSION['type'] = "success";
+            return true;
+        } else {
+            $_SESSION['feedback'] = "Information: The records were already up to date, so no changes were made.";
+            $_SESSION['type'] = "primary";
+            return false;
+        }
+    } else {
+        $_SESSION['feedback'] = "Error: Invalid student ID!";
+        $_SESSION['type'] = "danger";
         return false;
     }
 }

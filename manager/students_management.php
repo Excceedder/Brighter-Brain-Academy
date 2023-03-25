@@ -83,7 +83,7 @@
                             $row = $result->fetch_assoc();
                             $designated_student_data = json_decode(hex2bin($row['designated_student_data']), true);
                         } else {
-                            $_SESSION['feedback'] = "Error: This student account does not exist in the system.";
+                            $_SESSION['feedback'] = "Error: Invalid student ID!";
                             $_SESSION['type'] = "warning";
                             return false;
                         }
@@ -111,7 +111,7 @@
                             <div class="col-md-12">
                                 <div class="card" style="border: 1px dashed #343a40;">
                                     <div class="card-body">
-                                        <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post" enctype="multipart/form-data">
+                                        <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post">
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="mb-1">
@@ -131,7 +131,7 @@
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="date_of_birth" class="form-label">Date of Birth</label>
-                                                        <input type="date" id="date_of_birth" required name="date_of_birth" class="form-control">
+                                                        <input type="date" id="date_of_birth" required name="date_of_birth" value="<?php echo $designated_student_data["date_of_birth"] ?>" class="form-control">
                                                     </div>
 
                                                     <div class="col-md-4 mb-3">
@@ -197,8 +197,9 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer d-flex">
+                                                <input type="hidden" name="designated_student_id" value="<?php echo $_GET['designated_student_id'] ?>">
                                                 <button type="reset" class="me-auto btn btn-secondary float-start"><i class='bx bx-reset'></i> Cancel</button>
-                                                <button type="submit" class="btn btn-success" name="new_admission"><i class='bx bx-save'></i> Save Changes</button>
+                                                <button type="submit" class="btn btn-success" name="update_student_credentials"><i class='bx bx-save'></i> Save Changes</button>
                                             </div>
                                         </form>
                                     </div>
