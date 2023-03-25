@@ -546,6 +546,7 @@ function delete_student_account($form_data)
 function update_student_credentials($form_data)
 {
     $db_conn = connect_to_database();
+    unset($form_data['update_student_credentials']);
 
     $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `designated_student_id` = ?");
     $stmt->bind_param("s", $form_data['designated_student_id']);
