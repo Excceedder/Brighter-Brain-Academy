@@ -698,3 +698,34 @@ function create_termly_report($form_data)
         return false;
     }
 }
+
+function delete_termly_report($form_data)
+{
+    $db_conn = connect_to_database();
+
+    $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE `termly_report_id` = ?");
+    $stmt->bind_param("s", $form_data['termly_report_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $stmt = $db_conn->prepare("DELETE FROM `termly_reports` WHERE `termly_report_id` = ?");
+        $stmt->bind_param("s", $form_data['termly_report_id']);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($stmt->affected_rows > 0) {
+            $_SESSION['feedback'] = "Termly report deleted successfully.";
+            $_SESSION['type'] = "success";
+            return true;
+        } else {
+            $_SESSION['feedback'] = "Error: Unable to delete termly report.";
+            $_SESSION['type'] = "warning";
+            return false;
+        }
+    } else {
+        $_SESSION['feedback'] = "Error: Invalid termly reportF ID!";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+}

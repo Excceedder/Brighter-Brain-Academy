@@ -61,3 +61,7 @@ if (isset($_POST['update_student_profile_photo'])) {
 if (isset($_POST['create_termly_report'])) {
     create_termly_report($_POST);
 }
+
+if (isset($_POST['delete_termly_report'])) {
+    delete_termly_report($_POST);
+}

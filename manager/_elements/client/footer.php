@@ -201,7 +201,7 @@
                 <h1 class="modal-title fs-5 text-dark" id="staticBackdropLabel">New Termly Report</h1>
                 <button type="button" class="border-0" style="border-radius: 5px; padding: 4px 4px 0; background-color: #FF0000;" data-bs-dismiss="modal" aria-label="Close"><i class='bx bx-x bx-tada text-light' style="font-size: 24px;"></i></button>
             </div>
-            <form action="" method="post">
+            <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post">
                 <div class="modal-body">
                     <div class="table-responsive">
                         <table class="table table-striped">
