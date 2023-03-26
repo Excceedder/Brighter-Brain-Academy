@@ -49,7 +49,7 @@
                         </div>
                     <?php
                     } else if (isset($_SESSION['reset_password'])) {
-                        $designated_manager_id = $_SESSION['reset_password'];
+                        $manager_id = $_SESSION['reset_password'];
                         unset($_SESSION['reset_password']);
                     ?>
                         <div class="card overflow-hidden">
@@ -100,7 +100,7 @@
                                         </div>
                                     </div>
 
-                                    <input type="hidden" name="designated_manager_id" value="<?php echo $designated_manager_id ?>" id="designated_manager_id">
+                                    <input type="hidden" name="manager_id" value="<?php echo $manager_id ?>" id="manager_id">
                                     <div class="mt-4 d-grid">
                                         <button class="btn btn-success waves-effect waves-light" name="reset_password" type="submit">Save Changes</button>
                                     </div>
@@ -108,9 +108,9 @@
                             </div>
                         </div>
                     <?php
-                    } else if (isset($_SESSION['designated_manager_id'])) {
-                        $designated_manager_id = $_SESSION['designated_manager_id'];
-                        unset($_SESSION['designated_manager_id']);
+                    } else if (isset($_SESSION['manager_id'])) {
+                        $manager_id = $_SESSION['manager_id'];
+                        unset($_SESSION['manager_id']);
                     ?>
                         <div class="card overflow-hidden">
                             <div class="bg-success bg-soft">
@@ -148,7 +148,7 @@
                                     <div class="mt-2">
                                         <video src="" id="preview" width="100%" height="100%"></video>
                                         <input type="hidden" name="authorize_password_recovery" id="access_token">
-                                        <input type="hidden" name="designated_manager_id" value="<?php echo $designated_manager_id ?>" id="designated_manager_id">
+                                        <input type="hidden" name="manager_id" value="<?php echo $manager_id ?>" id="manager_id">
                                     </div>
 
                                 </form>

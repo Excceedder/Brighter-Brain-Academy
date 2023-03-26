@@ -58,9 +58,9 @@
                                     <div class="row">
                                         <div class="col-7">
                                             <div class="text-success p-3">
-                                                <h5 class="text-dark" style="margin-bottom: 2px;"><?php echo $designated_manager_data["greeting"] ?></h5>
-                                                <p class="mb-0 text-trucate"><?php echo $designated_manager_data["first_name"] . " " . $designated_manager_data["last_name"] ?></p>
-                                                <p class="mb-0 text-truncate"><a href="mailto:<?php echo $designated_manager_data["email_address"] ?>" class="text-dark"><?php echo $designated_manager_data["email_address"] ?></a></p>
+                                                <h5 class="text-dark" style="margin-bottom: 2px;"><?php echo $manager_data["greeting"] ?></h5>
+                                                <p class="mb-0 text-trucate"><?php echo $manager_data["first_name"] . " " . $manager_data["last_name"] ?></p>
+                                                <p class="mb-0 text-truncate"><a href="mailto:<?php echo $manager_data["email_address"] ?>" class="text-dark"><?php echo $manager_data["email_address"] ?></a></p>
                                             </div>
                                         </div>
                                         <div class="col-5 align-self-end">
@@ -94,7 +94,7 @@
                                                         <div class="spinner-grow text-secondary" style="width: 8px; height: 8px;" role="status">
                                                             <span class="visually-hidden">Loading...</span>
                                                         </div>
-                                                        <h5 class="mb-0"><?php echo $designated_manager_data["account_status"] ?></h5>
+                                                        <h5 class="mb-0"><?php echo $manager_data["account_status"] ?></h5>
                                                     </div>
                                                 </div>
 

@@ -9,7 +9,7 @@ function create_manager($form_data)
 {
     $db_conn = connect_to_database();
     $cipher_algorithm = "AES-256-CBC";
-    $designated_manager_id = bin2hex(random_bytes(32));
+    $manager_id = bin2hex(random_bytes(32));
 
     if ($_FILES["profile_photo"]["size"] > 1000000) {
         $_SESSION['feedback'] = "Error: File is too large. Maximum file size is 1mb.";
@@ -17,7 +17,7 @@ function create_manager($form_data)
         return false;
     }
 
-    $designated_manager_data = array(
+    $manager_data = array(
         "account_role" => "Manager",
         "reg_date" => date('M jS Y'),
         "last_name" => $form_data["last_name"],
@@ -25,7 +25,7 @@ function create_manager($form_data)
         "profile_photo" => '../server/data_entries/managers/' . bin2hex(random_bytes(32)) . '.' . pathinfo($_FILES["profile_photo"]["name"], PATHINFO_EXTENSION),
     );
 
-    $designated_manager_pass = array(
+    $manager_pass = array(
         "account_status" => "Dormant",
         "username" => $form_data["username"],
         "encryption_key" => random_bytes(32),
@@ -35,8 +35,8 @@ function create_manager($form_data)
         "password" => password_hash($form_data["password"], PASSWORD_BCRYPT),
     );
 
-    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE JSON_EXTRACT(UNHEX(`designated_manager_pass`), '$.username') = ? OR JSON_EXTRACT(UNHEX(`designated_manager_pass`), '$.email_address') = ?");
-    $stmt->bind_param("ss", $designated_manager_pass['username'], $designated_manager_pass['email_address']);
+    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE JSON_EXTRACT(UNHEX(`manager_pass`), '$.username') = ? OR JSON_EXTRACT(UNHEX(`manager_pass`), '$.email_address') = ?");
+    $stmt->bind_param("ss", $manager_pass['username'], $manager_pass['email_address']);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -47,10 +47,10 @@ function create_manager($form_data)
     }
 
     $mail_data = array(
-        "designated_manager_id" => $designated_manager_id,
-        "account_role" => $designated_manager_data["account_role"],
-        "email_address" => $designated_manager_pass["email_address"],
-        "full_names" => $designated_manager_data["first_name"] . " " . $designated_manager_data["last_name"],
+        "manager_id" => $manager_id,
+        "account_role" => $manager_data["account_role"],
+        "email_address" => $manager_pass["email_address"],
+        "full_names" => $manager_data["first_name"] . " " . $manager_data["last_name"],
     );
 
     if (!send_mail($mail_data)) {
@@ -59,19 +59,19 @@ function create_manager($form_data)
         return false;
     }
 
-    if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $designated_manager_data["profile_photo"])) {
+    if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $manager_data["profile_photo"])) {
         $_SESSION['feedback'] = "Error: Unable to upload image.";
         $_SESSION['type'] = "danger";
         return false;
     }
 
-    $designated_manager_data = bin2hex(openssl_encrypt(json_encode($designated_manager_data), $cipher_algorithm, $designated_manager_pass["encryption_key"], 0, $designated_manager_pass["initialization_vector"]));
-    $designated_manager_pass["encryption_key"] = bin2hex($designated_manager_pass["encryption_key"]);
-    $designated_manager_pass["initialization_vector"] = bin2hex($designated_manager_pass["initialization_vector"]);
-    $designated_manager_pass = bin2hex(json_encode($designated_manager_pass));
+    $manager_data = bin2hex(openssl_encrypt(json_encode($manager_data), $cipher_algorithm, $manager_pass["encryption_key"], 0, $manager_pass["initialization_vector"]));
+    $manager_pass["encryption_key"] = bin2hex($manager_pass["encryption_key"]);
+    $manager_pass["initialization_vector"] = bin2hex($manager_pass["initialization_vector"]);
+    $manager_pass = bin2hex(json_encode($manager_pass));
 
-    $stmt = $db_conn->prepare("INSERT INTO `managers_accounts`(`designated_manager_id`, `designated_manager_pass`, `designated_manager_data`) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $designated_manager_id, $designated_manager_pass, $designated_manager_data);
+    $stmt = $db_conn->prepare("INSERT INTO `managers_accounts`(`manager_id`, `manager_pass`, `manager_data`) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $manager_id, $manager_pass, $manager_data);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
@@ -85,17 +85,17 @@ function create_manager($form_data)
     }
 }
 
-function verify_email_address($designated_manager_pass)
+function verify_email_address($manager_pass)
 {
     $db_conn = connect_to_database();
-    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `designated_manager_id` = ? AND JSON_EXTRACT(UNHEX(`designated_manager_pass`), '$.account_status') = ?");
-    $stmt->bind_param("ss", $designated_manager_pass['designated_manager_id'], $designated_manager_pass['dormant_status']);
+    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `manager_id` = ? AND JSON_EXTRACT(UNHEX(`manager_pass`), '$.account_status') = ?");
+    $stmt->bind_param("ss", $manager_pass['manager_id'], $manager_pass['dormant_status']);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $stmt = $db_conn->prepare("UPDATE `managers_accounts` SET `designated_manager_pass` = HEX(JSON_SET(UNHEX(`designated_manager_pass`), '$.account_status', ?)) WHERE designated_manager_id = ?");
-        $stmt->bind_param("ss", $designated_manager_pass['active_status'], $designated_manager_pass['designated_manager_id']);
+        $stmt = $db_conn->prepare("UPDATE `managers_accounts` SET `manager_pass` = HEX(JSON_SET(UNHEX(`manager_pass`), '$.account_status', ?)) WHERE manager_id = ?");
+        $stmt->bind_param("ss", $manager_pass['active_status'], $manager_pass['manager_id']);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
@@ -108,8 +108,8 @@ function verify_email_address($designated_manager_pass)
             return false;
         }
     } else {
-        $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `designated_manager_id` = ? AND JSON_EXTRACT(UNHEX(`designated_manager_pass`), '$.account_status') = ?");
-        $stmt->bind_param("ss", $designated_manager_pass['designated_manager_id'], $designated_manager_pass['active_status']);
+        $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `manager_id` = ? AND JSON_EXTRACT(UNHEX(`manager_pass`), '$.account_status') = ?");
+        $stmt->bind_param("ss", $manager_pass['manager_id'], $manager_pass['active_status']);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -129,17 +129,17 @@ function authenticate_login($form_data)
 {
     $db_conn = connect_to_database();
 
-    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE JSON_EXTRACT(UNHEX(`designated_manager_pass`), '$.username') = ? OR JSON_EXTRACT(UNHEX(`designated_manager_pass`), '$.email_address') = ?");
+    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE JSON_EXTRACT(UNHEX(`manager_pass`), '$.username') = ? OR JSON_EXTRACT(UNHEX(`manager_pass`), '$.email_address') = ?");
     $stmt->bind_param("ss", $form_data["account_holder"], $form_data["account_holder"]);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
-        $designated_manager_pass = json_decode(hex2bin($row['designated_manager_pass']), true);
+        $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
 
-        if (password_verify($form_data["password"], $designated_manager_pass['password'])) {
-            $_SESSION['designated_manager_id'] = $row['designated_manager_id'];
+        if (password_verify($form_data["password"], $manager_pass['password'])) {
+            $_SESSION['manager_id'] = $row['manager_id'];
             return true;
         } else {
             $_SESSION['feedback'] = "Error: Password is invalid.";
@@ -157,16 +157,16 @@ function retrieve_access_token($form_data)
 {
     $db_conn = connect_to_database();
 
-    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE JSON_EXTRACT(UNHEX(`designated_manager_pass`), '$.username') = ? OR JSON_EXTRACT(UNHEX(`designated_manager_pass`), '$.email_address') = ?");
+    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE JSON_EXTRACT(UNHEX(`manager_pass`), '$.username') = ? OR JSON_EXTRACT(UNHEX(`manager_pass`), '$.email_address') = ?");
     $stmt->bind_param("ss", $form_data["account_holder"], $form_data["account_holder"]);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
-        $designated_manager_pass = json_decode(hex2bin($row['designated_manager_pass']), true);
+        $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
 
-        $access_token = $designated_manager_pass['access_token'];
+        $access_token = $manager_pass['access_token'];
         $access_token = password_hash($access_token, PASSWORD_BCRYPT);
         $access_token = urlencode($access_token);
 
@@ -184,24 +184,24 @@ function authorize_login($form_data)
 {
     $db_conn = connect_to_database();
 
-    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `designated_manager_id` = ?");
-    $stmt->bind_param("s", $form_data["designated_manager_id"]);
+    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `manager_id` = ?");
+    $stmt->bind_param("s", $form_data["manager_id"]);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
-        $designated_manager_pass = json_decode(hex2bin($row['designated_manager_pass']), true);
+        $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
 
-        if (password_verify($designated_manager_pass["access_token"], $form_data['authorize_login'])) {
+        if (password_verify($manager_pass["access_token"], $form_data['authorize_login'])) {
             $access_token = bin2hex(random_bytes(32));
 
-            $stmt = $db_conn->prepare("UPDATE `managers_accounts` SET `designated_manager_pass` = HEX(JSON_SET(UNHEX(`designated_manager_pass`), '$.access_token', ?)) WHERE designated_manager_id = ?");
-            $stmt->bind_param("ss", $access_token, $form_data['designated_manager_id']);
+            $stmt = $db_conn->prepare("UPDATE `managers_accounts` SET `manager_pass` = HEX(JSON_SET(UNHEX(`manager_pass`), '$.access_token', ?)) WHERE manager_id = ?");
+            $stmt->bind_param("ss", $access_token, $form_data['manager_id']);
             $stmt->execute();
 
             if ($stmt->affected_rows > 0) {
-                $_SESSION['authorized'] = $form_data['designated_manager_id'];
+                $_SESSION['authorized'] = $form_data['manager_id'];
                 header("location: ./");
                 return true;
             } else {
@@ -225,14 +225,14 @@ function recover_password($form_data)
 {
     $db_conn = connect_to_database();
 
-    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE JSON_EXTRACT(UNHEX(`designated_manager_pass`), '$.username') = ? OR JSON_EXTRACT(UNHEX(`designated_manager_pass`), '$.email_address') = ?");
+    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE JSON_EXTRACT(UNHEX(`manager_pass`), '$.username') = ? OR JSON_EXTRACT(UNHEX(`manager_pass`), '$.email_address') = ?");
     $stmt->bind_param("ss", $form_data["account_holder"], $form_data["account_holder"]);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
-        $_SESSION['designated_manager_id'] = $row['designated_manager_id'];
+        $_SESSION['manager_id'] = $row['manager_id'];
         return true;
     } else {
         $_SESSION['feedback'] = "Error: Account does not exist in the system.";
@@ -245,17 +245,17 @@ function authorize_password_recovery($form_data)
 {
     $db_conn = connect_to_database();
 
-    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `designated_manager_id` = ?");
-    $stmt->bind_param("s", $form_data["designated_manager_id"]);
+    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `manager_id` = ?");
+    $stmt->bind_param("s", $form_data["manager_id"]);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
-        $designated_manager_pass = json_decode(hex2bin($row['designated_manager_pass']), true);
+        $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
 
-        if (password_verify($designated_manager_pass["access_token"], $form_data['authorize_password_recovery'])) {
-            $_SESSION['reset_password'] = $form_data['designated_manager_id'];
+        if (password_verify($manager_pass["access_token"], $form_data['authorize_password_recovery'])) {
+            $_SESSION['reset_password'] = $form_data['manager_id'];
             return true;
         } else {
             $_SESSION['feedback'] = "Error: Access token is invalid.";
@@ -277,12 +277,12 @@ function reset_password($form_data)
         $access_token = bin2hex(random_bytes(32));
         $form_data["password"] = password_hash($form_data["password"], PASSWORD_BCRYPT);
 
-        $stmt = $db_conn->prepare("UPDATE `managers_accounts` SET `designated_manager_pass` = HEX(JSON_SET(UNHEX(`designated_manager_pass`), '$.password', ?, '$.access_token', ?)) WHERE designated_manager_id = ?");
-        $stmt->bind_param("sss", $form_data['password'], $access_token, $form_data['designated_manager_id']);
+        $stmt = $db_conn->prepare("UPDATE `managers_accounts` SET `manager_pass` = HEX(JSON_SET(UNHEX(`manager_pass`), '$.password', ?, '$.access_token', ?)) WHERE manager_id = ?");
+        $stmt->bind_param("sss", $form_data['password'], $access_token, $form_data['manager_id']);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
-            $_SESSION['password_updated'] = $form_data['designated_manager_id'];
+            $_SESSION['password_updated'] = $form_data['manager_id'];
             return true;
         } else {
             $_SESSION['feedback'] = "Error: Unable to update data.";
@@ -296,7 +296,7 @@ function reset_password($form_data)
     }
 }
 
-function fetch_designated_manager_data($designated_manager_id)
+function fetch_manager_data($manager_id)
 {
     $db_conn = connect_to_database();
     $cipher_algorithm = "AES-256-CBC";
@@ -309,19 +309,19 @@ function fetch_designated_manager_data($designated_manager_id)
         $greeting = 'Good evening!';
     }
 
-    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `designated_manager_id` = ?");
-    $stmt->bind_param("s", $designated_manager_id);
+    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `manager_id` = ?");
+    $stmt->bind_param("s", $manager_id);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
-        $designated_manager_pass = json_decode(hex2bin($row['designated_manager_pass']), true);
-        $designated_manager_data = openssl_decrypt(hex2bin($row['designated_manager_data']), $cipher_algorithm, hex2bin($designated_manager_pass["encryption_key"]), 0, hex2bin($designated_manager_pass["initialization_vector"]));
-        $designated_manager_data = array('designated_manager_pass' => $designated_manager_pass, 'designated_manager_data' => json_decode($designated_manager_data, true));
-        $designated_manager_data = array_merge($designated_manager_data['designated_manager_pass'], $designated_manager_data['designated_manager_data']);
-        $designated_manager_data['greeting'] = $greeting;
-        return $designated_manager_data;
+        $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
+        $manager_data = openssl_decrypt(hex2bin($row['manager_data']), $cipher_algorithm, hex2bin($manager_pass["encryption_key"]), 0, hex2bin($manager_pass["initialization_vector"]));
+        $manager_data = array('manager_pass' => $manager_pass, 'manager_data' => json_decode($manager_data, true));
+        $manager_data = array_merge($manager_data['manager_pass'], $manager_data['manager_data']);
+        $manager_data['greeting'] = $greeting;
+        return $manager_data;
     } else {
         $_SESSION['feedback'] = "Error: Account does not exist in the system.";
         $_SESSION['type'] = "warning";
@@ -332,9 +332,9 @@ function fetch_designated_manager_data($designated_manager_id)
 function update_session_and_term($form_data)
 {
     $db_conn = connect_to_database();
-    $designated_session_and_term_id = bin2hex(random_bytes(32));
+    $session_and_term_id = bin2hex(random_bytes(32));
 
-    $designated_session_and_term_data = array(
+    $session_and_term_data = array(
         "session_tag" => $form_data["session_tag"],
         "term_tag" => $form_data["term_tag"],
         "main_campus" => "BBA Ughelli",
@@ -345,15 +345,15 @@ function update_session_and_term($form_data)
         "session_and_term_status" => "Active",
     );
 
-    $stmt = $db_conn->prepare("SELECT * FROM `sessions_and_terms` WHERE JSON_EXTRACT(UNHEX(`designated_session_and_term_data`), '$.session_tag') = ? AND JSON_EXTRACT(UNHEX(`designated_session_and_term_data`), '$.term_tag') = ?");
-    $stmt->bind_param("ss", $designated_session_and_term_data['session_tag'], $designated_session_and_term_data['term_tag']);
+    $stmt = $db_conn->prepare("SELECT * FROM `sessions_and_terms` WHERE JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.session_tag') = ? AND JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.term_tag') = ?");
+    $stmt->bind_param("ss", $session_and_term_data['session_tag'], $session_and_term_data['term_tag']);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $stmt = $db_conn->prepare("UPDATE `sessions_and_terms` SET `designated_session_and_term_data` = HEX(JSON_SET(UNHEX(`designated_session_and_term_data`), '$.session_start', ?, '$.session_stop', ?, '$.term_start', ?, '$.term_stop', ?)) WHERE JSON_EXTRACT(UNHEX(`designated_session_and_term_data`), '$.session_tag') = ? AND JSON_EXTRACT(UNHEX(`designated_session_and_term_data`), '$.term_tag') = ?");
+        $stmt = $db_conn->prepare("UPDATE `sessions_and_terms` SET `session_and_term_data` = HEX(JSON_SET(UNHEX(`session_and_term_data`), '$.session_start', ?, '$.session_stop', ?, '$.term_start', ?, '$.term_stop', ?)) WHERE JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.session_tag') = ? AND JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.term_tag') = ?");
 
-        $stmt->bind_param("ssssss", $designated_session_and_term_data['session_start'], $designated_session_and_term_data['session_stop'], $designated_session_and_term_data['term_start'], $designated_session_and_term_data['term_stop'], $designated_session_and_term_data['session_tag'], $designated_session_and_term_data['term_tag']);
+        $stmt->bind_param("ssssss", $session_and_term_data['session_start'], $session_and_term_data['session_stop'], $session_and_term_data['term_start'], $session_and_term_data['term_stop'], $session_and_term_data['session_tag'], $session_and_term_data['term_tag']);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
@@ -367,13 +367,13 @@ function update_session_and_term($form_data)
         }
     } else {
         $dormant_status = "Dormant";
-        $stmt = $db_conn->prepare("UPDATE `sessions_and_terms` SET `designated_session_and_term_data` = HEX(JSON_SET(UNHEX(`designated_session_and_term_data`), '$.session_and_term_status', ?)) WHERE JSON_EXTRACT(UNHEX(`designated_session_and_term_data`), '$.session_and_term_status') = ?");
-        $stmt->bind_param("ss", $dormant_status, $designated_session_and_term_data['session_and_term_status']);
+        $stmt = $db_conn->prepare("UPDATE `sessions_and_terms` SET `session_and_term_data` = HEX(JSON_SET(UNHEX(`session_and_term_data`), '$.session_and_term_status', ?)) WHERE JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.session_and_term_status') = ?");
+        $stmt->bind_param("ss", $dormant_status, $session_and_term_data['session_and_term_status']);
         $stmt->execute();
 
-        $designated_session_and_term_data = bin2hex(json_encode($designated_session_and_term_data));
-        $stmt = $db_conn->prepare("INSERT INTO `sessions_and_terms`(`designated_session_and_term_id`, `designated_session_and_term_data`) VALUES (?, ?)");
-        $stmt->bind_param("ss", $designated_session_and_term_id, $designated_session_and_term_data);
+        $session_and_term_data = bin2hex(json_encode($session_and_term_data));
+        $stmt = $db_conn->prepare("INSERT INTO `sessions_and_terms`(`session_and_term_id`, `session_and_term_data`) VALUES (?, ?)");
+        $stmt->bind_param("ss", $session_and_term_id, $session_and_term_data);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
@@ -394,12 +394,12 @@ function activate_session_and_term($form_data)
     $dormant_status = "Dormant";
     $active_status = "Active";
 
-    $stmt = $db_conn->prepare("UPDATE `sessions_and_terms` SET `designated_session_and_term_data` = HEX(JSON_SET(UNHEX(`designated_session_and_term_data`), '$.session_and_term_status', ?)) WHERE JSON_EXTRACT(UNHEX(`designated_session_and_term_data`), '$.session_and_term_status') = ?");
+    $stmt = $db_conn->prepare("UPDATE `sessions_and_terms` SET `session_and_term_data` = HEX(JSON_SET(UNHEX(`session_and_term_data`), '$.session_and_term_status', ?)) WHERE JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.session_and_term_status') = ?");
     $stmt->bind_param("ss", $dormant_status, $active_status);
     $stmt->execute();
 
-    $stmt = $db_conn->prepare("UPDATE `sessions_and_terms` SET `designated_session_and_term_data` = HEX(JSON_SET(UNHEX(`designated_session_and_term_data`), '$.session_and_term_status', ?)) WHERE `designated_session_and_term_id` = ?");
-    $stmt->bind_param("ss", $active_status, $form_data['designated_session_and_term_id']);
+    $stmt = $db_conn->prepare("UPDATE `sessions_and_terms` SET `session_and_term_data` = HEX(JSON_SET(UNHEX(`session_and_term_data`), '$.session_and_term_status', ?)) WHERE `session_and_term_id` = ?");
+    $stmt->bind_param("ss", $active_status, $form_data['session_and_term_id']);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
@@ -418,8 +418,8 @@ function delete_session_and_term($form_data)
     $db_conn = connect_to_database();
     $active_status = "Active";
 
-    $stmt = $db_conn->prepare("SELECT * FROM `sessions_and_terms` WHERE `designated_session_and_term_id` = ? AND JSON_EXTRACT(UNHEX(`designated_session_and_term_data`), '$.session_and_term_status') = ?");
-    $stmt->bind_param("ss", $form_data['designated_session_and_term_id'], $active_status);
+    $stmt = $db_conn->prepare("SELECT * FROM `sessions_and_terms` WHERE `session_and_term_id` = ? AND JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.session_and_term_status') = ?");
+    $stmt->bind_param("ss", $form_data['session_and_term_id'], $active_status);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -428,8 +428,8 @@ function delete_session_and_term($form_data)
         $_SESSION['type'] = "warning";
         return false;
     } else {
-        $stmt = $db_conn->prepare("DELETE FROM `sessions_and_terms` WHERE `designated_session_and_term_id` = ?");
-        $stmt->bind_param("s", $form_data['designated_session_and_term_id']);
+        $stmt = $db_conn->prepare("DELETE FROM `sessions_and_terms` WHERE `session_and_term_id` = ?");
+        $stmt->bind_param("s", $form_data['session_and_term_id']);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -448,7 +448,7 @@ function delete_session_and_term($form_data)
 function new_admission($form_data)
 {
     $db_conn = connect_to_database();
-    $designated_student_id = bin2hex(random_bytes(32));
+    $student_id = bin2hex(random_bytes(32));
     $school_prefix = "BBA--";
 
     if ($_FILES["profile_photo"]["size"] > 1000000) {
@@ -457,7 +457,7 @@ function new_admission($form_data)
         return false;
     }
 
-    $stmt = $db_conn->prepare("SELECT MAX(CAST(JSON_EXTRACT(`designated_student_data`, '$.admission_number') AS UNSIGNED)) AS `current_admission_number` FROM `students_accounts`");
+    $stmt = $db_conn->prepare("SELECT MAX(CAST(JSON_EXTRACT(`student_data`, '$.admission_number') AS UNSIGNED)) AS `current_admission_number` FROM `students_accounts`");
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -469,7 +469,7 @@ function new_admission($form_data)
         $new_admission_number = 1;
     }
 
-    $designated_student_data = array(
+    $student_data = array(
         "surname" => $form_data["surname"],
         "first_name" => $form_data["first_name"],
         "other_names" => $form_data["other_names"],
@@ -490,16 +490,16 @@ function new_admission($form_data)
         "profile_photo" => '../server/data_entries/students/' . bin2hex(random_bytes(32)) . '.' . pathinfo($_FILES["profile_photo"]["name"], PATHINFO_EXTENSION),
     );
 
-    if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $designated_student_data["profile_photo"])) {
+    if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $student_data["profile_photo"])) {
         $_SESSION['feedback'] = "Error: Unable to upload image.";
         $_SESSION['type'] = "danger";
         return false;
     }
 
-    $designated_student_data = bin2hex(json_encode($designated_student_data));
+    $student_data = bin2hex(json_encode($student_data));
 
-    $stmt = $db_conn->prepare("INSERT INTO `students_accounts`(`designated_student_id`, `designated_student_data`) VALUES (?, ?)");
-    $stmt->bind_param("ss", $designated_student_id, $designated_student_data);
+    $stmt = $db_conn->prepare("INSERT INTO `students_accounts`(`student_id`, `student_data`) VALUES (?, ?)");
+    $stmt->bind_param("ss", $student_id, $student_data);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
@@ -517,14 +517,14 @@ function delete_student_account($form_data)
 {
     $db_conn = connect_to_database();
 
-    $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `designated_student_id` = ?");
-    $stmt->bind_param("s", $form_data['designated_student_id']);
+    $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `student_id` = ?");
+    $stmt->bind_param("s", $form_data['student_id']);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $stmt = $db_conn->prepare("DELETE FROM `students_accounts` WHERE `designated_student_id` = ?");
-        $stmt->bind_param("s", $form_data['designated_student_id']);
+        $stmt = $db_conn->prepare("DELETE FROM `students_accounts` WHERE `student_id` = ?");
+        $stmt->bind_param("s", $form_data['student_id']);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -553,21 +553,21 @@ function update_student_credentials($form_data)
         }
     }
 
-    $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `designated_student_id` = ?");
-    $stmt->bind_param("s", $form_data['designated_student_id']);
+    $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `student_id` = ?");
+    $stmt->bind_param("s", $form_data['student_id']);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $sql = "UPDATE `students_accounts` SET `designated_student_data` = HEX(JSON_SET(UNHEX(`designated_student_data`), ";
+        $sql = "UPDATE `students_accounts` SET `student_data` = HEX(JSON_SET(UNHEX(`student_data`), ";
         $params = array();
         foreach ($form_data as $key => $value) {
             $sql .= "'$." . $key . "', ?, ";
             $params[] = $value;
         }
         $sql = rtrim($sql, ", ");
-        $sql .= ")) WHERE `designated_student_id` = ?";
-        $params[] = $form_data['designated_student_id'];
+        $sql .= ")) WHERE `student_id` = ?";
+        $params[] = $form_data['student_id'];
 
         $stmt = $db_conn->prepare($sql);
         $stmt->bind_param(str_repeat("s", count($params)), ...$params);
@@ -604,16 +604,16 @@ function update_student_profile_photo($form_data)
         return false;
     }
 
-    $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `designated_student_id` = ?");
-    $stmt->bind_param("s", $form_data['designated_student_id']);
+    $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `student_id` = ?");
+    $stmt->bind_param("s", $form_data['student_id']);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
-        $designated_student_data = json_decode(hex2bin($row['designated_student_data']), true);
+        $student_data = json_decode(hex2bin($row['student_data']), true);
 
-        if (!unlink($designated_student_data['profile_photo'])) {
+        if (!unlink($student_data['profile_photo'])) {
             $_SESSION['feedback'] = "Error: Unable to update phofile photo.";
             $_SESSION['type'] = "danger";
             return false;
@@ -627,8 +627,8 @@ function update_student_profile_photo($form_data)
             return false;
         }
 
-        $stmt = $db_conn->prepare("UPDATE `students_accounts` SET `designated_student_data` = HEX(JSON_SET(UNHEX(`designated_student_data`), '$.profile_photo', ?)) WHERE `designated_student_id` = ?");
-        $stmt->bind_param("ss", $new_profile_photo, $form_data['designated_student_id']);
+        $stmt = $db_conn->prepare("UPDATE `students_accounts` SET `student_data` = HEX(JSON_SET(UNHEX(`student_data`), '$.profile_photo', ?)) WHERE `student_id` = ?");
+        $stmt->bind_param("ss", $new_profile_photo, $form_data['student_id']);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {

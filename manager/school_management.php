@@ -90,29 +90,29 @@
                                             $db_conn = connect_to_database();
                                             $main_campus = "BBA Ughelli";
 
-                                            $stmt = $db_conn->prepare("SELECT * FROM `sessions_and_terms` WHERE JSON_EXTRACT(UNHEX(`designated_session_and_term_data`), '$.main_campus') = ?");
+                                            $stmt = $db_conn->prepare("SELECT * FROM `sessions_and_terms` WHERE JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.main_campus') = ?");
                                             $stmt->bind_param("s", $main_campus);
                                             $stmt->execute();
                                             $result = $stmt->get_result();
 
                                             if ($result->num_rows > 0) {
                                                 while ($row = $result->fetch_assoc()) {
-                                                    $designated_session_and_term_id = $row['designated_session_and_term_id'];
-                                                    $designated_session_and_term_data = json_decode(hex2bin($row['designated_session_and_term_data']), true);
+                                                    $session_and_term_id = $row['session_and_term_id'];
+                                                    $session_and_term_data = json_decode(hex2bin($row['session_and_term_data']), true);
                                             ?>
                                                     <tr>
-                                                        <td><?php echo $designated_session_and_term_data["main_campus"] ?></td>
-                                                        <td><?php echo $designated_session_and_term_data["session_tag"] ?></td>
-                                                        <td><?php echo $designated_session_and_term_data["session_start"] ?></td>
-                                                        <td><?php echo $designated_session_and_term_data["session_stop"] ?></td>
-                                                        <td><?php echo $designated_session_and_term_data["term_tag"] ?></td>
-                                                        <td><?php echo $designated_session_and_term_data["term_start"] ?></td>
-                                                        <td><?php echo $designated_session_and_term_data["term_stop"] ?></td>
+                                                        <td><?php echo $session_and_term_data["main_campus"] ?></td>
+                                                        <td><?php echo $session_and_term_data["session_tag"] ?></td>
+                                                        <td><?php echo $session_and_term_data["session_start"] ?></td>
+                                                        <td><?php echo $session_and_term_data["session_stop"] ?></td>
+                                                        <td><?php echo $session_and_term_data["term_tag"] ?></td>
+                                                        <td><?php echo $session_and_term_data["term_start"] ?></td>
+                                                        <td><?php echo $session_and_term_data["term_stop"] ?></td>
                                                         <td>
                                                             <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME)) ?>" method="post">
-                                                                <input type="hidden" name="designated_session_and_term_id" value="<?php echo $designated_session_and_term_id ?>">
+                                                                <input type="hidden" name="session_and_term_id" value="<?php echo $session_and_term_id ?>">
                                                                 <?php
-                                                                if ($designated_session_and_term_data["session_and_term_status"] == "Active") {
+                                                                if ($session_and_term_data["session_and_term_status"] == "Active") {
                                                                 ?>
                                                                     <button type="button" data-bs-toggle="modal" data-bs-target="#update_sessions_and_terms" style="border: 1px dashed #556ee6; color: #556ee6; background-color: transparent;border-radius: 5px;"><i class='bx bx-edit'></i> Manage</button>
                                                                 <?php

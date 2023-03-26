@@ -37,8 +37,8 @@
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="<?php echo $designated_manager_data["profile_photo"] ?>" alt="#">
-                    <span class="d-none d-xl-inline-block ms-1"><?php echo $designated_manager_data["username"] ?></span>
+                    <img class="rounded-circle header-profile-user" src="<?php echo $manager_data["profile_photo"] ?>" alt="#">
+                    <span class="d-none d-xl-inline-block ms-1"><?php echo $manager_data["username"] ?></span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->

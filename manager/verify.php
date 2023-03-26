@@ -5,13 +5,13 @@
 
 include "../server/server.php";
 
-if (isset($_GET['designated_manager_id']) && !empty($_GET['designated_manager_id'])) {
-    $designated_manager_pass = array(
-        'designated_manager_id' => $_GET['designated_manager_id'],
+if (isset($_GET['manager_id']) && !empty($_GET['manager_id'])) {
+    $manager_pass = array(
+        'manager_id' => $_GET['manager_id'],
         'active_status' => "Active",
         'dormant_status' => "Dormant",
     );
-    verify_email_address($designated_manager_pass);
+    verify_email_address($manager_pass);
 } else {
     $_SESSION['feedback'] = "Error: URL is invalid.";
     $_SESSION['type'] = "warning";
