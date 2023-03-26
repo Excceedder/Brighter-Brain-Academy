@@ -547,8 +547,6 @@ function delete_student_account($form_data)
 function update_student_credentials($form_data)
 {
     $db_conn = connect_to_database();
-    unset($form_data['update_student_credentials']);
-
     foreach ($form_data as $key => $value) {
         if (empty($value)) {
             unset($form_data[$key]);
