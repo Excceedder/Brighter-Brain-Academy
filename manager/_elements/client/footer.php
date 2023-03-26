@@ -194,6 +194,106 @@
     </div>
 </div>
 
+<div class="modal fade" id="new_termly_report" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-dark" id="staticBackdropLabel">New Termly Report</h1>
+                <button type="button" class="border-0" style="border-radius: 5px; padding: 4px 4px 0; background-color: #FF0000;" data-bs-dismiss="modal" aria-label="Close"><i class='bx bx-x bx-tada text-light' style="font-size: 24px;"></i></button>
+            </div>
+            <form action="" method="post">
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>CLASS SUBJECTS</th>
+                                    <th>1<sup>st</sup> CA(20) SCORE</th>
+                                    <th>2<sup>nd</sup> CA(10) SCORE</th>
+                                    <th>EXAMINATION(70) SCORE</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <?php
+
+                                if ($student_data["class_placement"] == "Pre Kindergarten") {
+                                ?>
+                                    <tr>
+                                        <td>English Language</td>
+                                        <td><input type="number" name="english_language_first_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="english_language_second_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="english_language_examination_score" placeholder="0" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mathematics</td>
+                                        <td><input type="number" name="mathematics_first_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="mathematics_second_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="mathematics_examination_score" placeholder="0" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hand Writing</td>
+                                        <td><input type="number" name="hand_writing_first_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="hand_writing_second_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="hand_writing_examination_score" placeholder="0" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rhymes</td>
+                                        <td><input type="number" name="rhymes_first_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="rhymes_second_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="rhymes_examination_score" placeholder="0" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coloring</td>
+                                        <td><input type="number" name="coloringfirst_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="coloringsecond_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="coloringexamination_score" placeholder="0" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Practcal Life</td>
+                                        <td><input type="number" name="practcal_life_first_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="practcal_life_second_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="practcal_life_examination_score" placeholder="0" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Health Habits</td>
+                                        <td><input type="number" name="health_habits_first_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="health_habits_second_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="health_habits_examination_score" placeholder="0" class="form-control"></td>
+                                    </tr>
+                                <?php
+                                } else if ($student_data["class_placement"] == "Kindergarten 1" || $student_data["class_placement"] == "Kindergarten 2" || $student_data["class_placement"] == "Kindergarten 3") {
+                                ?>
+                                    <h2>Kindergarten</h2>
+                                <?php
+                                } else if ($student_data["class_placement"] == "Primary 1" || $student_data["class_placement"] == "Primary 2") {
+                                ?>
+                                    <h2>Lower Primary</h2>
+                                <?php
+                                } else if ($student_data["class_placement"] == "Primary 3" || $student_data["class_placement"] == "Primary 4" || $student_data["class_placement"] == "Primary 5") {
+                                ?>
+                                    <h2>Upper Primary</h2>
+                                <?php
+                                } else if ($student_data["class_placement"] == "JSS 1" || $student_data["class_placement"] == "JSS 2" || $student_data["class_placement"] == "JSS 3") {
+                                ?>
+                                    <h2>Junior Secondary</h2>
+                                <?php
+                                }
+
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex">
+                    <button type="reset" class="me-auto btn btn-secondary"><i class='bx bx-reset'></i> Reset</button>
+                    <button type="submit" class="btn btn-success" name="save_termly_report"><i class='bx bx-save'></i> Save Entries</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="new_employee" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">

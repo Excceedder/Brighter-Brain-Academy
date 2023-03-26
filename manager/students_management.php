@@ -200,7 +200,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <button class="btn btn-outline-dark mb-3" type="button" data-bs-toggle="modal" data-bs-target="#new_termly" style="border: 1px dashed #343a40;"><i class='bx bxs-report'></i> Create Termly Report</button>
+                                <button class="btn btn-outline-dark mb-3" type="button" data-bs-toggle="modal" data-bs-target="#new_termly_report" style="border: 1px dashed #343a40;"><i class='bx bxs-report'></i> Create Termly Report</button>
                                 <div class="card" style="border: 1px dashed #343a40;">
                                     <div class="card-body">
                                         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
