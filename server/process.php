@@ -548,14 +548,10 @@ function update_student_credentials($form_data)
     $db_conn = connect_to_database();
     unset($form_data['update_student_credentials']);
 
-    if (empty($form_data['country'])) {
-        unset($form_data['country']);
-        unset($form_data['region']);
-        unset($form_data['city']);
-    }
-
-    if (empty($form_data['gender'])) {
-        unset($form_data['gender']);
+    foreach ($form_data as $key => $value) {
+        if (empty($value)) {
+            unset($form_data[$key]);
+        }
     }
 
     $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `designated_student_id` = ?");
