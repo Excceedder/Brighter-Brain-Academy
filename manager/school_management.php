@@ -122,7 +122,7 @@
                                                                 <?php
                                                                 }
                                                                 ?>
-                                                                <button style="border: 1px dashed #f46a6a; color: #f46a6a; background-color: transparent;border-radius: 5px; " name="delete_session_and_term" type="submit"><i class='bx bx-trash bx-tada'></i></button>
+                                                                <button style="border: 1px dashed #f46a6a; color: #f46a6a; background-color: transparent;border-radius: 5px; " name="delete_session_and_term" onclick="return confirm('Do you confirm that you intend to delete this Session/Term?');" type="submit"><i class='bx bx-trash bx-tada'></i></button>
                                                             </form>
                                                         </td>
                                                     </tr>

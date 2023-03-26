@@ -121,7 +121,7 @@
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="mb-1">
-                                                        <h5 style="text-decoration: underline;">Candidate's Credentials:</h5>
+                                                        <h5 style="text-decoration: underline;"><?php echo $student_data["first_name"] ?>'s Credentials:</h5>
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="surname" class="form-label">Surname</label>
@@ -206,12 +206,11 @@
                                         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                             <thead>
                                                 <tr>
-                                                    <th>Admission No.</th>
-                                                    <th>Main Campus</th>
+                                                    <th>Full Names</th>
+                                                    <th>Class Placement</th>
                                                     <th>Session Tag</th>
                                                     <th>Term Tag</th>
-                                                    <th>Overall Score</th>
-                                                    <th>Overrall Grade</th>
+                                                    <th>Main Campus</th>
                                                     <th>Action Buttons</th>
                                                 </tr>
                                             </thead>
@@ -220,30 +219,31 @@
                                                 <?php
                                                 $db_conn = connect_to_database();
 
-                                                $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE JSON_EXTRACT(UNHEX(`student_data`), '$.query_category') = ?");
-                                                $stmt->bind_param("s", $query_category);
+                                                $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE JSON_EXTRACT(UNHEX(`termly_report_data`), '$.student_id') = ?");
+                                                $stmt->bind_param("s", $_GET['student_id']);
                                                 $stmt->execute();
                                                 $result = $stmt->get_result();
 
                                                 if ($result->num_rows > 0) {
                                                     while ($row = $result->fetch_assoc()) {
-                                                        $student_id = $row['student_id'];
-                                                        $student_data = json_decode(hex2bin($row['student_data']), true);
+                                                        $termly_report_id = $row['termly_report_id'];
+                                                        $termly_report_data = json_decode(hex2bin($row['termly_report_data']), true);
                                                 ?>
                                                         <tr>
-                                                            <td><?php echo $student_data["admission_number"] ?></td>
-                                                            <td><?php echo $student_data["surname"] ?></td>
-                                                            <td><?php echo $student_data["first_name"] ?></td>
-                                                            <td><?php echo $student_data["class_placement"] ?></td>
-                                                            <td><?php echo $student_data["gender"] ?></td>
-                                                            <td><?php echo $student_data["registration_date"] ?></td>
+                                                            <td><?php echo $termly_report_data["full_names"] ?></td>
+                                                            <td><?php echo $termly_report_data["class_placement"] ?></td>
+                                                            <td><?php echo $termly_report_data["session_tag"] ?></td>
+                                                            <td><?php echo $termly_report_data["term_tag"] ?></td>
+                                                            <td><?php echo $termly_report_data["main_campus"] ?></td>
                                                             <td>
-                                                                <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post">
-                                                                    <input type="hidden" name="student_id" value="<?php echo $student_id ?>">
+                                                                <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME)) ?>" method="post">
+                                                                    <input type="hidden" name="session_and_term_id" value="<?php echo $session_and_term_id ?>">
 
-                                                                    <a href="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?student_id=' . $student_id) ?>" style="border: 1px dashed #34c38f; color: #34c38f; background-color: transparent;border-radius: 5px; padding: 1px 6px;" name="" type="submit"><i class='bx bxs-contact'></i> Manage</a>
+                                                                    <a href="#" style="border: 1px dashed #556ee6; color: #556ee6; background-color: transparent;border-radius: 5px; padding: 4px 6px 2px;"><i class='bx bx-edit'></i></a>
 
-                                                                    <button style="border: 1px dashed #f46a6a; color: #f46a6a; background-color: transparent;border-radius: 5px; " onclick="return confirm('Do you confirm that you intend to delete this student account?');" type="submit" name="delete_student_account"><i class='bx bx-trash bx-tada'></i></button>
+                                                                    <a href="#" style="border: 1px dashed #34c38f; color: #34c38f; background-color: transparent;border-radius: 5px; padding: 4px 6px 2px;"><i class='bx bx-printer'></i></a>
+
+                                                                    <button style="border: 1px dashed #f46a6a; color: #f46a6a; background-color: transparent;border-radius: 5px; padding: 4px 6px 2px; margin-left: 1px" onclick="return confirm('Do you confirm that you intend to delete this termly report?');" name="delete_termly_report" type="submit"><i class='bx bx-trash bx-tada'></i></button>
                                                                 </form>
                                                             </td>
                                                         </tr>
@@ -253,7 +253,6 @@
                                                     ?>
                                                     <tr>
                                                         <td style="font-weight: bold;">No records found!</td>
-                                                        <td></td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>

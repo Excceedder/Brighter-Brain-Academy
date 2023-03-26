@@ -286,8 +286,11 @@
                     </div>
                 </div>
                 <div class="modal-footer d-flex">
+                    <input type="hidden" name="student_id" value="<?php echo $_GET['student_id'] ?>">
+                    <input type="hidden" name="full_names" value="<?php echo $student_data["surname"] . ' ' . $student_data["first_name"] ?>">
+                    <input type="hidden" name="class_placement" value="<?php echo $student_data["class_placement"] ?>">
                     <button type="reset" class="me-auto btn btn-secondary"><i class='bx bx-reset'></i> Reset</button>
-                    <button type="submit" class="btn btn-success" name="save_termly_report"><i class='bx bx-save'></i> Save Entries</button>
+                    <button type="submit" class="btn btn-success" name="create_termly_report"><i class='bx bx-save'></i> Save Entries</button>
                 </div>
             </form>
         </div>

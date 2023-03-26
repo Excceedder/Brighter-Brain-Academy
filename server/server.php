@@ -57,3 +57,7 @@ if (isset($_POST['update_student_credentials'])) {
 if (isset($_POST['update_student_profile_photo'])) {
     update_student_profile_photo($_POST);
 }
+
+if (isset($_POST['create_termly_report'])) {
+    create_termly_report($_POST);
+}

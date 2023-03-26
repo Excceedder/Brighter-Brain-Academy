@@ -646,3 +646,55 @@ function update_student_profile_photo($form_data)
         return false;
     }
 }
+
+function create_termly_report($form_data)
+{
+    $db_conn = connect_to_database();
+    $active_status = "Active";
+    foreach ($form_data as $key => $value) {
+        if (empty($value)) {
+            unset($form_data[$key]);
+        }
+    }
+
+    $stmt = $db_conn->prepare("SELECT * FROM `sessions_and_terms` WHERE JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.session_and_term_status') = ?");
+    $stmt->bind_param("s", $active_status);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $session_and_term_data = json_decode(hex2bin($row['session_and_term_data']), true);
+    }
+
+    $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE JSON_EXTRACT(UNHEX(`termly_report_data`), '$.student_id') = ? AND JSON_EXTRACT(UNHEX(`termly_report_data`), '$.session_tag') = ? AND JSON_EXTRACT(UNHEX(`termly_report_data`), '$.term_tag') = ?");
+    $stmt->bind_param("sss", $form_data['student_id'], $session_and_term_data['session_tag'], $session_and_term_data['term_tag']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $_SESSION['feedback'] = "Information: The system has identified the presence of duplicate records.";
+        $_SESSION['type'] = "primary";
+        return false;
+    }
+
+    $termly_report_id = bin2hex(random_bytes(32));
+    $form_data["session_tag"] = $session_and_term_data["session_tag"];
+    $form_data["term_tag"] = $session_and_term_data["term_tag"];
+    $form_data["main_campus"] = $session_and_term_data["main_campus"];
+    $termly_report_data = bin2hex(json_encode($form_data));
+
+    $stmt = $db_conn->prepare("INSERT INTO `termly_reports`(`termly_report_id`, `termly_report_data`) VALUES (?, ?)");
+    $stmt->bind_param("ss", $termly_report_id, $termly_report_data);
+    $stmt->execute();
+
+    if ($stmt->affected_rows > 0) {
+        $_SESSION['feedback'] = "A term report for the current term has been successfully created.";
+        $_SESSION['type'] = "success";
+        return true;
+    } else {
+        $_SESSION['feedback'] = "Error: An error occurred while attempting to generate a new termly report.";
+        $_SESSION['type'] = "danger";
+        return false;
+    }
+}
