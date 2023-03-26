@@ -101,8 +101,14 @@
                             <div class="col-12">
                                 <div class="card" style="border: 1px dashed #343a40;">
                                     <div class="card-body">
-                                        <label for="profile_photo" class="form-label">Update Profile Photo</label>
-                                        <input type="file" name="profile_photo" id="profile_photo" required class="form-control">
+                                        <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" enctype="multipart/form-data" method="post">
+                                            <label for="profile_photo" class="form-label">Update Profile Photo</label>
+                                            <div class="input-group">
+                                                <input type="file" name="profile_photo" id="profile_photo" required class="form-control">
+                                                <input type="hidden" name="designated_student_id" value="<?php echo $_GET['designated_student_id'] ?>">
+                                                <button class="btn btn-outline-secondary" name="update_student_profile_photo" type="submit"><i class='bx bx-check-double fw-bold'></i></button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

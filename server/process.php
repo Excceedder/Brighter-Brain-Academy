@@ -352,6 +352,7 @@ function update_session_and_term($form_data)
 
     if ($result->num_rows > 0) {
         $stmt = $db_conn->prepare("UPDATE `sessions_and_terms` SET `designated_session_and_term_data` = HEX(JSON_SET(UNHEX(`designated_session_and_term_data`), '$.session_start', ?, '$.session_stop', ?, '$.term_start', ?, '$.term_stop', ?)) WHERE JSON_EXTRACT(UNHEX(`designated_session_and_term_data`), '$.session_tag') = ? AND JSON_EXTRACT(UNHEX(`designated_session_and_term_data`), '$.term_tag') = ?");
+
         $stmt->bind_param("ssssss", $designated_session_and_term_data['session_start'], $designated_session_and_term_data['session_stop'], $designated_session_and_term_data['term_start'], $designated_session_and_term_data['term_stop'], $designated_session_and_term_data['session_tag'], $designated_session_and_term_data['term_tag']);
         $stmt->execute();
 
@@ -576,6 +577,64 @@ function update_student_credentials($form_data)
 
         if ($stmt->affected_rows > 0) {
             $_SESSION['feedback'] = "The updates to the student's credentials have been saved successfully.";
+            $_SESSION['type'] = "success";
+            return true;
+        } else {
+            $_SESSION['feedback'] = "Information: The records were already up to date, so no changes were made.";
+            $_SESSION['type'] = "primary";
+            return false;
+        }
+    } else {
+        $_SESSION['feedback'] = "Error: Invalid student ID!";
+        $_SESSION['type'] = "danger";
+        return false;
+    }
+}
+
+function update_student_profile_photo($form_data)
+{
+    $db_conn = connect_to_database();
+    foreach ($form_data as $key => $value) {
+        if (empty($value)) {
+            unset($form_data[$key]);
+        }
+    }
+
+    if ($_FILES["profile_photo"]["size"] > 1000000) {
+        $_SESSION['feedback'] = "Error: File is too large. Maximum file size is 1mb.";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+
+    $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `designated_student_id` = ?");
+    $stmt->bind_param("s", $form_data['designated_student_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $designated_student_data = json_decode(hex2bin($row['designated_student_data']), true);
+
+        if (!unlink($designated_student_data['profile_photo'])) {
+            $_SESSION['feedback'] = "Error: Unable to update phofile photo.";
+            $_SESSION['type'] = "danger";
+            return false;
+        }
+
+        $new_profile_photo = '../server/data_entries/students/' . bin2hex(random_bytes(32)) . '.' . pathinfo($_FILES["profile_photo"]["name"], PATHINFO_EXTENSION);
+
+        if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $new_profile_photo)) {
+            $_SESSION['feedback'] = "Error: Unable to upload image.";
+            $_SESSION['type'] = "danger";
+            return false;
+        }
+
+        $stmt = $db_conn->prepare("UPDATE `students_accounts` SET `designated_student_data` = HEX(JSON_SET(UNHEX(`designated_student_data`), '$.profile_photo', ?)) WHERE `designated_student_id` = ?");
+        $stmt->bind_param("ss", $new_profile_photo, $form_data['designated_student_id']);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            $_SESSION['feedback'] = "The updates to the student's profile photo have been saved successfully.";
             $_SESSION['type'] = "success";
             return true;
         } else {

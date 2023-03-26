@@ -53,3 +53,7 @@ if (isset($_POST['delete_student_account'])) {
 if (isset($_POST['update_student_credentials'])) {
     update_student_credentials($_POST);
 }
+
+if (isset($_POST['update_student_profile_photo'])) {
+    update_student_profile_photo($_POST);
+}
