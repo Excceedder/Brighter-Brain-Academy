@@ -245,9 +245,9 @@
                                     </tr>
                                     <tr>
                                         <td>Coloring</td>
-                                        <td><input type="number" name="coloringfirst_ca_score" placeholder="0" class="form-control"></td>
-                                        <td><input type="number" name="coloringsecond_ca_score" placeholder="0" class="form-control"></td>
-                                        <td><input type="number" name="coloringexamination_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="coloring_first_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="coloring_second_ca_score" placeholder="0" class="form-control"></td>
+                                        <td><input type="number" name="coloring_examination_score" placeholder="0" class="form-control"></td>
                                     </tr>
                                     <tr>
                                         <td>Practcal Life</td>

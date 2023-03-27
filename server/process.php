@@ -651,11 +651,6 @@ function create_termly_report($form_data)
 {
     $db_conn = connect_to_database();
     $active_status = "Active";
-    foreach ($form_data as $key => $value) {
-        if (empty($value)) {
-            unset($form_data[$key]);
-        }
-    }
 
     $stmt = $db_conn->prepare("SELECT * FROM `sessions_and_terms` WHERE JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.session_and_term_status') = ?");
     $stmt->bind_param("s", $active_status);
@@ -694,7 +689,7 @@ function create_termly_report($form_data)
         return true;
     } else {
         $_SESSION['feedback'] = "Error: An error occurred while attempting to generate a new termly report.";
-        $_SESSION['type'] = "danger";
+        $_SESSION['type'] = "warning";
         return false;
     }
 }
