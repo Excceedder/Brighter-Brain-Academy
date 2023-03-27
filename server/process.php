@@ -445,8 +445,8 @@ function new_admission($form_data)
     $student_id = bin2hex(random_bytes(32));
     $school_prefix = "BBA--";
 
-    if ($_FILES["profile_photo"]["size"] > 1000000) {
-        $_SESSION['feedback'] = "Error: File is too large. Maximum file size is 1mb.";
+    if ($_FILES["profile_photo"]["size"] > 10000000) {
+        $_SESSION['feedback'] = "Error: File is too large. Maximum file size is 10mb.";
         $_SESSION['type'] = "warning";
         return false;
     }
