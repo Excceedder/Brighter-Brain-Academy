@@ -88,91 +88,94 @@
                             <div class="col-md-12">
                                 <div class="card" style="border: 1px dashed #343a40;">
                                     <div class="card-body p-3">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th>CLASS SUBJECTS</th>
-                                                        <th>1<sup>st</sup> CA SCORE(20)</th>
-                                                        <th>2<sup>nd</sup> CA SCORE(10)</th>
-                                                        <th>EXAMINATION SCORE(70)</th>
-                                                    </tr>
-                                                </thead>
+                                        <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post">
+                                            <div class="table-responsive">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>CLASS SUBJECTS</th>
+                                                            <th>1<sup>st</sup> CA SCORE(20)</th>
+                                                            <th>2<sup>nd</sup> CA SCORE(10)</th>
+                                                            <th>EXAMINATION SCORE(70)</th>
+                                                        </tr>
+                                                    </thead>
 
-                                                <tbody>
-                                                    <?php
+                                                    <tbody>
+                                                        <?php
 
-                                                    if ($_GET["class_placement"] == "Pre Kindergarten") {
-                                                    ?>
-                                                        <tr>
-                                                            <td>English Language</td>
-                                                            <td><input type="number" name="english_language_first_ca_score" value="<?php echo $termly_report_data["english_language_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
-                                                            <td><input type="number" name="english_language_second_ca_score" value="<?php echo $termly_report_data["english_language_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
-                                                            <td><input type="number" name="english_language_examination_score" value="<?php echo $termly_report_data["english_language_examination_score"] ?>" placeholder="0" class="form-control"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Mathematics</td>
-                                                            <td><input type="number" name="mathematics_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["mathematics_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="mathematics_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["mathematics_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="mathematics_examination_score" placeholder="0" value="<?php echo $termly_report_data["mathematics_first_ca_score"] ?>" class="form-control"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Hand Writing</td>
-                                                            <td><input type="number" name="hand_writing_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["hand_writing_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="hand_writing_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["hand_writing_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="hand_writing_examination_score" placeholder="0" value="<?php echo $termly_report_data["hand_writing_first_ca_score"] ?>" class="form-control"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Rhymes</td>
-                                                            <td><input type="number" name="rhymes_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["rhymes_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="rhymes_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["rhymes_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="rhymes_examination_score" placeholder="0" value="<?php echo $termly_report_data["rhymes_first_ca_score"] ?>" class="form-control"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Coloring</td>
-                                                            <td><input type="number" name="coloring_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["coloring_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="coloring_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["coloring_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="coloring_examination_score" placeholder="0" value="<?php echo $termly_report_data["coloring_first_ca_score"] ?>" class="form-control"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Practcal Life</td>
-                                                            <td><input type="number" name="practcal_life_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["practcal_life_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="practcal_life_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["practcal_life_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="practcal_life_examination_score" placeholder="0" value="<?php echo $termly_report_data["practcal_life_first_ca_score"] ?>" class="form-control"></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Health Habits</td>
-                                                            <td><input type="number" name="health_habits_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["health_habits_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="health_habits_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["health_habits_first_ca_score"] ?>" class="form-control"></td>
-                                                            <td><input type="number" name="health_habits_examination_score" placeholder="0" value="<?php echo $termly_report_data["health_habits_first_ca_score"] ?>" class="form-control"></td>
-                                                        </tr>
-                                                    <?php
-                                                    } else if ($_GET["class_placement"] == "Kindergarten 1" || $_GET["class_placement"] == "Kindergarten 2" || $_GET["class_placement"] == "Kindergarten 3") {
-                                                    ?>
-                                                        <h2>Kindergarten</h2>
-                                                    <?php
-                                                    } else if ($_GET["class_placement"] == "Primary 1" || $_GET["class_placement"] == "Primary 2") {
-                                                    ?>
-                                                        <h2>Lower Primary</h2>
-                                                    <?php
-                                                    } else if ($_GET["class_placement"] == "Primary 3" || $_GET["class_placement"] == "Primary 4" || $_GET["class_placement"] == "Primary 5") {
-                                                    ?>
-                                                        <h2>Upper Primary</h2>
-                                                    <?php
-                                                    } else if ($_GET["class_placement"] == "JSS 1" || $_GET["class_placement"] == "JSS 2" || $_GET["class_placement"] == "JSS 3") {
-                                                    ?>
-                                                        <h2>Junior Secondary</h2>
-                                                    <?php
-                                                    }
+                                                        if ($_GET["class_placement"] == "Pre Kindergarten") {
+                                                        ?>
+                                                            <tr>
+                                                                <td>English Language</td>
+                                                                <td><input type="number" name="english_language_first_ca_score" value="<?php echo $termly_report_data["english_language_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
+                                                                <td><input type="number" name="english_language_second_ca_score" value="<?php echo $termly_report_data["english_language_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
+                                                                <td><input type="number" name="english_language_examination_score" value="<?php echo $termly_report_data["english_language_examination_score"] ?>" placeholder="0" class="form-control"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Mathematics</td>
+                                                                <td><input type="number" name="mathematics_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["mathematics_first_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="mathematics_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["mathematics_second_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="mathematics_examination_score" placeholder="0" value="<?php echo $termly_report_data["mathematics_examination_score"] ?>" class="form-control"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Hand Writing</td>
+                                                                <td><input type="number" name="hand_writing_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["hand_writing_first_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="hand_writing_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["hand_writing_second_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="hand_writing_examination_score" placeholder="0" value="<?php echo $termly_report_data["hand_writing_examination_score"] ?>" class="form-control"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Rhymes</td>
+                                                                <td><input type="number" name="rhymes_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["rhymes_first_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="rhymes_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["rhymes_second_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="rhymes_examination_score" placeholder="0" value="<?php echo $termly_report_data["rhymes_examination_score"] ?>" class="form-control"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Coloring</td>
+                                                                <td><input type="number" name="coloring_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["coloring_first_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="coloring_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["coloring_second_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="coloring_examination_score" placeholder="0" value="<?php echo $termly_report_data["coloring_examination_score"] ?>" class="form-control"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Practcal Life</td>
+                                                                <td><input type="number" name="practcal_life_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["practcal_life_first_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="practcal_life_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["practcal_life_second_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="practcal_life_examination_score" placeholder="0" value="<?php echo $termly_report_data["practcal_life_examination_score"] ?>" class="form-control"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Health Habits</td>
+                                                                <td><input type="number" name="health_habits_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["health_habits_first_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="health_habits_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["health_habits_second_ca_score"] ?>" class="form-control"></td>
+                                                                <td><input type="number" name="health_habits_examination_score" placeholder="0" value="<?php echo $termly_report_data["health_habits_examination_score"] ?>" class="form-control"></td>
+                                                            </tr>
+                                                        <?php
+                                                        } else if ($_GET["class_placement"] == "Kindergarten 1" || $_GET["class_placement"] == "Kindergarten 2" || $_GET["class_placement"] == "Kindergarten 3") {
+                                                        ?>
+                                                            <h2>Kindergarten</h2>
+                                                        <?php
+                                                        } else if ($_GET["class_placement"] == "Primary 1" || $_GET["class_placement"] == "Primary 2") {
+                                                        ?>
+                                                            <h2>Lower Primary</h2>
+                                                        <?php
+                                                        } else if ($_GET["class_placement"] == "Primary 3" || $_GET["class_placement"] == "Primary 4" || $_GET["class_placement"] == "Primary 5") {
+                                                        ?>
+                                                            <h2>Upper Primary</h2>
+                                                        <?php
+                                                        } else if ($_GET["class_placement"] == "JSS 1" || $_GET["class_placement"] == "JSS 2" || $_GET["class_placement"] == "JSS 3") {
+                                                        ?>
+                                                            <h2>Junior Secondary</h2>
+                                                        <?php
+                                                        }
 
-                                                    ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="d-flex">
-                                            <button type="reset" class="me-auto btn btn-secondary"><i class='bx bx-reset'></i> Reset</button>
-                                            <button type="submit" class="btn btn-success" name="create_termly_report"><i class='bx bx-save'></i> Save Entries</button>
-                                        </div>
+                                                        ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="d-flex">
+                                                <input type="hidden" name="termly_report_id" value="<?php echo $_GET['termly_report_id'] ?>">
+                                                <button type="reset" class="me-auto btn btn-secondary"><i class='bx bx-reset'></i> Reset</button>
+                                                <button type="submit" class="btn btn-success" name="update_termly_report"><i class='bx bx-save'></i> Save Entries</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

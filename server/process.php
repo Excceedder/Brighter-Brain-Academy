@@ -55,13 +55,13 @@ function create_manager($form_data)
 
     if (!send_mail($mail_data)) {
         $_SESSION['feedback'] = "Error: Unable to send email.";
-        $_SESSION['type'] = "danger";
+        $_SESSION['type'] = "warning";
         return false;
     }
 
     if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $manager_data["profile_photo"])) {
         $_SESSION['feedback'] = "Error: Unable to upload image.";
-        $_SESSION['type'] = "danger";
+        $_SESSION['type'] = "warning";
         return false;
     }
 
@@ -80,7 +80,7 @@ function create_manager($form_data)
         return true;
     } else {
         $_SESSION['feedback'] = "Error: Unable to create account.";
-        $_SESSION['type'] = "danger";
+        $_SESSION['type'] = "warning";
         return false;
     }
 }
@@ -382,7 +382,7 @@ function update_session_and_term($form_data)
             return true;
         } else {
             $_SESSION['feedback'] = "Error: Unable to create new Session/Term.";
-            $_SESSION['type'] = "danger";
+            $_SESSION['type'] = "warning";
             return false;
         }
     }
@@ -492,7 +492,7 @@ function new_admission($form_data)
 
     if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $student_data["profile_photo"])) {
         $_SESSION['feedback'] = "Error: Unable to upload image.";
-        $_SESSION['type'] = "danger";
+        $_SESSION['type'] = "warning";
         return false;
     }
 
@@ -508,7 +508,7 @@ function new_admission($form_data)
         return true;
     } else {
         $_SESSION['feedback'] = "Error: Admission process could not be completed.";
-        $_SESSION['type'] = "danger";
+        $_SESSION['type'] = "warning";
         return false;
     }
 }
@@ -584,7 +584,7 @@ function update_student_credentials($form_data)
         }
     } else {
         $_SESSION['feedback'] = "Error: Invalid student ID!";
-        $_SESSION['type'] = "danger";
+        $_SESSION['type'] = "warning";
         return false;
     }
 }
@@ -592,12 +592,6 @@ function update_student_credentials($form_data)
 function update_student_profile_photo($form_data)
 {
     $db_conn = connect_to_database();
-    foreach ($form_data as $key => $value) {
-        if (empty($value)) {
-            unset($form_data[$key]);
-        }
-    }
-
     if ($_FILES["profile_photo"]["size"] > 1000000) {
         $_SESSION['feedback'] = "Error: File is too large. Maximum file size is 1mb.";
         $_SESSION['type'] = "warning";
@@ -615,7 +609,7 @@ function update_student_profile_photo($form_data)
 
         if (!unlink($student_data['profile_photo'])) {
             $_SESSION['feedback'] = "Error: Unable to update phofile photo.";
-            $_SESSION['type'] = "danger";
+            $_SESSION['type'] = "warning";
             return false;
         }
 
@@ -623,7 +617,7 @@ function update_student_profile_photo($form_data)
 
         if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $new_profile_photo)) {
             $_SESSION['feedback'] = "Error: Unable to upload image.";
-            $_SESSION['type'] = "danger";
+            $_SESSION['type'] = "warning";
             return false;
         }
 
@@ -642,7 +636,7 @@ function update_student_profile_photo($form_data)
         }
     } else {
         $_SESSION['feedback'] = "Error: Invalid student ID!";
-        $_SESSION['type'] = "danger";
+        $_SESSION['type'] = "warning";
         return false;
     }
 }
@@ -720,6 +714,46 @@ function delete_termly_report($form_data)
         }
     } else {
         $_SESSION['feedback'] = "Error: Invalid termly reportF ID!";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+}
+
+function update_termly_report($form_data)
+{
+    $db_conn = connect_to_database();
+
+    $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE `termly_report_id` = ?");
+    $stmt->bind_param("s", $form_data['termly_report_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $sql = "UPDATE `termly_reports` SET `termly_report_data` = HEX(JSON_SET(UNHEX(`termly_report_data`), ";
+        $params = array();
+        foreach ($form_data as $key => $value) {
+            $sql .= "'$." . $key . "', ?, ";
+            $params[] = $value;
+        }
+        $sql = rtrim($sql, ", ");
+        $sql .= ")) WHERE `termly_report_id` = ?";
+        $params[] = $form_data['termly_report_id'];
+
+        $stmt = $db_conn->prepare($sql);
+        $stmt->bind_param(str_repeat("s", count($params)), ...$params);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            $_SESSION['feedback'] = "The updates to the student's termly report have been saved successfully.";
+            $_SESSION['type'] = "success";
+            return true;
+        } else {
+            $_SESSION['feedback'] = "Information: The records were already up to date, so no changes were made.";
+            $_SESSION['type'] = "primary";
+            return false;
+        }
+    } else {
+        $_SESSION['feedback'] = "Error: Invalid termly report_id ID!";
         $_SESSION['type'] = "warning";
         return false;
     }
