@@ -8,7 +8,6 @@ include "send_mail.php";
 function create_manager($form_data)
 {
     $db_conn = connect_to_database();
-    $cipher_algorithm = "AES-256-CBC";
     $manager_id = bin2hex(random_bytes(32));
 
     if ($_FILES["profile_photo"]["size"] > 1000000) {
@@ -28,9 +27,7 @@ function create_manager($form_data)
     $manager_pass = array(
         "account_status" => "Dormant",
         "username" => $form_data["username"],
-        "encryption_key" => random_bytes(32),
         "access_token" => bin2hex(random_bytes(32)),
-        "initialization_vector" => random_bytes(16),
         "email_address" => $form_data["email_address"],
         "password" => password_hash($form_data["password"], PASSWORD_BCRYPT),
     );
@@ -65,9 +62,7 @@ function create_manager($form_data)
         return false;
     }
 
-    $manager_data = bin2hex(openssl_encrypt(json_encode($manager_data), $cipher_algorithm, $manager_pass["encryption_key"], 0, $manager_pass["initialization_vector"]));
-    $manager_pass["encryption_key"] = bin2hex($manager_pass["encryption_key"]);
-    $manager_pass["initialization_vector"] = bin2hex($manager_pass["initialization_vector"]);
+    $manager_data = bin2hex(json_encode($manager_data));
     $manager_pass = bin2hex(json_encode($manager_pass));
 
     $stmt = $db_conn->prepare("INSERT INTO `managers_accounts`(`manager_id`, `manager_pass`, `manager_data`) VALUES (?, ?, ?)");
@@ -299,7 +294,6 @@ function reset_password($form_data)
 function fetch_manager_data($manager_id)
 {
     $db_conn = connect_to_database();
-    $cipher_algorithm = "AES-256-CBC";
 
     if (date('H') < 12) {
         $greeting = 'Good morning!';
@@ -317,8 +311,8 @@ function fetch_manager_data($manager_id)
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
         $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
-        $manager_data = openssl_decrypt(hex2bin($row['manager_data']), $cipher_algorithm, hex2bin($manager_pass["encryption_key"]), 0, hex2bin($manager_pass["initialization_vector"]));
-        $manager_data = array('manager_pass' => $manager_pass, 'manager_data' => json_decode($manager_data, true));
+        $manager_data = json_decode(hex2bin($row['manager_data']), true);
+        $manager_data = array('manager_pass' => $manager_pass, 'manager_data' => $manager_data);
         $manager_data = array_merge($manager_data['manager_pass'], $manager_data['manager_data']);
         $manager_data['greeting'] = $greeting;
         return $manager_data;
