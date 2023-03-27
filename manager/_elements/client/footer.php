@@ -164,22 +164,22 @@
                             </select>
                         </div>
                         <div class="col-md-12 mb-3">
-                            <label for="residential_address" required class="form-label">Residential Address</label>
+                            <label for="residential_address" class="form-label">Residential Address</label>
                             <textarea id="residential_address" name="residential_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
                         </div>
                         <div class="mb-1">
                             <h5 style="text-decoration: underline;">Parent's Credentials:</h5>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="parent_full_names" required class="form-label">Full Names</label>
+                            <label for="parent_full_names" class="form-label">Full Names</label>
                             <input type="text" id="parent_full_names" name="parent_full_names" placeholder="Input value..." class="form-control">
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="parent_phone_number" required class="form-label">Phone Number</label>
+                            <label for="parent_phone_number" class="form-label">Phone Number</label>
                             <input type="text" id="parent_phone_number" name="parent_phone_number" placeholder="Input value..." class="form-control">
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="parent_occupation" required class="form-label">Ocupation</label>
+                            <label for="parent_occupation" class="form-label">Ocupation</label>
                             <input type="text" id="parent_occupation" name="parent_occupation" placeholder="Input value..." class="form-control">
                         </div>
                     </div>
