@@ -728,6 +728,11 @@ function delete_termly_report($form_data)
 function update_termly_report($form_data)
 {
     $db_conn = connect_to_database();
+    foreach ($form_data as $key => $value) {
+        if (empty($value)) {
+            $form_data[$key] = 0;
+        }
+    }
 
     $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE `termly_report_id` = ?");
     $stmt->bind_param("s", $form_data['termly_report_id']);
