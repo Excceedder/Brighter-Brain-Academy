@@ -5,7 +5,7 @@ $(document).ready(function () {
         lengthChange: !1,
         buttons: [
           {
-            extend: "excel",
+            extend: "csv",
             text: "Export Table",
             className: "btn btn-success",
           },
