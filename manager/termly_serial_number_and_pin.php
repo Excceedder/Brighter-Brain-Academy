@@ -110,13 +110,13 @@
                                                     $termly_report_data = json_decode(hex2bin($row['termly_report_data']), true);
                                             ?>
                                                     <tr>
-                                                        <td><?php echo $session_and_term_data["main_campus"] ?></td>
-                                                        <td><?php echo $session_and_term_data["session_tag"] ?></td>
-                                                        <td><?php echo $session_and_term_data["session_start"] ?></td>
-                                                        <td><?php echo $session_and_term_data["session_stop"] ?></td>
-                                                        <td><?php echo $session_and_term_data["term_tag"] ?></td>
-                                                        <td><?php echo $session_and_term_data["term_start"] ?></td>
-                                                        <td><?php echo $session_and_term_data["term_stop"] ?></td>
+                                                        <td><?php echo $termly_report_data["full_names"] ?></td>
+                                                        <td><?php echo $termly_report_data["class_placement"] ?></td>
+                                                        <td><?php echo $termly_report_data["session_tag"] ?></td>
+                                                        <td><?php echo $termly_report_data["term_tag"] ?></td>
+                                                        <td><?php echo $termly_report_data["main_campus"] ?></td>
+                                                        <td><?php echo $termly_report_data["serial_number"] ?></td>
+                                                        <td><?php echo $termly_report_data["unique_pin"] ?></td>
                                                     </tr>
                                                 <?php
                                                 }
