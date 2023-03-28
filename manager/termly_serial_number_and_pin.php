@@ -74,31 +74,40 @@
                                     <table id="datatable-buttons" class="table table-bordered dt-responsive nowrap w-100">
                                         <thead>
                                             <tr>
-                                                <th>Main Campus</th>
+                                                <th>Full Names</th>
+                                                <th>Class Placement</th>
                                                 <th>Session Tag</th>
-                                                <th>Session Start</th>
-                                                <th>Session Stop</th>
                                                 <th>Term Tag</th>
-                                                <th>Term Start</th>
-                                                <th>Term Stop</th>
-                                                <th>Action Buttons</th>
+                                                <th>Main Campus</th>
+                                                <th>Serial Number</th>
+                                                <th>Unique Pin</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                             <?php
                                             $db_conn = connect_to_database();
-                                            $main_campus = "BBA Ughelli";
+                                            $active_status = "Active";
 
-                                            $stmt = $db_conn->prepare("SELECT * FROM `sessions_and_terms` WHERE JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.main_campus') = ?");
-                                            $stmt->bind_param("s", $main_campus);
+                                            $stmt = $db_conn->prepare("SELECT * FROM `sessions_and_terms` WHERE JSON_EXTRACT(UNHEX(`session_and_term_data`), '$.session_and_term_status') = ?");
+                                            $stmt->bind_param("s", $active_status);
+                                            $stmt->execute();
+                                            $result = $stmt->get_result();
+
+                                            if ($result->num_rows > 0) {
+                                                $row = mysqli_fetch_assoc($result);
+                                                $session_and_term_data = json_decode(hex2bin($row['session_and_term_data']), true);
+                                            }
+
+                                            $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE JSON_EXTRACT(UNHEX(`termly_report_data`), '$.session_tag') = ? AND JSON_EXTRACT(UNHEX(`termly_report_data`), '$.term_tag') = ?");
+                                            $stmt->bind_param("ss", $session_and_term_data['session_tag'], $session_and_term_data['term_tag']);
                                             $stmt->execute();
                                             $result = $stmt->get_result();
 
                                             if ($result->num_rows > 0) {
                                                 while ($row = $result->fetch_assoc()) {
-                                                    $session_and_term_id = $row['session_and_term_id'];
-                                                    $session_and_term_data = json_decode(hex2bin($row['session_and_term_data']), true);
+                                                    $termly_report_id = $row['termly_report_id'];
+                                                    $termly_report_data = json_decode(hex2bin($row['termly_report_data']), true);
                                             ?>
                                                     <tr>
                                                         <td><?php echo $session_and_term_data["main_campus"] ?></td>
@@ -108,23 +117,6 @@
                                                         <td><?php echo $session_and_term_data["term_tag"] ?></td>
                                                         <td><?php echo $session_and_term_data["term_start"] ?></td>
                                                         <td><?php echo $session_and_term_data["term_stop"] ?></td>
-                                                        <td>
-                                                            <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME)) ?>" method="post">
-                                                                <input type="hidden" name="session_and_term_id" value="<?php echo $session_and_term_id ?>">
-                                                                <?php
-                                                                if ($session_and_term_data["session_and_term_status"] == "Active") {
-                                                                ?>
-                                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#update_sessions_and_terms" style="border: 1px dashed #556ee6; color: #556ee6; background-color: transparent;border-radius: 5px;"><i class='bx bx-edit'></i> Manage</button>
-                                                                <?php
-                                                                } else {
-                                                                ?>
-                                                                    <button style="border: 1px dashed #34c38f; color: #34c38f; background-color: transparent;border-radius: 5px; " type="submit" name="activate_session_and_term"><i class='bx bx-pulse'></i> Activate</button>
-                                                                <?php
-                                                                }
-                                                                ?>
-                                                                <button style="border: 1px dashed #f46a6a; color: #f46a6a; background-color: transparent;border-radius: 5px; " name="delete_session_and_term" onclick="return confirm('Do you confirm that you intend to delete this Session/Term?');" type="submit"><i class='bx bx-trash bx-tada'></i></button>
-                                                            </form>
-                                                        </td>
                                                     </tr>
                                                 <?php
                                                 }
@@ -132,7 +124,6 @@
                                                 ?>
                                                 <tr>
                                                     <td style="font-weight: bold;">No records found!</td>
-                                                    <td></td>
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>
