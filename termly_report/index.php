@@ -8,9 +8,9 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="ThemeMarch">
   <!-- Site Title -->
-  <title>General Invoice</title>
+  <title>Brighter Brain Academy | Termly Report</title>
+  <link rel="shortcut icon" type="image/x-icon" href="_vendors/img/logo.png">
   <link rel="stylesheet" href="_vendors/css/style.css">
 </head>
 
