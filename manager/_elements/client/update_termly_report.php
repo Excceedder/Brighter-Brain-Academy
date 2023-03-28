@@ -228,7 +228,7 @@ if ($_GET["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="history_examination_score" value="<?php echo $termly_report_data["history_examination_score"] ?>" placeholder="0" class="form-control"></td>
     </tr>
 <?php
-} else if ($_GET["class_placement"] == "JSS 1" || $_GET["class_placement"] == "JSS 2" || $_GET["class_placement"] == "JSS 3") {
+} else if ($_GET["class_placement"] == "JSS. 1" || $_GET["class_placement"] == "JSS. 2" || $_GET["class_placement"] == "JSS. 3") {
 ?>
     <tr>
         <td>English Language</td>

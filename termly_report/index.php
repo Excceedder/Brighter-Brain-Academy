@@ -20,7 +20,9 @@
       <div class="cs-invoice_in" id="download_section">
         <div class="cs-invoice_head cs-type1 cs-mb25">
           <div class="cs-invoice_left">
-            <p class="cs-invoice_number cs-primary_color cs-mb5 cs-f16"><b class="cs-primary_color">Invoice No:</b> #SM75692</p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Date: </b>05.01.2022</p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Date: </b>05.01.2022</p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Date: </b>05.01.2022</p>
             <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Date: </b>05.01.2022</p>
           </div>
           <div class="cs-invoice_right cs-text_right">
@@ -29,7 +31,7 @@
         </div>
         <div class="cs-invoice_head cs-mb10">
           <div class="cs-invoice_left">
-            <b class="cs-primary_color">Invoice To:</b>
+            <b class="cs-primary_color">Student Credentials:</b>
             <p>
               Jennifer Richards <br>
               365 Bloor Street East, Toronto, <br>Ontario, M4W 3L4, <br>
@@ -37,7 +39,7 @@
             </p>
           </div>
           <div class="cs-invoice_right cs-text_right">
-            <b class="cs-primary_color">Pay To:</b>
+            <b class="cs-primary_color">School Information:</b>
             <p>
               Biman Airlines <br>
               237 Roanoke Road, North York, <br>
@@ -52,67 +54,22 @@
               <table>
                 <thead>
                   <tr>
-                    <th class="cs-width_3 cs-semi_bold cs-primary_color cs-focus_bg">Item</th>
-                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">Description</th>
-                    <th class="cs-width_2 cs-semi_bold cs-primary_color cs-focus_bg">Qty</th>
-                    <th class="cs-width_1 cs-semi_bold cs-primary_color cs-focus_bg">Price</th>
-                    <th class="cs-width_2 cs-semi_bold cs-primary_color cs-focus_bg cs-text_right">Total</th>
+                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">CLASS SUBJECTS</th>
+                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">1<sup>st</sup> CA SCORE(20)</th>
+                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">2<sup>nd</sup> CA SCORE(10)</th>
+                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">EXAMINATION SCORE(70)</th>
+                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">SUBJECT SCORE</th>
+                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg cs-text_right">SUBJECT GRADE</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="cs-width_3">App Development</td>
-                    <td class="cs-width_4">Mobile & Ios Application Development</td>
-                    <td class="cs-width_2">2</td>
-                    <td class="cs-width_1">$460</td>
-                    <td class="cs-width_2 cs-text_right">$920</td>
-                  </tr>
-                  <tr>
-                    <td class="cs-width_3">Ui/UX Design</td>
-                    <td class="cs-width_4">Mobile & Ios Mobile App Design, Product Design</td>
-                    <td class="cs-width_2">1</td>
-                    <td class="cs-width_1">$220</td>
-                    <td class="cs-width_2 cs-text_right">$220</td>
-                  </tr>
-                  <tr>
-                    <td class="cs-width_3">Web Design</td>
-                    <td class="cs-width_4">Web Design & Development</td>
-                    <td class="cs-width_2">2</td>
-                    <td class="cs-width_1">$120</td>
-                    <td class="cs-width_2 cs-text_right">#240</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="cs-invoice_footer cs-border_top">
-              <div class="cs-left_footer cs-mobile_hide">
-                <p class="cs-mb0"><b class="cs-primary_color">Additional Information:</b></p>
-                <p class="cs-m0">At check in you may need to present the credit <br>card used for payment of this ticket.</p>
-              </div>
-              <div class="cs-right_footer">
-                <table>
-                  <tbody>
-                    <tr class="cs-border_left">
-                      <td class="cs-width_3 cs-semi_bold cs-primary_color cs-focus_bg">Subtoal</td>
-                      <td class="cs-width_3 cs-semi_bold cs-focus_bg cs-primary_color cs-text_right">$1140</td>
-                    </tr>
-                    <tr class="cs-border_left">
-                      <td class="cs-width_3 cs-semi_bold cs-primary_color cs-focus_bg">Tax</td>
-                      <td class="cs-width_3 cs-semi_bold cs-focus_bg cs-primary_color cs-text_right">-$20</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div class="cs-invoice_footer">
-            <div class="cs-left_footer cs-mobile_hide"></div>
-            <div class="cs-right_footer">
-              <table>
-                <tbody>
-                  <tr class="cs-border_none">
-                    <td class="cs-width_3 cs-border_top_0 cs-bold cs-f16 cs-primary_color">Total Amount</td>
-                    <td class="cs-width_3 cs-border_top_0 cs-bold cs-f16 cs-primary_color cs-text_right">$1160</td>
+                    <td class="cs-width_4">App Development</td>
+                    <td class="cs-width_4">12</td>
+                    <td class="cs-width_4">2</td>
+                    <td class="cs-width_4">$460</td>
+                    <td class="cs-width_4">$920</td>
+                    <td class="cs-width_4 cs-text_right">$920</td>
                   </tr>
                 </tbody>
               </table>
