@@ -3,16 +3,16 @@
 if ($student_data["class_placement"] == "Pre Kindergarten") {
 ?>
     <tr>
-        <td>English Language</td>
-        <td><input type="number" name="english_language_first_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="english_language_second_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="english_language_examination_score" placeholder="0" class="form-control"></td>
+        <td>Literacy</td>
+        <td><input type="number" name="literacy_first_ca_score" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="literacy_second_ca_score" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="literacy_examination_score" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
-        <td>Mathematics</td>
-        <td><input type="number" name="mathematics_first_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="mathematics_second_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="mathematics_examination_score" placeholder="0" class="form-control"></td>
+        <td>Numeracy</td>
+        <td><input type="number" name="numeracy_first_ca_score" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="numeracy_second_ca_score" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="numeracy_examination_score" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
         <td>Hand Writing</td>
@@ -39,10 +39,10 @@ if ($student_data["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="practcal_life_examination_score" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
-        <td>Health Habits</td>
-        <td><input type="number" name="health_habits_first_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="health_habits_second_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="health_habits_examination_score" placeholder="0" class="form-control"></td>
+        <td>Social Habits</td>
+        <td><input type="number" name="social_habits_first_ca_score" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="social_habits_second_ca_score" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="social_habits_examination_score" placeholder="0" class="form-control"></td>
     </tr>
 <?php
 } else if ($student_data["class_placement"] == "Kindergarten 1" || $student_data["class_placement"] == "Kindergarten 2" || $student_data["class_placement"] == "Kindergarten 3") {
@@ -60,10 +60,10 @@ if ($student_data["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="mathematics_examination_score" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
-        <td>Civic Education</td>
-        <td><input type="number" name="civic_education_first_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="civic_education_second_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="civic_education_examination_score" placeholder="0" class="form-control"></td>
+        <td>Practcal Life</td>
+        <td><input type="number" name="practcal_life_first_ca_score" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="practcal_life_second_ca_score" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="practcal_life_examination_score" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
         <td>Nature Studies</td>
@@ -139,12 +139,6 @@ if ($student_data["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="hand_writing_first_ca_score" placeholder="0" class="form-control"></td>
         <td><input type="number" name="hand_writing_second_ca_score" placeholder="0" class="form-control"></td>
         <td><input type="number" name="hand_writing_examination_score" placeholder="0" class="form-control"></td>
-    </tr>
-    <tr>
-        <td>Computer Studies</td>
-        <td><input type="number" name="computer_studies_first_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="computer_studies_second_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="computer_studies_examination_score" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
         <td>Basic Technology</td>
@@ -226,12 +220,6 @@ if ($student_data["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="pre_vocational_studies_first_ca_score" placeholder="0" class="form-control"></td>
         <td><input type="number" name="pre_vocational_studies_second_ca_score" placeholder="0" class="form-control"></td>
         <td><input type="number" name="pre_vocational_studies_examination_score" placeholder="0" class="form-control"></td>
-    </tr>
-    <tr>
-        <td>Computer Studies</td>
-        <td><input type="number" name="computer_studies_first_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="computer_studies_second_ca_score" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="computer_studies_examination_score" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
         <td>History</td>

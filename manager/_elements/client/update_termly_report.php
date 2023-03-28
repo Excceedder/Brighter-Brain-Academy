@@ -3,16 +3,16 @@
 if ($_GET["class_placement"] == "Pre Kindergarten") {
 ?>
     <tr>
-        <td>English Language</td>
-        <td><input type="number" name="english_language_first_ca_score" value="<?php echo $termly_report_data["english_language_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="english_language_second_ca_score" value="<?php echo $termly_report_data["english_language_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="english_language_examination_score" value="<?php echo $termly_report_data["english_language_examination_score"] ?>" placeholder="0" class="form-control"></td>
+        <td>Literacy</td>
+        <td><input type="number" name="literacy_first_ca_score" value="<?php echo $termly_report_data["literacy_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="literacy_second_ca_score" value="<?php echo $termly_report_data["literacy_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="literacy_examination_score" value="<?php echo $termly_report_data["literacy_examination_score"] ?>" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
-        <td>Mathematics</td>
-        <td><input type="number" name="mathematics_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["mathematics_first_ca_score"] ?>" class="form-control"></td>
-        <td><input type="number" name="mathematics_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["mathematics_second_ca_score"] ?>" class="form-control"></td>
-        <td><input type="number" name="mathematics_examination_score" placeholder="0" value="<?php echo $termly_report_data["mathematics_examination_score"] ?>" class="form-control"></td>
+        <td>Numeracy</td>
+        <td><input type="number" name="numeracy_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["numeracy_first_ca_score"] ?>" class="form-control"></td>
+        <td><input type="number" name="numeracy_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["numeracy_second_ca_score"] ?>" class="form-control"></td>
+        <td><input type="number" name="numeracy_examination_score" placeholder="0" value="<?php echo $termly_report_data["numeracy_examination_score"] ?>" class="form-control"></td>
     </tr>
     <tr>
         <td>Hand Writing</td>
@@ -39,10 +39,10 @@ if ($_GET["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="practcal_life_examination_score" placeholder="0" value="<?php echo $termly_report_data["practcal_life_examination_score"] ?>" class="form-control"></td>
     </tr>
     <tr>
-        <td>Health Habits</td>
-        <td><input type="number" name="health_habits_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["health_habits_first_ca_score"] ?>" class="form-control"></td>
-        <td><input type="number" name="health_habits_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["health_habits_second_ca_score"] ?>" class="form-control"></td>
-        <td><input type="number" name="health_habits_examination_score" placeholder="0" value="<?php echo $termly_report_data["health_habits_examination_score"] ?>" class="form-control"></td>
+        <td>Social Habits</td>
+        <td><input type="number" name="social_habits_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["social_habits_first_ca_score"] ?>" class="form-control"></td>
+        <td><input type="number" name="social_habits_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["social_habits_second_ca_score"] ?>" class="form-control"></td>
+        <td><input type="number" name="social_habits_examination_score" placeholder="0" value="<?php echo $termly_report_data["social_habits_examination_score"] ?>" class="form-control"></td>
     </tr>
 <?php
 } else if ($_GET["class_placement"] == "Kindergarten 1" || $_GET["class_placement"] == "Kindergarten 2" || $_GET["class_placement"] == "Kindergarten 3") {
@@ -60,10 +60,10 @@ if ($_GET["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="mathematics_examination_score" placeholder="0" value="<?php echo $termly_report_data["mathematics_examination_score"] ?>" class="form-control"></td>
     </tr>
     <tr>
-        <td>Civic Education</td>
-        <td><input type="number" name="civic_education_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["civic_education_first_ca_score"] ?>" class="form-control"></td>
-        <td><input type="number" name="civic_education_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["civic_education_second_ca_score"] ?>" class="form-control"></td>
-        <td><input type="number" name="civic_education_examination_score" placeholder="0" value="<?php echo $termly_report_data["civic_education_examination_score"] ?>" class="form-control"></td>
+        <td>Practcal Life</td>
+        <td><input type="number" name="practcal_life_first_ca_score" placeholder="0" value="<?php echo $termly_report_data["practcal_life_first_ca_score"] ?>" class="form-control"></td>
+        <td><input type="number" name="practcal_life_second_ca_score" placeholder="0" value="<?php echo $termly_report_data["practcal_life_second_ca_score"] ?>" class="form-control"></td>
+        <td><input type="number" name="practcal_life_examination_score" placeholder="0" value="<?php echo $termly_report_data["practcal_life_examination_score"] ?>" class="form-control"></td>
     </tr>
     <tr>
         <td>Nature Studies</td>
@@ -141,12 +141,6 @@ if ($_GET["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="hand_writing_examination_score" value="<?php echo $termly_report_data["hand_writing_examination_score"] ?>" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
-        <td>Computer Studies</td>
-        <td><input type="number" name="computer_studies_first_ca_score" value="<?php echo $termly_report_data["computer_studies_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="computer_studies_second_ca_score" value="<?php echo $termly_report_data["computer_studies_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="computer_studies_examination_score" value="<?php echo $termly_report_data["computer_studies_examination_score"] ?>" placeholder="0" class="form-control"></td>
-    </tr>
-    <tr>
         <td>Basic Technology</td>
         <td><input type="number" name="basic_technology_first_ca_score" value="<?php echo $termly_report_data["basic_technology_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
         <td><input type="number" name="basic_technology_second_ca_score" value="<?php echo $termly_report_data["basic_technology_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
@@ -202,12 +196,6 @@ if ($_GET["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="christian_religious_studies_first_ca_score" value="<?php echo $termly_report_data["christian_religious_studies_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
         <td><input type="number" name="christian_religious_studies_second_ca_score" value="<?php echo $termly_report_data["christian_religious_studies_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
         <td><input type="number" name="christian_religious_studies_examination_score" value="<?php echo $termly_report_data["christian_religious_studies_examination_score"] ?>" placeholder="0" class="form-control"></td>
-    </tr>
-    <tr>
-        <td>Computer Studies</td>
-        <td><input type="number" name="computer_studies_first_ca_score" value="<?php echo $termly_report_data["computer_studies_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="computer_studies_second_ca_score" value="<?php echo $termly_report_data["computer_studies_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="computer_studies_examination_score" value="<?php echo $termly_report_data["computer_studies_examination_score"] ?>" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
         <td>Creative Arts</td>
