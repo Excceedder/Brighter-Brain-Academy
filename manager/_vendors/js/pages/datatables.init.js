@@ -3,10 +3,10 @@ $(document).ready(function () {
     $("#datatable-buttons")
       .DataTable({
         lengthChange: !1,
-        buttons: ["excel", "pdf"],
+        buttons: ["excel"],
       })
       .buttons()
       .container()
       .appendTo("#datatable-buttons_wrapper .col-md-6:eq(0)"),
-    $(".dataTables_length select").addClass("form-select form-select-sm");
+    $(".dataTables_length select").addClass("form-select form-select-sm bg-success");
 });
