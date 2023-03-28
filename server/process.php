@@ -668,6 +668,8 @@ function create_termly_report($form_data)
     }
 
     $termly_report_id = bin2hex(random_bytes(32));
+    $form_data["serial_number"] = "BBA" . rand(9999999999, 1111111111);
+    $form_data["unique_pin"] = rand(999999999999, 111111111111);
     $form_data["session_tag"] = $session_and_term_data["session_tag"];
     $form_data["term_tag"] = $session_and_term_data["term_tag"];
     $form_data["main_campus"] = $session_and_term_data["main_campus"];

@@ -25,6 +25,12 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="./termly_serial_number_and_pin" class="waves-effect">
+                        <i class='bx bx-customize'></i> <span>Termly S/N & Pin</span>
+                    </a>
+                </li>
+
                 <li class="menu-title">Student Management</li>
 
                 <li>

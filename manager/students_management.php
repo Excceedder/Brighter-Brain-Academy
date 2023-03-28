@@ -284,9 +284,7 @@
                                                                 <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post">
                                                                     <input type="hidden" name="termly_report_id" value="<?php echo $termly_report_id ?>">
 
-                                                                    <a href="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?termly_report_id=' . $termly_report_id) . '&class_placement=' . urlencode($termly_report_data["class_placement"]) ?>" style="border: 1px dashed #556ee6; color: #556ee6; background-color: transparent;border-radius: 5px; padding: 4px 6px 2px;"><i class='bx bx-edit'></i></a>
-
-                                                                    <a href="#" target="_blank" style="border: 1px dashed #34c38f; color: #34c38f; background-color: transparent;border-radius: 5px; padding: 4px 6px 2px;"><i class='bx bx-printer'></i></a>
+                                                                    <a href="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?termly_report_id=' . $termly_report_id) . '&class_placement=' . urlencode($termly_report_data["class_placement"]) ?>" style="border: 1px dashed #556ee6; color: #556ee6; background-color: transparent;border-radius: 5px; padding: 4px 6px 2px;"><i class='bx bx-edit'></i> Edit Report</a>
 
                                                                     <button style="border: 1px dashed #f46a6a; color: #f46a6a; background-color: transparent;border-radius: 5px; padding: 4px 6px 2px; margin-left: 1px" onclick="return confirm('Do you confirm that you intend to delete this termly report?');" name="delete_termly_report" type="submit"><i class='bx bx-trash bx-tada'></i></button>
                                                                 </form>
