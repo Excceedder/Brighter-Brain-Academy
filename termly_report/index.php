@@ -11,7 +11,7 @@
   <meta name="author" content="ThemeMarch">
   <!-- Site Title -->
   <title>General Invoice</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="_vendors/css/style.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Date: </b>05.01.2022</p>
           </div>
           <div class="cs-invoice_right cs-text_right">
-            <div class="cs-logo cs-mb5"><img src="assets/img/logo.svg" alt="Logo"></div>
+            <div class="cs-logo cs-mb5" style="width: 100px; height: 100px;"><img src="_vendors/img/logo.png" alt="Logo"></div>
           </div>
         </div>
         <div class="cs-invoice_head cs-mb10">
@@ -153,10 +153,10 @@
       </div>
     </div>
   </div>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jspdf.min.js"></script>
-  <script src="assets/js/html2canvas.min.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="_vendors/js/jquery.min.js"></script>
+  <script src="_vendors/js/jspdf.min.js"></script>
+  <script src="_vendors/js/html2canvas.min.js"></script>
+  <script src="_vendors/js/main.js"></script>
 </body>
 
 </html>
