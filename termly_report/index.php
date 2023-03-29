@@ -20,6 +20,39 @@
       <div class="cs-invoice_in" id="download_section">
         <div class="cs-invoice_head cs-type1 cs-mb25">
           <div class="cs-invoice_left">
+            <p>
+              <b class="cs-primary_color">Brighter Brain Academy</b><br>
+              2 Makolomi street, Ughelli, <br>
+              Delta State, Nigeria <br>
+              brighterbrainacademy.com
+            </p>
+          </div>
+          <div class="cs-invoice_right cs-text_right">
+            <div class="cs-logo cs-mb5" style="width: 100px; height: 100px;"><img src="_vendors/img/logo.png" alt="Logo"></div>
+          </div>
+        </div>
+        <form action="" method="post">
+          <div style="margin-bottom: 10px;">
+            <label for="serial_number" style="color: #000000; font-weight: bold;">Serial Number</label>
+            <input type="text" style="border: 1px solid #777777; width: 100%; padding: 8px; border-radius: 8px; margin-top: 2px;" id="serial_number">
+          </div>
+          <div style="margin-bottom: 10px;">
+            <label for="serial_number" style="color: #000000; font-weight: bold;">Unique Pin</label>
+            <input type="text" style="border: 1px solid #777777; width: 100%; padding: 8px; border-radius: 8px; margin-top: 2px;" id="serial_number">
+          </div>
+          <div style="margin: 18px 0;">
+            <button id="download_btn" class="cs-invoice_btn cs-color2" style="border-radius: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                <title>Verify Credentials</title>
+                <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 192L256.13 320l-47.95-48M191.95 320L144 272M305.71 192l-51.55 59" />
+              </svg>
+              <span>Verify Credentials</span>
+            </button>
+          </div>
+        </form>
+        <div class="cs-invoice_head cs-type1 cs-mb25">
+          <div class="cs-invoice_left">
             <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Campus: </b>BBA Ughelli</p>
             <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Term: </b>2nd Term</p>
             <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Session: </b>2022/23</p>
