@@ -40,7 +40,7 @@
           canvasImageHeight
         );
       }
-      pdf.save('ivonne-invoice.pdf');
+      pdf.save('termly_report.pdf');
     });
   });
 })(jQuery); // End of use strict

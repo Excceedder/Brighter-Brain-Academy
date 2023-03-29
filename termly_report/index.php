@@ -116,7 +116,6 @@
   <script src="_vendors/js/jspdf.min.js"></script>
   <script src="_vendors/js/html2canvas.min.js"></script>
   <script src="_vendors/js/main.js"></script>
-
 </body>
 
 </html>
