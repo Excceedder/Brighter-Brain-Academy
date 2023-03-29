@@ -20,10 +20,10 @@
       <div class="cs-invoice_in" id="download_section">
         <div class="cs-invoice_head cs-type1 cs-mb25">
           <div class="cs-invoice_left">
-            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Date: </b>05.01.2022</p>
-            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Date: </b>05.01.2022</p>
-            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Date: </b>05.01.2022</p>
-            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Date: </b>05.01.2022</p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Campus: </b>BBA Ughelli</p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Term: </b>2nd Term</p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Session: </b>2022/23</p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Collection Date: </b>05.01.2022</p>
           </div>
           <div class="cs-invoice_right cs-text_right">
             <div class="cs-logo cs-mb5" style="width: 100px; height: 100px;"><img src="_vendors/img/logo.png" alt="Logo"></div>
@@ -34,17 +34,18 @@
             <b class="cs-primary_color">Student Credentials:</b>
             <p>
               Jennifer Richards <br>
-              365 Bloor Street East, Toronto, <br>Ontario, M4W 3L4, <br>
+              Primary 5, <br>
+              Ontario, M4W 3L4, <br>
               Canada
             </p>
           </div>
           <div class="cs-invoice_right cs-text_right">
             <b class="cs-primary_color">School Information:</b>
             <p>
-              Biman Airlines <br>
-              237 Roanoke Road, North York, <br>
-              Ontario, Canada <br>
-              demo@email.com
+              Brighter Brain Academy <br>
+              2 Makolomi street, Ughelli, <br>
+              Delta State, Nigeria <br>
+              brighterbrainacademy.com
             </p>
           </div>
         </div>
@@ -110,10 +111,12 @@
       </div>
     </div>
   </div>
+
   <script src="_vendors/js/jquery.min.js"></script>
   <script src="_vendors/js/jspdf.min.js"></script>
   <script src="_vendors/js/html2canvas.min.js"></script>
   <script src="_vendors/js/main.js"></script>
+
 </body>
 
 </html>
