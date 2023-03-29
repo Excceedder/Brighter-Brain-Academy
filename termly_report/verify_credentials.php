@@ -33,14 +33,15 @@ if (isset($_SESSION['termly_report_id'])) {
             <b class="cs-primary_color">Brighter Brain Academy</b><br>
             2 Makolomi street, Ughelli, <br>
             Delta State, Nigeria <br>
-            brighterbrainacademy.com
+            <a href="mailto:info@brighterbrainacademy.com" style="color: #2ad19d;">info@brighterbrainacademy.com</a>
           </p>
         </div>
         <div class="cs-invoice_right cs-text_right">
           <div class="cs-logo cs-mb5" style="width: 100px; height: 100px;"><img src="_vendors/img/logo.png" alt="Logo"></div>
         </div>
       </div>
-      <form action="./" method="post">
+
+      <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME)); ?>" method="post">
         <div style="margin-bottom: 10px;">
           <h5 style="font-weight: bold;">Check Termly Report...</h5>
         </div>
