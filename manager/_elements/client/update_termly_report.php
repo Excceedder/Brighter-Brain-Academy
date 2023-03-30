@@ -178,9 +178,9 @@ if ($_GET["class_placement"] == "Pre Kindergarten") {
     </tr>
     <tr>
         <td>Agricultural Science</td>
-        <td><input type="number" name="agricultural_science_first_ca_score" value="<?php echo $termly_report_data["agricultural_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="agricultural_science_second_ca_score" value="<?php echo $termly_report_data["agricultural_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
-        <td><input type="number" name="agricultural_science_examination_score" value="<?php echo $termly_report_data["agricultural_examination_score"] ?>" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="agricultural_science_first_ca_score" value="<?php echo $termly_report_data["agricultural_science_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="agricultural_science_second_ca_score" value="<?php echo $termly_report_data["agricultural_science_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="agricultural_science_examination_score" value="<?php echo $termly_report_data["agricultural_science_examination_score"] ?>" placeholder="0" class="form-control"></td>
     </tr>
 <?php
 } else if ($_GET["class_placement"] == "Primary 3" || $_GET["class_placement"] == "Primary 4" || $_GET["class_placement"] == "Primary 5") {
