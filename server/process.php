@@ -765,3 +765,49 @@ function update_termly_report($form_data)
         return false;
     }
 }
+
+function verify_credentials($form_data)
+{
+    $db_conn = connect_to_database();
+
+    $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE JSON_EXTRACT(UNHEX(`termly_report_data`), '$.serial_number') = ? OR JSON_EXTRACT(UNHEX(`termly_report_data`), '$.unique_pin') = ?");
+    $stmt->bind_param("ss", $form_data["serial_number"], $form_data["unique_pin"]);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['termly_report_id'] = $row['termly_report_id'];
+        return true;
+    } else {
+        echo ("
+            <script>
+                alert('Error: Invalid credentials detected.');
+            </script>
+        ");
+        return false;
+    }
+}
+
+function fetch_termly_report_data($termly_report_id)
+{
+    $db_conn = connect_to_database();
+
+    $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE `termly_report_id` = ?");
+    $stmt->bind_param("s", $termly_report_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $termly_report_data = json_decode(hex2bin($row['termly_report_data']), true);
+        return $termly_report_data;
+    } else {
+        echo ("
+            <script>
+                alert('Error: Invalid credentials detected.');
+            </script>
+        ");
+        return false;
+    }
+}

@@ -6,7 +6,7 @@
 include "../server/server.php";
 
 if (isset($_SESSION['termly_report_id'])) {
-  $termly_report_data = fetch_manager_data($_SESSION['termly_report_id']);
+  $termly_report_data = fetch_termly_report_data($_SESSION['termly_report_id']);
 } else {
   header('Location: ./verify_credentials');
   exit();
@@ -33,10 +33,10 @@ if (isset($_SESSION['termly_report_id'])) {
       <div class="cs-invoice_in" id="download_section">
         <div class="cs-invoice_head cs-type1 cs-mb25">
           <div class="cs-invoice_left">
-            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Campus: </b>BBA Ughelli</p>
-            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Term: </b>2nd Term</p>
-            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Session: </b>2022/23</p>
-            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Collection Date: </b>05.01.2022</p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Campus: </b><?php echo $termly_report_data["main_campus"] ?></p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Term: </b><?php echo $termly_report_data["term_tag"] ?></p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Session: </b><?php echo $termly_report_data["session_tag"] ?></p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Collection Date: </b><?php echo date("jS M Y") ?></p>
           </div>
           <div class="cs-invoice_right cs-text_right">
             <div class="cs-logo cs-mb5" style="width: 100px; height: 100px;"><img src="_vendors/img/logo.png" alt="Logo"></div>
@@ -46,10 +46,10 @@ if (isset($_SESSION['termly_report_id'])) {
           <div class="cs-invoice_left">
             <b class="cs-primary_color">Student Credentials:</b>
             <p>
-              Jennifer Richards <br>
-              Primary 5, <br>
-              Ontario, M4W 3L4, <br>
-              Canada
+              <b>Full Names:</b> <?php echo $termly_report_data["full_names"] ?> <br>
+              <b>Class Placement:</b> <?php echo $termly_report_data["class_placement"] ?> <br>
+              <b>Serial Number:</b> <?php echo $termly_report_data["serial_number"] ?> <br>
+              <b>Unique Pin:</b> <?php echo $termly_report_data["unique_pin"] ?>
             </p>
           </div>
           <div class="cs-invoice_right cs-text_right">
@@ -77,14 +77,479 @@ if (isset($_SESSION['termly_report_id'])) {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="cs-width_4">App Development</td>
-                    <td class="cs-width_4">12</td>
-                    <td class="cs-width_4">2</td>
-                    <td class="cs-width_4">$460</td>
-                    <td class="cs-width_4">$920</td>
-                    <td class="cs-width_4 cs-text_right">$920</td>
-                  </tr>
+                  <?php
+
+                  if ($termly_report_data["class_placement"] == "Pre Kindergarten") {
+                  ?>
+                    <tr>
+                      <td>Literacy</td>
+                      <td><?php echo $termly_report_data["literacy_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["literacy_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["literacy_examination_score"] ?></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Numeracy</td>
+                      <td><?php echo $termly_report_data["numeracy_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["numeracy_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["numeracy_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Hand Writing</td>
+                      <td><?php echo $termly_report_data["hand_writing_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["hand_writing_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["hand_writing_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Rhymes</td>
+                      <td><?php echo $termly_report_data["rhymes_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["rhymes_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["rhymes_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Coloring</td>
+                      <td><?php echo $termly_report_data["coloring_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["coloring_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["coloring_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Practcal Life</td>
+                      <td><?php echo $termly_report_data["practcal_life_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["practcal_life_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["practcal_life_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Social Habits</td>
+                      <td><?php echo $termly_report_data["social_habits_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["social_habits_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["social_habits_examination_score"] ?></td>
+                    </tr>
+                  <?php
+                  } else if ($termly_report_data["class_placement"] == "Kindergarten 1" || $termly_report_data["class_placement"] == "Kindergarten 2" || $termly_report_data["class_placement"] == "Kindergarten 3") {
+                  ?>
+                    <tr>
+                      <td>English Language</td>
+                      <td><?php echo $termly_report_data["english_language_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["english_language_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["english_language_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Mathematics</td>
+                      <td><?php echo $termly_report_data["mathematics_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["mathematics_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["mathematics_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Practcal Life</td>
+                      <td><?php echo $termly_report_data["practcal_life_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["practcal_life_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["practcal_life_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Nature Studies</td>
+                      <td><?php echo $termly_report_data["nature_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["nature_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["nature_studies_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Christian Religious Studies</td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Health Habits</td>
+                      <td><?php echo $termly_report_data["health_habits_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["health_habits_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["health_habits_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Social Habits</td>
+                      <td><?php echo $termly_report_data["social_habits_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["social_habits_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["social_habits_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Hand Writing</td>
+                      <td><?php echo $termly_report_data["hand_writing_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["hand_writing_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["hand_writing_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Rhymes</td>
+                      <td><?php echo $termly_report_data["rhymes_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["rhymes_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["rhymes_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Coloring</td>
+                      <td><?php echo $termly_report_data["coloring_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["coloring_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["coloring_examination_score"] ?></td>
+                    </tr>
+                  <?php
+                  } else if ($termly_report_data["class_placement"] == "Primary 1" || $termly_report_data["class_placement"] == "Primary 2") {
+                  ?>
+                    <tr>
+                      <td>English Language</td>
+                      <td><?php echo $termly_report_data["english_language_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["english_language_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["english_language_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Mathematics</td>
+                      <td><?php echo $termly_report_data["mathematics_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["mathematics_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["mathematics_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Civic Education</td>
+                      <td><?php echo $termly_report_data["civic_education_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["civic_education_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["civic_education_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Christian Religious Studies</td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Hand Writing</td>
+                      <td><?php echo $termly_report_data["hand_writing_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["hand_writing_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["hand_writing_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Basic Technology</td>
+                      <td><?php echo $termly_report_data["basic_technology_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["basic_technology_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["basic_technology_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Basic Science</td>
+                      <td><?php echo $termly_report_data["basic_science_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["basic_science_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["basic_science_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Social Studies</td>
+                      <td><?php echo $termly_report_data["social_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["social_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["social_studies_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Home Economics</td>
+                      <td><?php echo $termly_report_data["home_economics_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["home_economics_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["home_economics_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Creative Arts</td>
+                      <td><?php echo $termly_report_data["creative_arts_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["creative_arts_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["creative_arts_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Agricultural Science</td>
+                      <td><?php echo $termly_report_data["agricultural_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["agricultural_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["agricultural_examination_score"] ?></td>
+                    </tr>
+                  <?php
+                  } else if ($termly_report_data["class_placement"] == "Primary 3" || $termly_report_data["class_placement"] == "Primary 4" || $termly_report_data["class_placement"] == "Primary 5") {
+                  ?>
+                    <tr>
+                      <td>English Language</td>
+                      <td><?php echo $termly_report_data["english_language_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["english_language_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["english_language_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td><?php echo $subject_grade ?></td>
+                    </tr>
+                    <tr>
+                      <td>Mathematics</td>
+                      <td><?php echo $termly_report_data["mathematics_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["mathematics_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["mathematics_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td><?php echo $subject_grade ?></td>
+                    </tr>
+                    <tr>
+                      <td>Christian Religious Studies</td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["christian_religious_studies_first_ca_score"] + $termly_report_data["christian_religious_studies_second_ca_score"] + $termly_report_data["christian_religious_studies_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td><?php echo $subject_grade ?></td>
+                    </tr>
+                    <tr>
+                      <td>Creative Arts</td>
+                      <td><?php echo $termly_report_data["creative_arts_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["creative_arts_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["creative_arts_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["creative_arts_first_ca_score"] + $termly_report_data["creative_arts_second_ca_score"] + $termly_report_data["creative_arts_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td><?php echo $subject_grade ?></td>
+                    </tr>
+                    <tr>
+                      <td>Basic Science & Technology</td>
+                      <td><?php echo $termly_report_data["basic_science_and_technology_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["basic_science_and_technology_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["basic_science_and_technology_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["basic_science_and_technology_first_ca_score"] + $termly_report_data["basic_science_and_technology_second_ca_score"] + $termly_report_data["basic_science_and_technology_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td><?php echo $subject_grade ?></td>
+                    </tr>
+                    <tr>
+                      <td>National Values</td>
+                      <td><?php echo $termly_report_data["national_values_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["national_values_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["national_values_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["national_values_first_ca_score"] + $termly_report_data["national_values_second_ca_score"] + $termly_report_data["national_values_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td><?php echo $subject_grade ?></td>
+                    </tr>
+                    <tr>
+                      <td>Pre Vocational Studies</td>
+                      <td><?php echo $termly_report_data["pre_vocational_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["pre_vocational_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["pre_vocational_studies_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["pre_vocational_studies_first_ca_score"] + $termly_report_data["pre_vocational_studies_second_ca_score"] + $termly_report_data["pre_vocational_studies_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td><?php echo $subject_grade ?></td>
+                    </tr>
+                    <tr>
+                      <td>History</td>
+                      <td><?php echo $termly_report_data["history_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["history_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["history_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["history_first_ca_score"] + $termly_report_data["history_second_ca_score"] + $termly_report_data["history_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td><?php echo $subject_grade ?></td>
+                    </tr>
+                  <?php
+                  } else if ($termly_report_data["class_placement"] == "JSS. 1" || $termly_report_data["class_placement"] == "JSS. 2" || $termly_report_data["class_placement"] == "JSS. 3") {
+                  ?>
+                    <tr>
+                      <td>English Language</td>
+                      <td><?php echo $termly_report_data["english_language_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["english_language_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["english_language_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Mathematics</td>
+                      <td><?php echo $termly_report_data["mathematics_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["mathematics_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["mathematics_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Christian Religious Studies</td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["christian_religious_studies_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Computer Studies</td>
+                      <td><?php echo $termly_report_data["computer_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["computer_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["computer_studies_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>National Values</td>
+                      <td><?php echo $termly_report_data["national_values_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["national_values_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["national_values_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Basic Science & Technology</td>
+                      <td><?php echo $termly_report_data["basic_science_and_technology_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["basic_science_and_technology_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["basic_science_and_technology_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Pre Vocational Studies</td>
+                      <td><?php echo $termly_report_data["pre_vocational_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["pre_vocational_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["pre_vocational_studies_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>History</td>
+                      <td><?php echo $termly_report_data["history_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["history_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["history_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Business Studies</td>
+                      <td><?php echo $termly_report_data["business_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["business_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["business_studies_examination_score"] ?></td>
+                    </tr>
+                    <tr>
+                      <td>Literature</td>
+                      <td><?php echo $termly_report_data["literature_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["literature_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["literature_examination_score"] ?></td>
+                    </tr>
+                  <?php
+                  }
+                  ?>
                 </tbody>
               </table>
             </div>

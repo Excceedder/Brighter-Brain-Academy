@@ -69,3 +69,7 @@ if (isset($_POST['delete_termly_report'])) {
 if (isset($_POST['update_termly_report'])) {
     update_termly_report($_POST);
 }
+
+if (isset($_POST['verify_credentials'])) {
+    verify_credentials($_POST);
+}
