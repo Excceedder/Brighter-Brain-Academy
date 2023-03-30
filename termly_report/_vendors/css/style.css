@@ -482,7 +482,7 @@ th {
 }
 
 td {
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #000000;
 }
 
 td,
@@ -879,7 +879,7 @@ kbd {
 }
 
 .cs-round_border {
-  border: 1px solid #eaeaea;
+  border: 1px solid #000000;
   overflow: hidden;
   border-radius: 6px;
 }
@@ -1109,7 +1109,7 @@ kbd {
 }
 
 .cs-table.cs-style2 tr:not(:first-child) {
-  border-top: 1px dashed #eaeaea;
+  border-top: 1px dashed #000000;
 }
 
 .cs-list.cs-style1 {
@@ -1212,7 +1212,7 @@ kbd {
 }
 
 .cs-table.cs-style1 .cs-table.cs-style1 tr:not(:first-child) td {
-  border-color: #eaeaea;
+  border-color: #000000;
 }
 
 .cs-table.cs-style1 .cs-table.cs-style2 td {

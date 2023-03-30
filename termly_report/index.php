@@ -39,7 +39,7 @@ if (isset($_SESSION['termly_report_id'])) {
         <span>Search New Report</span>
       </a>
     </div>
-    <div class="cs-invoice cs-style1">
+    <div class="cs-invoice cs-style1" style="background-image: url('./_vendors/img/background.jpg'); background-repeat: no-repeat; background-size: cover;">
       <div class="cs-invoice_in" id="download_section">
         <div class="cs-invoice_head cs-type1 cs-mb25">
           <div class="cs-invoice_left">
@@ -55,7 +55,7 @@ if (isset($_SESSION['termly_report_id'])) {
         <div class="cs-invoice_head cs-mb10">
           <div class="cs-invoice_left">
             <b class="cs-primary_color">Student Credentials:</b>
-            <p>
+            <p style="color: #000000;">
               <b>Full Names:</b> <?php echo $termly_report_data["full_names"] ?> <br>
               <b>Class Placement:</b> <?php echo $termly_report_data["class_placement"] ?> <br>
               <b>Serial Number:</b> <?php echo $termly_report_data["serial_number"] ?> <br>
@@ -64,7 +64,7 @@ if (isset($_SESSION['termly_report_id'])) {
           </div>
           <div class="cs-invoice_right cs-text_right">
             <b class="cs-primary_color">School Information:</b>
-            <p>
+            <p style="color: #000000;">
               Brighter Brain Academy <br>
               2 Makolomi street, Ughelli, <br>
               Delta State, Nigeria <br>
@@ -76,14 +76,14 @@ if (isset($_SESSION['termly_report_id'])) {
           <div class="cs-round_border">
             <div class="cs-table_responsive">
               <table>
-                <thead>
+                <thead style="background-color: #6ad8d9ff;">
                   <tr>
-                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">CLASS SUBJECTS</th>
-                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">1<sup>st</sup> CA SCORE(20)</th>
-                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">2<sup>nd</sup> CA SCORE(10)</th>
-                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">EXAMINATION SCORE(70)</th>
-                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg">SUBJECT SCORE</th>
-                    <th class="cs-width_4 cs-semi_bold cs-primary_color cs-focus_bg cs-text_right">SUBJECT GRADE</th>
+                    <th class="cs-width_4 cs-semi_bold" style="color: #000000;">CLASS SUBJECTS</th>
+                    <th class="cs-width_4 cs-semi_bold " style="color: #000000;">1<sup>st</sup> CA SCORE(20)</th>
+                    <th class="cs-width_4 cs-semi_bold " style="color: #000000;">2<sup>nd</sup> CA SCORE(10)</th>
+                    <th class="cs-width_4 cs-semi_bold " style="color: #000000;">EXAMINATION SCORE(70)</th>
+                    <th class="cs-width_4 cs-semi_bold " style="color: #000000;">SUBJECT SCORE</th>
+                    <th class="cs-width_4 cs-semi_bold cs-text_right" style="color: #000000;">SUBJECT GRADE</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -883,12 +883,12 @@ if (isset($_SESSION['termly_report_id'])) {
                     </tr>
                     <tr>
                       <td>Agricultural Science</td>
-                      <td><?php echo $termly_report_data["agricultural_first_ca_score"] ?></td>
-                      <td><?php echo $termly_report_data["agricultural_second_ca_score"] ?></td>
-                      <td><?php echo $termly_report_data["agricultural_examination_score"] ?></td>
+                      <td><?php echo $termly_report_data["agricultural_science_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["agricultural_science_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["agricultural_science_examination_score"] ?></td>
                       <td>
                         <?php
-                        $subject_score = $termly_report_data["agricultural_first_ca_score"] + $termly_report_data["agricultural_second_ca_score"] + $termly_report_data["agricultural_examination_score"];
+                        $subject_score = $termly_report_data["agricultural_science_first_ca_score"] + $termly_report_data["agricultural_science_second_ca_score"] + $termly_report_data["agricultural_science_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
                         } else if ($subject_score >= 31 && $subject_score <= 35) {
