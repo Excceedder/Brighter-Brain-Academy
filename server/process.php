@@ -770,7 +770,7 @@ function verify_credentials($form_data)
 {
     $db_conn = connect_to_database();
 
-    $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE JSON_EXTRACT(UNHEX(`termly_report_data`), '$.serial_number') = ? OR JSON_EXTRACT(UNHEX(`termly_report_data`), '$.unique_pin') = ?");
+    $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE JSON_EXTRACT(UNHEX(`termly_report_data`), '$.serial_number') = ? AND JSON_EXTRACT(UNHEX(`termly_report_data`), '$.unique_pin') = ?");
     $stmt->bind_param("ss", $form_data["serial_number"], $form_data["unique_pin"]);
     $stmt->execute();
     $result = $stmt->get_result();

@@ -46,7 +46,7 @@ if (isset($_SESSION['termly_report_id'])) {
             <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Campus: </b><?php echo $termly_report_data["main_campus"] ?></p>
             <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Term: </b><?php echo $termly_report_data["term_tag"] ?></p>
             <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Session: </b><?php echo $termly_report_data["session_tag"] ?></p>
-            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Collection Date: </b><?php echo date("jS M Y") ?></p>
+            <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Resumption Date: </b>24th Apr 2023</p>
           </div>
           <div class="cs-invoice_right cs-text_right">
             <div class="cs-logo cs-mb5" style="width: 100px; height: 100px;"><img src="_vendors/img/logo.png" alt="Logo"></div>
@@ -721,6 +721,34 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td>
                         <?php
                         $subject_score = $termly_report_data["hand_writing_first_ca_score"] + $termly_report_data["hand_writing_second_ca_score"] + $termly_report_data["hand_writing_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td class="cs-text_center"><?php echo $subject_grade ?></td>
+                    </tr>
+                    <tr>
+                      <td>Physical Health Education</td>
+                      <td><?php echo $termly_report_data["physical_health_education_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["physical_health_education_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["physical_health_education_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["physical_health_education_first_ca_score"] + $termly_report_data["physical_health_education_second_ca_score"] + $termly_report_data["physical_health_education_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
                         } else if ($subject_score >= 31 && $subject_score <= 35) {
