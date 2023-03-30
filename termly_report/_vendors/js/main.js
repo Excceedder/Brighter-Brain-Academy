@@ -1,46 +1,20 @@
-(function ($) {
-  'use strict';
+// (function ($) {
+//   "use strict";
 
-  /*--------------------------------------------------------------
-  ## Down Load Button Function
-  ----------------------------------------------------------------*/
-  $('#download_btn').on('click', function () {
-    var downloadSection = $('#download_section');
-    var cWidth = downloadSection.width();
-    var cHeight = downloadSection.height();
-    var topLeftMargin = 40;
-    var pdfWidth = cWidth + topLeftMargin * 2;
-    var pdfHeight = pdfWidth * 1.5 + topLeftMargin * 2;
-    var canvasImageWidth = cWidth;
-    var canvasImageHeight = cHeight;
-    var totalPDFPages = Math.ceil(cHeight / pdfHeight) - 1;
+//   /*--------------------------------------------------------------
+//   ## Down Load Button Function
+//   ----------------------------------------------------------------*/
+//   $("#download_btn").on("click", function () {
+//     var downloadSection = $("#download_section")[0];
+//     var cWidth = downloadSection.offsetWidth;
+//     var cHeight = downloadSection.offsetHeight;
 
-    html2canvas(downloadSection[0], { allowTaint: true }).then(function (
-      canvas
-    ) {
-      canvas.getContext('2d');
-      var imgData = canvas.toDataURL('image/jpeg', 1.0);
-      var pdf = new jsPDF('p', 'pt', [pdfWidth, pdfHeight]);
-      pdf.addImage(
-        imgData,
-        'JPG',
-        topLeftMargin,
-        topLeftMargin,
-        canvasImageWidth,
-        canvasImageHeight
-      );
-      for (var i = 1; i <= totalPDFPages; i++) {
-        pdf.addPage(pdfWidth, pdfHeight);
-        pdf.addImage(
-          imgData,
-          'JPG',
-          topLeftMargin,
-          -(pdfHeight * i) + topLeftMargin * 0,
-          canvasImageWidth,
-          canvasImageHeight
-        );
-      }
-      pdf.save('termly_report.pdf');
-    });
-  });
-})(jQuery); // End of use strict
+//     html2canvas(downloadSection, { allowTaint: true }).then(function (canvas) {
+//       var imgData = canvas.toDataURL("image/jpeg", 1.0);
+//       var link = document.createElement("a");
+//       link.download = "termly_report.jpg";
+//       link.href = imgData;
+//       link.click();
+//     });
+//   });
+// })(jQuery); // End of use strict
