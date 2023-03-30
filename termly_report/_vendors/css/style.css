@@ -482,7 +482,8 @@ th {
 }
 
 td {
-  border-top: 1px solid #000000;
+  border: 1px solid #000000;
+  color: #000000;
 }
 
 td,
@@ -916,7 +917,7 @@ kbd {
       -ms-flex-align: end;
           align-items: flex-end;
   padding-bottom: 25px;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #000000;
 }
 
 .cs-invoice.cs-style1 .cs-invoice_footer {
