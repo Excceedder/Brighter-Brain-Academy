@@ -17,6 +17,7 @@ if (isset($_SESSION['termly_report_id'])) {
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 <head>
+
   <!-- Meta Tags -->
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -25,22 +26,40 @@ if (isset($_SESSION['termly_report_id'])) {
   <title>Brighter Brain Academy | Termly Report</title>
   <link rel="shortcut icon" type="image/x-icon" href="_vendors/img/logo.png">
   <link rel="stylesheet" href="_vendors/css/style.css">
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+  <style>
+    .bg-img-2 {
+      background-image: url('./_vendors/img/background.png') !important;
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+    }
+  </style>
+
 </head>
 
 <body>
   <div class="cs-container">
-    <div class="cs-hide_print">
+    <div class="cs-hide_print" style="display: inline-flexbox;">
       <a href="./end_session" class="cs-invoice_btn" style="margin-bottom: 25px; border-radius: 8px; color: #2ad19d; border: 2px dashed #2ad19d;">
         <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
           <path d="M256 80a176 176 0 10176 176A176 176 0 00256 80z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
           <path d="M232 160a72 72 0 1072 72 72 72 0 00-72-72z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
           <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M283.64 283.64L336 336" />
         </svg>
-        <span>Search New Report</span>
+        <span>Search New</span>
+      </a>
+      <a href="#" id="download" class="cs-invoice_btn cs-color2" style="margin-bottom: 25px; border-radius: 8px; border: 2px solid #2ad19d; float: right;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+          <title>Download</title>
+          <path d="M336 176h40a40 40 0 0140 40v208a40 40 0 01-40 40H136a40 40 0 01-40-40V216a40 40 0 0140-40h40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 272l80 80 80-80M256 48v288" />
+        </svg>
+        <span>Download</span>
       </a>
     </div>
-    <div class="cs-invoice cs-style1" style="background-image: url('./_vendors/img/background.png'); background-repeat: no-repeat; background-size: cover;">
-      <div class="cs-invoice_in" id="download_section">
+    <div class="cs-invoice cs-style1 bg-img-2 download_section">
+      <div class="cs-invoice_in ">
         <div class="cs-invoice_head cs-type1 cs-mb25">
           <div class="cs-invoice_left">
             <p class="cs-invoice_date cs-primary_color cs-m0"><b class="cs-primary_color">Campus: </b><?php echo $termly_report_data["main_campus"] ?></p>
@@ -1468,23 +1487,25 @@ if (isset($_SESSION['termly_report_id'])) {
           </div>
         </div><!-- .cs-note -->
       </div>
-      <div class="cs-invoice_btns cs-hide_print">
-        <button id="download_btn" class="cs-invoice_btn cs-color2" style="border-radius: 8px;">
-          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-            <title>Download</title>
-            <path d="M336 176h40a40 40 0 0140 40v208a40 40 0 01-40 40H136a40 40 0 01-40-40V216a40 40 0 0140-40h40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
-            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 272l80 80 80-80M256 48v288" />
-          </svg>
-          <span>Download Termly Report</span>
-        </button>
-      </div>
     </div>
   </div>
 
-  <script src="_vendors/js/jquery.min.js"></script>
-  <script src="_vendors/js/jspdf.min.js"></script>
-  <script src="_vendors/js/html2canvas.min.js"></script>
-  <script src="_vendors/js/main.js"></script>
+  <script>
+    function download(canvas, filename) {
+      const data = canvas.toDataURL("image/png;base64");
+      const downloadLink = document.querySelector("#download");
+      downloadLink.download = filename;
+      downloadLink.href = data;
+    }
+
+    html2canvas(document.querySelector('.download_section'), {
+      scale: 5, // increase scale factor for higher quality
+      useCORS: true, // enable CORS
+    }).then((canvas) => {
+      const filename = "termly_report-" + Math.floor(Math.random() * 100000) + ".png";
+      download(canvas, filename);
+    });
+  </script>
 </body>
 
 </html>
