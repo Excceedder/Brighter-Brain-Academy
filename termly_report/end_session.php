@@ -1,4 +1,5 @@
 <?php
 session_start();
-session_destroy();
+unset($_SESSION['termly_report_id']);
 header('location: ./verify_credentials');
+exit();
