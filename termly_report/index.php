@@ -686,6 +686,34 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td class="cs-text_center"><?php echo $subject_grade ?></td>
                     </tr>
                     <tr>
+                      <td>Computer Studies</td>
+                      <td><?php echo $termly_report_data["computer_studies_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["computer_studies_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["computer_studies_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["computer_studies_first_ca_score"] + $termly_report_data["computer_studies_second_ca_score"] + $termly_report_data["computer_studies_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td class="cs-text_center"><?php echo $subject_grade ?></td>
+                    </tr>
+                    <tr>
                       <td>Hand Writing</td>
                       <td><?php echo $termly_report_data["hand_writing_first_ca_score"] ?></td>
                       <td><?php echo $termly_report_data["hand_writing_second_ca_score"] ?></td>

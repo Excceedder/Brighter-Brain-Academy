@@ -129,6 +129,12 @@ if ($_GET["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="civic_education_examination_score" value="<?php echo $termly_report_data["civic_education_examination_score"] ?>" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
+        <td>Computer Studies</td>
+        <td><input type="number" name="computer_studies_first_ca_score" value="<?php echo $termly_report_data["computer_studies_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="computer_studies_second_ca_score" value="<?php echo $termly_report_data["computer_studies_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="computer_studies_examination_score" value="<?php echo $termly_report_data["computer_studies_examination_score"] ?>" placeholder="0" class="form-control"></td>
+    </tr>
+    <tr>
         <td>Christian Religious Studies</td>
         <td><input type="number" name="christian_religious_studies_first_ca_score" value="<?php echo $termly_report_data["christian_religious_studies_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
         <td><input type="number" name="christian_religious_studies_second_ca_score" value="<?php echo $termly_report_data["christian_religious_studies_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
