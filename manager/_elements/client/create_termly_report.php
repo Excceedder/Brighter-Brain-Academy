@@ -141,6 +141,12 @@ if ($student_data["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="computer_studies_examination_score" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
+        <td>Literature</td>
+        <td><input type="number" name="literature_first_ca_score" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="literature_second_ca_score" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="literature_examination_score" placeholder="0" class="form-control"></td>
+    </tr>
+    <tr>
         <td>Hand Writing</td>
         <td><input type="number" name="hand_writing_first_ca_score" placeholder="0" class="form-control"></td>
         <td><input type="number" name="hand_writing_second_ca_score" placeholder="0" class="form-control"></td>

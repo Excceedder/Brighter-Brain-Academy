@@ -677,6 +677,34 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td class="cs-text_center"><?php echo $subject_grade ?></td>
                     </tr>
                     <tr>
+                      <td>Literature</td>
+                      <td><?php echo $termly_report_data["literature_first_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["literature_second_ca_score"] ?></td>
+                      <td><?php echo $termly_report_data["literature_examination_score"] ?></td>
+                      <td>
+                        <?php
+                        $subject_score = $termly_report_data["literature_first_ca_score"] + $termly_report_data["literature_second_ca_score"] + $termly_report_data["literature_examination_score"];
+                        if ($subject_score <= 30) {
+                          $subject_grade = "F";
+                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                          $subject_grade = "E";
+                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                          $subject_grade = "D";
+                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                          $subject_grade = "C";
+                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                          $subject_grade = "B";
+                        } else if ($subject_score >= 70 && $subject_score <= 80) {
+                          $subject_grade = "A";
+                        } else if ($subject_score >= 81) {
+                          $subject_grade = "A1";
+                        }
+                        echo $subject_score;
+                        ?>
+                      </td>
+                      <td class="cs-text_center"><?php echo $subject_grade ?></td>
+                    </tr>
+                    <tr>
                       <td>Christian Religious Studies</td>
                       <td><?php echo $termly_report_data["christian_religious_studies_first_ca_score"] ?></td>
                       <td><?php echo $termly_report_data["christian_religious_studies_second_ca_score"] ?></td>
@@ -1470,10 +1498,45 @@ if (isset($_SESSION['termly_report_id'])) {
                   }
                   ?>
                 </tbody>
+                <tfoot style="color: #000000;">
+                  <tr>
+                    <th style="font-weight: bold; text-align: center;">Total Subject</th>
+                    <th style="font-weight: bold; text-align: center;">Overall Score</th>
+                    <th style="font-weight: bold; text-align: center;">Average</th>
+                    <th style="font-weight: bold; text-align: center;">Overall Grade</th>
+                    <th style="font-weight: bold; text-align: center;" colspan="2">Remark(s)</th>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: bold; text-align: center;">
+                      <?php
+                      if ($termly_report_data["class_placement"] == "Pre Kindergarten") {
+                        echo ("7");
+                      } else if ($termly_report_data["class_placement"] == "Kindergarten 1" || $termly_report_data["class_placement"] == "Kindergarten 2" || $termly_report_data["class_placement"] == "Kindergarten 3") {
+                        echo ("10");
+                      } else if ($termly_report_data["class_placement"] == "Primary 1" || $termly_report_data["class_placement"] == "Primary 2") {
+                        echo ("14");
+                      } else if ($termly_report_data["class_placement"] == "Primary 3" || $termly_report_data["class_placement"] == "Primary 4" || $termly_report_data["class_placement"] == "Primary 5") {
+                        echo ("8");
+                      } else if ($termly_report_data["class_placement"] == "JSS. 1" || $termly_report_data["class_placement"] == "JSS. 2" || $termly_report_data["class_placement"] == "JSS. 3") {
+                        echo ("10");
+                      }
+                      ?>
+                    </td>
+                    <td style="font-weight: bold; text-align: center;">100</td>
+                    <td style="font-weight: bold; text-align: center;">83.45</td>
+                    <td style="font-weight: bold; text-align: center;">A</td>
+                    <td style="font-weight: bold; text-align: center;" colspan="2">Distinction</td>
+                  </tr>
+                </tfoot>
               </table>
+
+              <!-- <table style="color: #000000;">
+               
+              </table> -->
             </div>
           </div>
         </div>
+
         <div class="cs-note">
           <div class="cs-note_left">
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">

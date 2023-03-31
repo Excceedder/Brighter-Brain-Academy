@@ -135,6 +135,12 @@ if ($_GET["class_placement"] == "Pre Kindergarten") {
         <td><input type="number" name="computer_studies_examination_score" value="<?php echo $termly_report_data["computer_studies_examination_score"] ?>" placeholder="0" class="form-control"></td>
     </tr>
     <tr>
+        <td>Literature</td>
+        <td><input type="number" name="literature_first_ca_score" value="<?php echo $termly_report_data["literature_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="literature_second_ca_score" value="<?php echo $termly_report_data["literature_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
+        <td><input type="number" name="literature_examination_score" value="<?php echo $termly_report_data["literature_examination_score"] ?>" placeholder="0" class="form-control"></td>
+    </tr>
+    <tr>
         <td>Physical Health Education</td>
         <td><input type="number" name="physical_health_education_first_ca_score" value="<?php echo $termly_report_data["physical_health_education_first_ca_score"] ?>" placeholder="0" class="form-control"></td>
         <td><input type="number" name="physical_health_education_second_ca_score" value="<?php echo $termly_report_data["physical_health_education_second_ca_score"] ?>" placeholder="0" class="form-control"></td>
