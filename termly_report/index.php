@@ -1511,28 +1511,204 @@ if (isset($_SESSION['termly_report_id'])) {
                       <?php
                       if ($termly_report_data["class_placement"] == "Pre Kindergarten") {
                         echo ("7");
+                        $overall_score = $termly_report_data["literacy_first_ca_score"]
+                          + $termly_report_data["literacy_second_ca_score"]
+                          + $termly_report_data["literacy_examination_score"]
+                          + $termly_report_data["numeracy_first_ca_score"]
+                          + $termly_report_data["numeracy_second_ca_score"]
+                          + $termly_report_data["numeracy_examination_score"]
+                          + $termly_report_data["hand_writing_first_ca_score"]
+                          + $termly_report_data["hand_writing_second_ca_score"]
+                          + $termly_report_data["hand_writing_examination_score"]
+                          + $termly_report_data["rhymes_first_ca_score"]
+                          + $termly_report_data["rhymes_second_ca_score"]
+                          + $termly_report_data["rhymes_examination_score"]
+                          + $termly_report_data["coloring_first_ca_score"]
+                          + $termly_report_data["coloring_second_ca_score"]
+                          + $termly_report_data["coloring_examination_score"]
+                          + $termly_report_data["practcal_life_first_ca_score"]
+                          + $termly_report_data["practcal_life_second_ca_score"]
+                          + $termly_report_data["practcal_life_examination_score"]
+                          + $termly_report_data["social_habits_first_ca_score"]
+                          + $termly_report_data["social_habits_second_ca_score"]
+                          + $termly_report_data["social_habits_examination_score"];
+                        $average = $overall_score / 7;
                       } else if ($termly_report_data["class_placement"] == "Kindergarten 1" || $termly_report_data["class_placement"] == "Kindergarten 2" || $termly_report_data["class_placement"] == "Kindergarten 3") {
                         echo ("10");
+                        $overall_score = $termly_report_data["english_language_first_ca_score"]
+                          + $termly_report_data["english_language_second_ca_score"]
+                          + $termly_report_data["english_language_examination_score"]
+                          + $termly_report_data["mathematics_first_ca_score"]
+                          + $termly_report_data["mathematics_second_ca_score"]
+                          + $termly_report_data["mathematics_examination_score"]
+                          + $termly_report_data["practcal_life_first_ca_score"]
+                          + $termly_report_data["practcal_life_second_ca_score"]
+                          + $termly_report_data["practcal_life_examination_score"]
+                          + $termly_report_data["nature_studies_first_ca_score"]
+                          + $termly_report_data["nature_studies_second_ca_score"]
+                          + $termly_report_data["nature_studies_examination_score"]
+                          + $termly_report_data["christian_religious_studies_first_ca_score"]
+                          + $termly_report_data["christian_religious_studies_second_ca_score"]
+                          + $termly_report_data["christian_religious_studies_examination_score"]
+                          + $termly_report_data["health_habits_first_ca_score"]
+                          + $termly_report_data["health_habits_second_ca_score"]
+                          + $termly_report_data["health_habits_examination_score"]
+                          + $termly_report_data["social_habits_first_ca_score"]
+                          + $termly_report_data["social_habits_second_ca_score"]
+                          + $termly_report_data["social_habits_examination_score"]
+                          + $termly_report_data["hand_writing_first_ca_score"]
+                          + $termly_report_data["hand_writing_second_ca_score"]
+                          + $termly_report_data["hand_writing_examination_score"]
+                          + $termly_report_data["rhymes_first_ca_score"]
+                          + $termly_report_data["rhymes_second_ca_score"]
+                          + $termly_report_data["rhymes_examination_score"]
+                          + $termly_report_data["coloring_first_ca_score"]
+                          + $termly_report_data["coloring_second_ca_score"]
+                          + $termly_report_data["coloring_examination_score"];
+                        $average = $overall_score / 10;
                       } else if ($termly_report_data["class_placement"] == "Primary 1" || $termly_report_data["class_placement"] == "Primary 2") {
                         echo ("14");
+                        $overall_score = $termly_report_data["english_language_first_ca_score"]
+                          + $termly_report_data["english_language_second_ca_score"]
+                          + $termly_report_data["english_language_examination_score"]
+                          + $termly_report_data["mathematics_first_ca_score"]
+                          + $termly_report_data["mathematics_second_ca_score"]
+                          + $termly_report_data["mathematics_examination_score"]
+                          + $termly_report_data["civic_education_first_ca_score"]
+                          + $termly_report_data["civic_education_second_ca_score"]
+                          + $termly_report_data["civic_education_examination_score"]
+                          + $termly_report_data["computer_studies_first_ca_score"]
+                          + $termly_report_data["computer_studies_second_ca_score"]
+                          + $termly_report_data["computer_studies_examination_score"]
+                          + $termly_report_data["literature_first_ca_score"]
+                          + $termly_report_data["literature_second_ca_score"]
+                          + $termly_report_data["literature_examination_score"]
+                          + $termly_report_data["physical_health_education_first_ca_score"]
+                          + $termly_report_data["physical_health_education_second_ca_score"]
+                          + $termly_report_data["physical_health_education_examination_score"]
+                          + $termly_report_data["christian_religious_studies_first_ca_score"]
+                          + $termly_report_data["christian_religious_studies_second_ca_score"]
+                          + $termly_report_data["christian_religious_studies_examination_score"]
+                          + $termly_report_data["hand_writing_first_ca_score"]
+                          + $termly_report_data["hand_writing_second_ca_score"]
+                          + $termly_report_data["hand_writing_examination_score"]
+                          + $termly_report_data["basic_technology_first_ca_score"]
+                          + $termly_report_data["basic_technology_second_ca_score"]
+                          + $termly_report_data["basic_technology_examination_score"]
+                          + $termly_report_data["basic_science_first_ca_score"]
+                          + $termly_report_data["basic_science_second_ca_score"]
+                          + $termly_report_data["basic_science_examination_score"]
+                          + $termly_report_data["social_studies_first_ca_score"]
+                          + $termly_report_data["social_studies_second_ca_score"]
+                          + $termly_report_data["social_studies_examination_score"]
+                          + $termly_report_data["home_economics_first_ca_score"]
+                          + $termly_report_data["home_economics_second_ca_score"]
+                          + $termly_report_data["home_economics_examination_score"]
+                          + $termly_report_data["creative_arts_first_ca_score"]
+                          + $termly_report_data["creative_arts_second_ca_score"]
+                          + $termly_report_data["creative_arts_examination_score"]
+                          + $termly_report_data["agricultural_science_first_ca_score"]
+                          + $termly_report_data["agricultural_science_second_ca_score"]
+                          + $termly_report_data["agricultural_science_examination_score"];
+                        $average = $overall_score / 14;
                       } else if ($termly_report_data["class_placement"] == "Primary 3" || $termly_report_data["class_placement"] == "Primary 4" || $termly_report_data["class_placement"] == "Primary 5") {
                         echo ("8");
+                        $overall_score = $termly_report_data["english_language_first_ca_score"]
+                          + $termly_report_data["english_language_second_ca_score"]
+                          + $termly_report_data["english_language_examination_score"]
+                          + $termly_report_data["mathematics_first_ca_score"]
+                          + $termly_report_data["mathematics_second_ca_score"]
+                          + $termly_report_data["mathematics_examination_score"]
+                          + $termly_report_data["christian_religious_studies_first_ca_score"]
+                          + $termly_report_data["christian_religious_studies_second_ca_score"]
+                          + $termly_report_data["christian_religious_studies_examination_score"]
+                          + $termly_report_data["creative_arts_first_ca_score"]
+                          + $termly_report_data["creative_arts_second_ca_score"]
+                          + $termly_report_data["creative_arts_examination_score"]
+                          + $termly_report_data["basic_science_and_technology_first_ca_score"]
+                          + $termly_report_data["basic_science_and_technology_second_ca_score"]
+                          + $termly_report_data["basic_science_and_technology_examination_score"]
+                          + $termly_report_data["national_values_first_ca_score"]
+                          + $termly_report_data["national_values_second_ca_score"]
+                          + $termly_report_data["national_values_examination_score"]
+                          + $termly_report_data["pre_vocational_studies_first_ca_score"]
+                          + $termly_report_data["pre_vocational_studies_second_ca_score"]
+                          + $termly_report_data["pre_vocational_studies_examination_score"]
+                          + $termly_report_data["history_first_ca_score"]
+                          + $termly_report_data["history_second_ca_score"]
+                          + $termly_report_data["history_examination_score"];
+                        $average = $overall_score / 8;
                       } else if ($termly_report_data["class_placement"] == "JSS. 1" || $termly_report_data["class_placement"] == "JSS. 2" || $termly_report_data["class_placement"] == "JSS. 3") {
                         echo ("10");
+                        $overall_score = $termly_report_data["english_language_first_ca_score"]
+                          + $termly_report_data["english_language_second_ca_score"]
+                          + $termly_report_data["english_language_examination_score"]
+                          + $termly_report_data["mathematics_first_ca_score"]
+                          + $termly_report_data["mathematics_second_ca_score"]
+                          + $termly_report_data["mathematics_examination_score"]
+                          + $termly_report_data["christian_religious_studies_first_ca_score"]
+                          + $termly_report_data["christian_religious_studies_second_ca_score"]
+                          + $termly_report_data["christian_religious_studies_examination_score"]
+                          + $termly_report_data["computer_studies_first_ca_score"]
+                          + $termly_report_data["computer_studies_second_ca_score"]
+                          + $termly_report_data["computer_studies_examination_score"]
+                          + $termly_report_data["national_values_first_ca_score"]
+                          + $termly_report_data["national_values_second_ca_score"]
+                          + $termly_report_data["national_values_examination_score"]
+                          + $termly_report_data["basic_science_and_technology_first_ca_score"]
+                          + $termly_report_data["basic_science_and_technology_second_ca_score"]
+                          + $termly_report_data["basic_science_and_technology_examination_score"]
+                          + $termly_report_data["pre_vocational_studies_first_ca_score"]
+                          + $termly_report_data["pre_vocational_studies_second_ca_score"]
+                          + $termly_report_data["pre_vocational_studies_examination_score"]
+                          + $termly_report_data["history_first_ca_score"]
+                          + $termly_report_data["history_second_ca_score"]
+                          + $termly_report_data["history_examination_score"]
+                          + $termly_report_data["business_studies_first_ca_score"]
+                          + $termly_report_data["business_studies_second_ca_score"]
+                          + $termly_report_data["business_studies_examination_score"]
+                          + $termly_report_data["literature_first_ca_score"]
+                          + $termly_report_data["literature_second_ca_score"]
+                          + $termly_report_data["literature_examination_score"];
+                        $average = $overall_score / 10;
                       }
                       ?>
                     </td>
-                    <td style="font-weight: bold; text-align: center;">100</td>
-                    <td style="font-weight: bold; text-align: center;">83.45</td>
-                    <td style="font-weight: bold; text-align: center;">A</td>
-                    <td style="font-weight: bold; text-align: center;" colspan="2">Distinction</td>
+                    <td style="font-weight: bold; text-align: center;"><?php echo $overall_score ?></td>
+                    <td style="font-weight: bold; text-align: center;"><?php echo number_format((float)$average, 2, '.', ''); ?></td>
+                    <td style="font-weight: bold; text-align: center;">
+                      <?php
+
+                      if ($average < 30) {
+                        $overall_grade = "F";
+                        $remark = "Fail";
+                      } else if ($average < 35) {
+                        $overall_grade = "E";
+                        $remark = "Fair";
+                      } else if ($average < 45) {
+                        $overall_grade = "D";
+                        $remark = "Pass";
+                      } else if ($average < 55) {
+                        $overall_grade = "C";
+                        $remark = "Credit";
+                      } else if ($average < 69) {
+                        $overall_grade = "B";
+                        $remark = "Very Good";
+                      } else if ($average < 79) {
+                        $overall_grade = "A";
+                        $remark = "Excellent";
+                      } else if ($average > 80) {
+                        $overall_grade = "A1";
+                        $remark = "Distinction";
+                      }
+                      echo $overall_grade;
+
+                      ?>
+                    </td>
+                    <td style="font-weight: bold; text-align: center;" colspan="2"><?php echo $remark ?></td>
                   </tr>
                 </tfoot>
               </table>
-
-              <!-- <table style="color: #000000;">
-               
-              </table> -->
             </div>
           </div>
         </div>
