@@ -70,6 +70,10 @@ if (isset($_POST['update_termly_report'])) {
     update_termly_report($_POST);
 }
 
-if (isset($_POST['verify_credentials'])) {
-    verify_credentials($_POST);
+if (isset($_POST['update_termly_report'])) {
+    update_termly_report($_POST);
+}
+
+if (isset($_POST['update_student_full_names'])) {
+    update_student_full_names($_POST);
 }

@@ -766,6 +766,51 @@ function update_termly_report($form_data)
     }
 }
 
+function update_student_full_names($form_data)
+{
+    $db_conn = connect_to_database();
+    foreach ($form_data as $key => $value) {
+        if (empty($value)) {
+            $form_data[$key] = 0;
+        }
+    }
+
+    $stmt = $db_conn->prepare("SELECT * FROM `termly_reports` WHERE `termly_report_id` = ?");
+    $stmt->bind_param("s", $form_data['termly_report_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $sql = "UPDATE `termly_reports` SET `termly_report_data` = HEX(JSON_SET(UNHEX(`termly_report_data`), ";
+        $params = array();
+        foreach ($form_data as $key => $value) {
+            $sql .= "'$." . $key . "', ?, ";
+            $params[] = $value;
+        }
+        $sql = rtrim($sql, ", ");
+        $sql .= ")) WHERE `termly_report_id` = ?";
+        $params[] = $form_data['termly_report_id'];
+
+        $stmt = $db_conn->prepare($sql);
+        $stmt->bind_param(str_repeat("s", count($params)), ...$params);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            $_SESSION['feedback'] = "The updates to the student's termly report have been saved successfully.";
+            $_SESSION['type'] = "success";
+            return true;
+        } else {
+            $_SESSION['feedback'] = "Information: The records were already up to date, so no changes were made.";
+            $_SESSION['type'] = "primary";
+            return false;
+        }
+    } else {
+        $_SESSION['feedback'] = "Error: Invalid termly report_id ID!";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+}
+
 function verify_credentials($form_data)
 {
     $db_conn = connect_to_database();
