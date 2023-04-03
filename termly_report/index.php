@@ -120,13 +120,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["literacy_first_ca_score"] + $termly_report_data["literacy_second_ca_score"] + $termly_report_data["literacy_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -148,13 +148,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["numeracy_first_ca_score"] + $termly_report_data["numeracy_second_ca_score"] + $termly_report_data["numeracy_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -176,13 +176,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["hand_writing_first_ca_score"] + $termly_report_data["hand_writing_second_ca_score"] + $termly_report_data["hand_writing_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -204,13 +204,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["rhymes_first_ca_score"] + $termly_report_data["rhymes_second_ca_score"] + $termly_report_data["rhymes_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -232,13 +232,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["coloring_first_ca_score"] + $termly_report_data["coloring_second_ca_score"] + $termly_report_data["coloring_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -260,13 +260,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["practcal_life_first_ca_score"] + $termly_report_data["practcal_life_second_ca_score"] + $termly_report_data["practcal_life_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -288,13 +288,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["social_habits_first_ca_score"] + $termly_report_data["social_habits_second_ca_score"] + $termly_report_data["social_habits_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -319,13 +319,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -347,13 +347,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -375,13 +375,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["practcal_life_first_ca_score"] + $termly_report_data["practcal_life_second_ca_score"] + $termly_report_data["practcal_life_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -403,13 +403,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["nature_studies_first_ca_score"] + $termly_report_data["nature_studies_second_ca_score"] + $termly_report_data["nature_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -431,13 +431,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["christian_religious_studies_first_ca_score"] + $termly_report_data["christian_religious_studies_second_ca_score"] + $termly_report_data["christian_religious_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -459,13 +459,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["health_habits_first_ca_score"] + $termly_report_data["health_habits_second_ca_score"] + $termly_report_data["health_habits_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -487,13 +487,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["social_habits_first_ca_score"] + $termly_report_data["social_habits_second_ca_score"] + $termly_report_data["social_habits_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -515,13 +515,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["hand_writing_first_ca_score"] + $termly_report_data["hand_writing_second_ca_score"] + $termly_report_data["hand_writing_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -543,13 +543,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["rhymes_first_ca_score"] + $termly_report_data["rhymes_second_ca_score"] + $termly_report_data["rhymes_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -571,13 +571,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["coloring_first_ca_score"] + $termly_report_data["coloring_second_ca_score"] + $termly_report_data["coloring_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -602,13 +602,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -630,13 +630,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -658,13 +658,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["civic_education_first_ca_score"] + $termly_report_data["civic_education_second_ca_score"] + $termly_report_data["civic_education_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -686,13 +686,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["literature_first_ca_score"] + $termly_report_data["literature_second_ca_score"] + $termly_report_data["literature_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -714,13 +714,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["christian_religious_studies_first_ca_score"] + $termly_report_data["christian_religious_studies_second_ca_score"] + $termly_report_data["christian_religious_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -742,13 +742,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["computer_studies_first_ca_score"] + $termly_report_data["computer_studies_second_ca_score"] + $termly_report_data["computer_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -770,13 +770,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["hand_writing_first_ca_score"] + $termly_report_data["hand_writing_second_ca_score"] + $termly_report_data["hand_writing_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -798,13 +798,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["physical_health_education_first_ca_score"] + $termly_report_data["physical_health_education_second_ca_score"] + $termly_report_data["physical_health_education_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -826,13 +826,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["basic_technology_first_ca_score"] + $termly_report_data["basic_technology_second_ca_score"] + $termly_report_data["basic_technology_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -854,13 +854,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["basic_science_first_ca_score"] + $termly_report_data["basic_science_second_ca_score"] + $termly_report_data["basic_science_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -882,13 +882,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["social_studies_first_ca_score"] + $termly_report_data["social_studies_second_ca_score"] + $termly_report_data["social_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -910,13 +910,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["home_economics_first_ca_score"] + $termly_report_data["home_economics_second_ca_score"] + $termly_report_data["home_economics_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -938,13 +938,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["creative_arts_first_ca_score"] + $termly_report_data["creative_arts_second_ca_score"] + $termly_report_data["creative_arts_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -966,13 +966,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["agricultural_science_first_ca_score"] + $termly_report_data["agricultural_science_second_ca_score"] + $termly_report_data["agricultural_science_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -997,13 +997,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1025,13 +1025,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1053,13 +1053,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["christian_religious_studies_first_ca_score"] + $termly_report_data["christian_religious_studies_second_ca_score"] + $termly_report_data["christian_religious_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1081,13 +1081,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["creative_arts_first_ca_score"] + $termly_report_data["creative_arts_second_ca_score"] + $termly_report_data["creative_arts_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1109,13 +1109,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["basic_science_and_technology_first_ca_score"] + $termly_report_data["basic_science_and_technology_second_ca_score"] + $termly_report_data["basic_science_and_technology_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1137,13 +1137,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["national_values_first_ca_score"] + $termly_report_data["national_values_second_ca_score"] + $termly_report_data["national_values_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1165,13 +1165,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["pre_vocational_studies_first_ca_score"] + $termly_report_data["pre_vocational_studies_second_ca_score"] + $termly_report_data["pre_vocational_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1193,13 +1193,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["history_first_ca_score"] + $termly_report_data["history_second_ca_score"] + $termly_report_data["history_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1224,13 +1224,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1252,13 +1252,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1280,13 +1280,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["christian_religious_studies_first_ca_score"] + $termly_report_data["christian_religious_studies_second_ca_score"] + $termly_report_data["christian_religious_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1308,13 +1308,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["computer_studies_first_ca_score"] + $termly_report_data["computer_studies_second_ca_score"] + $termly_report_data["computer_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1336,13 +1336,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["national_values_first_ca_score"] + $termly_report_data["national_values_second_ca_score"] + $termly_report_data["national_values_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1364,13 +1364,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["basic_science_and_technology_first_ca_score"] + $termly_report_data["basic_science_and_technology_second_ca_score"] + $termly_report_data["basic_science_and_technology_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1392,13 +1392,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["pre_vocational_studies_first_ca_score"] + $termly_report_data["pre_vocational_studies_second_ca_score"] + $termly_report_data["pre_vocational_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1420,13 +1420,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["history_first_ca_score"] + $termly_report_data["history_second_ca_score"] + $termly_report_data["history_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1448,13 +1448,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["business_studies_first_ca_score"] + $termly_report_data["business_studies_second_ca_score"] + $termly_report_data["business_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
@@ -1476,13 +1476,13 @@ if (isset($_SESSION['termly_report_id'])) {
                         $subject_score = $termly_report_data["literature_first_ca_score"] + $termly_report_data["literature_second_ca_score"] + $termly_report_data["literature_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 35) {
+                        } else if ($subject_score >= 31 && $subject_score <= 39) {
                           $subject_grade = "E";
-                        } else if ($subject_score >= 36 && $subject_score <= 45) {
+                        } else if ($subject_score >= 40 && $subject_score <= 49) {
                           $subject_grade = "D";
-                        } else if ($subject_score >= 46 && $subject_score <= 55) {
+                        } else if ($subject_score >= 50 && $subject_score <= 59) {
                           $subject_grade = "C";
-                        } else if ($subject_score >= 56 && $subject_score <= 69) {
+                        } else if ($subject_score >= 60 && $subject_score <= 69) {
                           $subject_grade = "B";
                         } else if ($subject_score >= 70 && $subject_score <= 80) {
                           $subject_grade = "A";
