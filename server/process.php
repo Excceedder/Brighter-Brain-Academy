@@ -846,6 +846,7 @@ function fetch_termly_report_data($termly_report_id)
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
         $termly_report_data = json_decode(hex2bin($row['termly_report_data']), true);
+
         return $termly_report_data;
     } else {
         echo ("
