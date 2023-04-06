@@ -895,3 +895,43 @@ function register_employee($form_data)
         return false;
     }
 }
+
+function delete_employee_account($form_data)
+{
+    $db_conn = connect_to_database();
+
+    $stmt = $db_conn->prepare("SELECT * FROM `employees_accounts` WHERE `employee_id` = ?");
+    $stmt->bind_param("s", $form_data['employee_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $employee_data = json_decode(hex2bin($row['employee_data']), true);
+
+        if (!unlink($employee_data['profile_photo'])) {
+            $_SESSION['feedback'] = "Error: Unable to delete employee's account.";
+            $_SESSION['type'] = "warning";
+            return false;
+        }
+
+        $stmt = $db_conn->prepare("DELETE FROM `employees_accounts` WHERE `employee_id` = ?");
+        $stmt->bind_param("s", $form_data['employee_id']);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($stmt->affected_rows > 0) {
+            $_SESSION['feedback'] = "Employee's account deleted successfully.";
+            $_SESSION['type'] = "success";
+            return true;
+        } else {
+            $_SESSION['feedback'] = "Error: Unable to delete employee's account.";
+            $_SESSION['type'] = "warning";
+            return false;
+        }
+    } else {
+        $_SESSION['feedback'] = "Error: Invalid employee ID!";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+}

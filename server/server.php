@@ -81,3 +81,7 @@ if (isset($_POST['update_student_full_names'])) {
 if (isset($_POST['register_employee'])) {
     register_employee($_POST);
 }
+
+if (isset($_POST['delete_employee_account'])) {
+    delete_employee_account($_POST);
+}
