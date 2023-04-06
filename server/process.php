@@ -857,3 +857,41 @@ function fetch_termly_report_data($termly_report_id)
         return false;
     }
 }
+
+function register_employee($form_data)
+{
+    $db_conn = connect_to_database();
+    $employee_id = bin2hex(random_bytes(32));
+
+    if ($_FILES["profile_photo"]["size"] > 10000000) {
+        $_SESSION['feedback'] = "Error: File is too large. Maximum file size is 10mb.";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+
+    $form_data["profile_photo"] = '../server/data_entries/employees/' . bin2hex(random_bytes(32)) . '.' . pathinfo($_FILES["profile_photo"]["name"], PATHINFO_EXTENSION);
+    $form_data["registration_date"] = date('M jS Y');
+    $form_data["employment_status"] = "Active";
+
+    if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $form_data["profile_photo"])) {
+        $_SESSION['feedback'] = "Error: Unable to upload image.";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+
+    $employee_data = bin2hex(json_encode($form_data));
+
+    $stmt = $db_conn->prepare("INSERT INTO `employees_accounts`(`employee_id`, `employee_data`) VALUES (?, ?)");
+    $stmt->bind_param("ss", $employee_id, $employee_data);
+    $stmt->execute();
+
+    if ($stmt->affected_rows > 0) {
+        $_SESSION['feedback'] = "Registration completed successfully!  ";
+        $_SESSION['type'] = "success";
+        return true;
+    } else {
+        $_SESSION['feedback'] = "Error: Registration process could not be completed.";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+}

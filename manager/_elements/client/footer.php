@@ -236,31 +236,109 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5 text-success" id="staticBackdropLabel">New Employee</h1>
+                <h1 class="modal-title fs-5 text-dark" id="staticBackdropLabel">Employee Registration</h1>
                 <button type="button" class="border-0" style="border-radius: 5px; padding: 4px 4px 0; background-color: #FF0000;" data-bs-dismiss="modal" aria-label="Close"><i class='bx bx-x bx-tada text-light' style="font-size: 24px;"></i></button>
             </div>
-            <div class="modal-body">
-                <form action="" method="post">
+            <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-4 mb-1">
-                            <label for="term_tag" class="form-label">Term Tag</label>
-                            <input type="text" id="term_tag" placeholder="e.g. 2023/24" class="form-control">
+                        <div class="mb-1">
+                            <h5 style="text-decoration: underline;">Candidate's Credentials:</h5>
                         </div>
-                        <div class="col-md-4 mb-1">
-                            <label for="term_start_date" class="form-label">Start Date</label>
-                            <input type="date" id="term_start_date" class="form-control">
+                        <div class="col-md-4 mb-3">
+                            <label for="profile_photo" class="form-label">Profile Photo</label>
+                            <input type="file" id="profile_photo" name="profile_photo" required accept="image/jpeg,image/jpg,image/png" class="form-control">
                         </div>
-                        <div class="col-md-4 mb-1">
-                            <label for="term_stop_date" class="form-label">Stop Date</label>
-                            <input type="date" id="term_stop_date" class="form-control">
+                        <div class="col-md-4 mb-3">
+                            <label for="full_names" class="form-label">Full Names</label>
+                            <input type="text" id="full_names" name="full_names" required placeholder="Input value..." class="form-control">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="phone_number" class="form-label">Phone Number</label>
+                            <input type="text" id="phone_number" name="phone_number" required placeholder="Input value..." class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="email_address" class="form-label">Email Address</label>
+                            <input type="text" id="email_address" name="email_address" placeholder="Input value..." class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="date_of_birth" class="form-label">Date of Birth</label>
+                            <input type="date" id="date_of_birth" required name="date_of_birth" class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select class="form-control" name="gender" required id="gender">
+                                <option value="" disabled selected>-- Select --</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="previous_workplace" class="form-label">Previous workplace</label>
+                            <textarea id="previous_workplace" name="previous_workplace" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="residential_address" class="form-label">Residential Address</label>
+                            <textarea id="residential_address" name="residential_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                        </div>
+                        <div class="mb-1">
+                            <h5 style="text-decoration: underline;">Next of Kin's Credentials:</h5>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="next_of_kin_full_names" class="form-label">Full Names</label>
+                            <input type="text" id="next_of_kin_full_names" name="next_of_kin_full_names" placeholder="Input value..." class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="next_of_kin_phone_number" class="form-label">Phone Number</label>
+                            <input type="text" id="next_of_kin_phone_number" name="next_of_kin_phone_number" placeholder="Input value..." class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="next_of_kin_residential_address" class="form-label">Residential Address</label>
+                            <textarea id="next_of_kin_residential_address" name="next_of_kin_residential_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="kinship" class="form-label">Kinship</label>
+                            <input type="text" id="kinship" name="kinship" placeholder="Input value..." class="form-control">
+                        </div>
+                        <div class="mb-1">
+                            <h5 style="text-decoration: underline;">Guarantor's Credentials:</h5>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="guarantor_full_names" class="form-label">Full Names</label>
+                            <input type="text" id="guarantor_full_names" name="guarantor_full_names" placeholder="Input value..." class="form-control">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="guarantor_phone_number" class="form-label">Phone Number</label>
+                            <input type="text" id="guarantor_phone_number" name="guarantor_phone_number" placeholder="Input value..." class="form-control">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="guarantor_occupation" class="form-label">Ocupation</label>
+                            <input type="text" id="guarantor_occupation" name="guarantor_occupation" placeholder="Input value..." class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="guarantor_residential_address" class="form-label">Residential Address</label>
+                            <textarea id="guarantor_residential_address" name="guarantor_residential_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="guarantor_office_address" class="form-label">Office Address</label>
+                            <textarea id="guarantor_office_address" name="guarantor_office_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="employment_status" class="form-label">Employment Status</label>
+                            <input type="text" id="employment_status" name="employment_status" placeholder="Input value..." class="form-control">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="length_of_acquaintance" class="form-label">Length of acquaintance?</label>
+                            <input type="text" id="length_of_acquaintance" name="length_of_acquaintance" placeholder="Input value..." class="form-control">
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer d-flex">
-                <button type="button" class="me-auto btn btn-secondary float-start"><i class='bx bx-reset'></i> Cancel</button>
-                <button type="button" class="btn btn-success"><i class='bx bx-save'></i> Save Changes</button>
-            </div>
+                </div>
+                <div class="modal-footer d-flex">
+                    <input type="hidden" name="query_category" value="<?php echo htmlspecialchars(hex2bin($_GET['query_category'])); ?>">
+                    <button type="reset" class="me-auto btn btn-secondary float-start"><i class='bx bx-reset'></i> Cancel</button>
+                    <button type="submit" class="btn btn-success" name="register_employee"><i class='bx bx-save'></i> Save Changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

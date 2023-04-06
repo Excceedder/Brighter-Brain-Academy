@@ -77,3 +77,7 @@ if (isset($_POST['verify_credentials'])) {
 if (isset($_POST['update_student_full_names'])) {
     update_student_full_names($_POST);
 }
+
+if (isset($_POST['register_employee'])) {
+    register_employee($_POST);
+}

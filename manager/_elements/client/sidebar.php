@@ -66,13 +66,13 @@
                 <li class="menu-title">Employee Management</li>
 
                 <li>
-                    <a href="./employee_management?query_category=Employee" class="waves-effect">
+                    <a href="./employee_management?query_category=<?php echo bin2hex(urlencode('Employee')); ?>" class="waves-effect">
                         <i class='bx bx-briefcase-alt-2'></i> <span>Employee</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="./employee_management?query_category=Payroll" class="waves-effect">
+                    <a href="./employee_management?query_category=<?php echo bin2hex(urlencode('Payroll')); ?>" class="waves-effect">
                         <i class='bx bx-wallet'></i> <span>Payroll Log</span>
                     </a>
                 </li>
