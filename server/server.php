@@ -85,3 +85,11 @@ if (isset($_POST['register_employee'])) {
 if (isset($_POST['delete_employee_account'])) {
     delete_employee_account($_POST);
 }
+
+if (isset($_POST['update_employee_credentials'])) {
+    update_employee_credentials($_POST);
+}
+
+if (isset($_POST['update_employee_profile_photo'])) {
+    update_employee_profile_photo($_POST);
+}

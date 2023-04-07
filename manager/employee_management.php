@@ -120,90 +120,98 @@
                                                         <h5 style="text-decoration: underline;">Candidate's Credentials:</h5>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <label for="profile_photo" class="form-label">Profile Photo</label>
-                                                        <input type="file" id="profile_photo" name="profile_photo" required accept="image/jpeg,image/jpg,image/png" class="form-control">
-                                                    </div>
-                                                    <div class="col-md-4 mb-3">
                                                         <label for="full_names" class="form-label">Full Names</label>
-                                                        <input type="text" id="full_names" name="full_names" required placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="full_names" value="<?php echo $employee_data["full_names"] ?>" name="full_names" required placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <label for="phone_number" class="form-label">Phone Number</label>
-                                                        <input type="text" id="phone_number" name="phone_number" required placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="phone_number" value="<?php echo $employee_data["phone_number"] ?>" name="phone_number" required placeholder="Input value..." class="form-control">
                                                     </div>
-                                                    <div class="col-md-3 mb-3">
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="gender" class="form-label">Qualification: <span class="fw-bold" style="border-bottom: 1px dashed #343a40;"><?php echo strtoupper($employee_data["gender"]) ?></span></label>
+                                                        <select class="form-control" name="gender" id="gender">
+                                                            <option value="" disabled selected>-- Select --</option>
+                                                            <option value="Male">SSCE</option>
+                                                            <option value="Male">NCE</option>
+                                                            <option value="Male">ND</option>
+                                                            <option value="Male">HND</option>
+                                                            <option value="Male">B.Sc</option>
+                                                            <option value="Male">M.Sc</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3">
                                                         <label for="email_address" class="form-label">Email Address</label>
-                                                        <input type="text" id="email_address" name="email_address" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="email_address" value="<?php echo $employee_data["email_address"] ?>" name="email_address" placeholder="Input value..." class="form-control">
                                                     </div>
-                                                    <div class="col-md-3 mb-3">
+                                                    <div class="col-md-4 mb-3">
                                                         <label for="date_of_birth" class="form-label">Date of Birth</label>
-                                                        <input type="date" id="date_of_birth" required name="date_of_birth" class="form-control">
+                                                        <input type="date" id="date_of_birth" required value="<?php echo $employee_data["date_of_birth"] ?>" name="date_of_birth" class="form-control">
                                                     </div>
-                                                    <div class="col-md-3 mb-3">
-                                                        <label for="gender" class="form-label">Gender</label>
-                                                        <select class="form-control" name="gender" required id="gender">
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="gender" class="form-label">Gender: <span class="fw-bold" style="border-bottom: 1px dashed #343a40;"><?php echo strtoupper($employee_data["gender"]) ?></span></label>
+                                                        <select class="form-control" name="gender" id="gender">
                                                             <option value="" disabled selected>-- Select --</option>
                                                             <option value="Male">Male</option>
                                                             <option value="Female">Female</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-md-3 mb-3">
+                                                    <div class="col-md-6 mb-3">
                                                         <label for="previous_workplace" class="form-label">Previous workplace</label>
-                                                        <textarea id="previous_workplace" name="previous_workplace" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                                                        <textarea id="previous_workplace" name="previous_workplace" class="form-control" rows="1" placeholder="Input value..."><?php echo $employee_data["previous_workplace"] ?></textarea>
                                                     </div>
-                                                    <div class="col-md-12 mb-3">
+                                                    <div class="col-md-6 mb-3">
                                                         <label for="residential_address" class="form-label">Residential Address</label>
-                                                        <textarea id="residential_address" name="residential_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                                                        <textarea id="residential_address" name="residential_address" class="form-control" rows="1" placeholder="Input value..."><?php echo $employee_data["residential_address"] ?></textarea>
                                                     </div>
                                                     <div class="mb-1">
                                                         <h5 style="text-decoration: underline;">Next of Kin's Credentials:</h5>
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="next_of_kin_full_names" class="form-label">Full Names</label>
-                                                        <input type="text" id="next_of_kin_full_names" name="next_of_kin_full_names" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="next_of_kin_full_names" value="<?php echo $employee_data["next_of_kin_full_names"] ?>" name="next_of_kin_full_names" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="next_of_kin_phone_number" class="form-label">Phone Number</label>
-                                                        <input type="text" id="next_of_kin_phone_number" name="next_of_kin_phone_number" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="next_of_kin_phone_number" value="<?php echo $employee_data["next_of_kin_phone_number"] ?>" name="next_of_kin_phone_number" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="next_of_kin_residential_address" class="form-label">Residential Address</label>
-                                                        <textarea id="next_of_kin_residential_address" name="next_of_kin_residential_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                                                        <textarea id="next_of_kin_residential_address" name="next_of_kin_residential_address" class="form-control" rows="1" placeholder="Input value..."><?php echo $employee_data["next_of_kin_residential_address"] ?></textarea>
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="kinship" class="form-label">Kinship</label>
-                                                        <input type="text" id="kinship" name="kinship" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="kinship" value="<?php echo $employee_data["kinship"] ?>" name="kinship" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="mb-1">
                                                         <h5 style="text-decoration: underline;">Guarantor's Credentials:</h5>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <label for="guarantor_full_names" class="form-label">Full Names</label>
-                                                        <input type="text" id="guarantor_full_names" name="guarantor_full_names" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="guarantor_full_names" value="<?php echo $employee_data["guarantor_full_names"] ?>" name="guarantor_full_names" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <label for="guarantor_phone_number" class="form-label">Phone Number</label>
-                                                        <input type="text" id="guarantor_phone_number" name="guarantor_phone_number" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="guarantor_phone_number" value="<?php echo $employee_data["guarantor_phone_number"] ?>" name="guarantor_phone_number" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-4 mb-3">
                                                         <label for="guarantor_occupation" class="form-label">Ocupation</label>
-                                                        <input type="text" id="guarantor_occupation" name="guarantor_occupation" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="guarantor_occupation" value="<?php echo $employee_data["guarantor_occupation"] ?>" name="guarantor_occupation" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="guarantor_residential_address" class="form-label">Residential Address</label>
-                                                        <textarea id="guarantor_residential_address" name="guarantor_residential_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                                                        <textarea id="guarantor_residential_address" name="guarantor_residential_address" class="form-control" rows="1" placeholder="Input value..."><?php echo $employee_data["guarantor_residential_address"] ?></textarea>
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="guarantor_office_address" class="form-label">Office Address</label>
-                                                        <textarea id="guarantor_office_address" name="guarantor_office_address" class="form-control" rows="1" placeholder="Input value..."></textarea>
+                                                        <textarea id="guarantor_office_address" name="guarantor_office_address" class="form-control" rows="1" placeholder="Input value..."><?php echo $employee_data["guarantor_office_address"] ?></textarea>
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="employment_status" class="form-label">Employment Status</label>
-                                                        <input type="text" id="employment_status" name="employment_status" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="employment_status" value="<?php echo $employee_data["employment_status"] ?>" name="employment_status" placeholder="Input value..." class="form-control">
                                                     </div>
                                                     <div class="col-md-3 mb-3">
                                                         <label for="length_of_acquaintance" class="form-label">Length of acquaintance?</label>
-                                                        <input type="text" id="length_of_acquaintance" name="length_of_acquaintance" placeholder="Input value..." class="form-control">
+                                                        <input type="text" id="length_of_acquaintance" value="<?php echo $employee_data["length_of_acquaintance"] ?>" name="length_of_acquaintance" placeholder="Input value..." class="form-control">
                                                     </div>
                                                 </div>
                                             </div>

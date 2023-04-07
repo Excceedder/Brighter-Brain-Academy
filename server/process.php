@@ -935,3 +935,100 @@ function delete_employee_account($form_data)
         return false;
     }
 }
+
+function update_employee_credentials($form_data)
+{
+    $db_conn = connect_to_database();
+    foreach ($form_data as $key => $value) {
+        if (empty($value)) {
+            unset($form_data[$key]);
+        }
+    }
+
+    $stmt = $db_conn->prepare("SELECT * FROM `employees_accounts` WHERE `employee_id` = ?");
+    $stmt->bind_param("s", $form_data['employee_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $sql = "UPDATE `employees_accounts` SET `employee_data` = HEX(JSON_SET(UNHEX(`employee_data`), ";
+        $params = array();
+        foreach ($form_data as $key => $value) {
+            $sql .= "'$." . $key . "', ?, ";
+            $params[] = $value;
+        }
+        $sql = rtrim($sql, ", ");
+        $sql .= ")) WHERE `employee_id` = ?";
+        $params[] = $form_data['employee_id'];
+
+        $stmt = $db_conn->prepare($sql);
+        $stmt->bind_param(str_repeat("s", count($params)), ...$params);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            $_SESSION['feedback'] = "The updates to the employee's credentials have been saved successfully.";
+            $_SESSION['type'] = "success";
+            return true;
+        } else {
+            $_SESSION['feedback'] = "Information: The records were already up to date, so no changes were made.";
+            $_SESSION['type'] = "primary";
+            return false;
+        }
+    } else {
+        $_SESSION['feedback'] = "Error: Invalid employee ID!";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+}
+
+function update_employee_profile_photo($form_data)
+{
+    $db_conn = connect_to_database();
+    if ($_FILES["profile_photo"]["size"] > 1000000) {
+        $_SESSION['feedback'] = "Error: File is too large. Maximum file size is 1mb.";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+
+    $stmt = $db_conn->prepare("SELECT * FROM `employees_accounts` WHERE `employee_id` = ?");
+    $stmt->bind_param("s", $form_data['employee_id']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $employee_data = json_decode(hex2bin($row['employee_data']), true);
+
+        if (!unlink($employee_data['profile_photo'])) {
+            $_SESSION['feedback'] = "Error: Unable to update phofile photo.";
+            $_SESSION['type'] = "warning";
+            return false;
+        }
+
+        $new_profile_photo = '../server/data_entries/employees/' . bin2hex(random_bytes(32)) . '.' . pathinfo($_FILES["profile_photo"]["name"], PATHINFO_EXTENSION);
+
+        if (!move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $new_profile_photo)) {
+            $_SESSION['feedback'] = "Error: Unable to upload image.";
+            $_SESSION['type'] = "warning";
+            return false;
+        }
+
+        $stmt = $db_conn->prepare("UPDATE `employees_accounts` SET `employee_data` = HEX(JSON_SET(UNHEX(`employee_data`), '$.profile_photo', ?)) WHERE `employee_id` = ?");
+        $stmt->bind_param("ss", $new_profile_photo, $form_data['employee_id']);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            $_SESSION['feedback'] = "The updates to the employee's profile photo have been saved successfully.";
+            $_SESSION['type'] = "success";
+            return true;
+        } else {
+            $_SESSION['feedback'] = "Information: The records were already up to date, so no changes were made.";
+            $_SESSION['type'] = "primary";
+            return false;
+        }
+    } else {
+        $_SESSION['feedback'] = "Error: Invalid employee ID!";
+        $_SESSION['type'] = "warning";
+        return false;
+    }
+}
