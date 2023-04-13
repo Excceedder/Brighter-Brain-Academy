@@ -108,6 +108,17 @@
                                                 while ($row = $result->fetch_assoc()) {
                                                     $termly_report_id = $row['termly_report_id'];
                                                     $termly_report_data = json_decode(hex2bin($row['termly_report_data']), true);
+
+                                                    $stmt = $db_conn->prepare("SELECT * FROM `students_accounts` WHERE `student_id` = ?");
+                                                    $stmt->bind_param("s", $termly_report_data["student_id"]);
+                                                    $stmt->execute();
+                                                    $result = $stmt->get_result();
+
+                                                    $row = mysqli_fetch_assoc($result);
+                                                    $student_data = json_decode(hex2bin($row['student_data']), true);
+
+                                                    $termly_report_data["full_names"] = $student_data["surname"] . " " . $student_data["first_name"] . " " . $student_data["other_names"];
+
                                             ?>
                                                     <tr>
                                                         <td><?php echo $termly_report_data["full_names"] ?></td>
