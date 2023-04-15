@@ -117,11 +117,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["literacy_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["literacy_first_ca_score"] + $termly_report_data["literacy_second_ca_score"] + $termly_report_data["literacy_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -150,11 +146,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["numeracy_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["numeracy_first_ca_score"] + $termly_report_data["numeracy_second_ca_score"] + $termly_report_data["numeracy_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -183,11 +175,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["hand_writing_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["hand_writing_first_ca_score"] + $termly_report_data["hand_writing_second_ca_score"] + $termly_report_data["hand_writing_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -216,11 +204,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["rhymes_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["rhymes_first_ca_score"] + $termly_report_data["rhymes_second_ca_score"] + $termly_report_data["rhymes_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -249,11 +233,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["coloring_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["coloring_first_ca_score"] + $termly_report_data["coloring_second_ca_score"] + $termly_report_data["coloring_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -282,11 +262,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["practcal_life_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["practcal_life_first_ca_score"] + $termly_report_data["practcal_life_second_ca_score"] + $termly_report_data["practcal_life_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -315,11 +291,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["social_habits_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["social_habits_first_ca_score"] + $termly_report_data["social_habits_second_ca_score"] + $termly_report_data["social_habits_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -351,11 +323,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["english_language_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -384,11 +352,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["mathematics_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -417,11 +381,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["practcal_life_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["practcal_life_first_ca_score"] + $termly_report_data["practcal_life_second_ca_score"] + $termly_report_data["practcal_life_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -450,11 +410,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["nature_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["nature_studies_first_ca_score"] + $termly_report_data["nature_studies_second_ca_score"] + $termly_report_data["nature_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -483,11 +439,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["christian_religious_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["christian_religious_studies_first_ca_score"] + $termly_report_data["christian_religious_studies_second_ca_score"] + $termly_report_data["christian_religious_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -516,11 +468,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["health_habits_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["health_habits_first_ca_score"] + $termly_report_data["health_habits_second_ca_score"] + $termly_report_data["health_habits_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -549,11 +497,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["social_habits_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["social_habits_first_ca_score"] + $termly_report_data["social_habits_second_ca_score"] + $termly_report_data["social_habits_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -582,11 +526,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["hand_writing_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["hand_writing_first_ca_score"] + $termly_report_data["hand_writing_second_ca_score"] + $termly_report_data["hand_writing_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -615,11 +555,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["rhymes_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["rhymes_first_ca_score"] + $termly_report_data["rhymes_second_ca_score"] + $termly_report_data["rhymes_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -648,11 +584,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["coloring_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["coloring_first_ca_score"] + $termly_report_data["coloring_second_ca_score"] + $termly_report_data["coloring_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -684,11 +616,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["english_language_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -717,11 +645,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["mathematics_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -750,11 +674,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["civic_education_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["civic_education_first_ca_score"] + $termly_report_data["civic_education_second_ca_score"] + $termly_report_data["civic_education_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -783,11 +703,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["literature_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["literature_first_ca_score"] + $termly_report_data["literature_second_ca_score"] + $termly_report_data["literature_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -816,11 +732,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["christian_religious_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["christian_religious_studies_first_ca_score"] + $termly_report_data["christian_religious_studies_second_ca_score"] + $termly_report_data["christian_religious_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -849,11 +761,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["computer_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["computer_studies_first_ca_score"] + $termly_report_data["computer_studies_second_ca_score"] + $termly_report_data["computer_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -882,11 +790,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["hand_writing_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["hand_writing_first_ca_score"] + $termly_report_data["hand_writing_second_ca_score"] + $termly_report_data["hand_writing_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -915,11 +819,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["physical_health_education_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["physical_health_education_first_ca_score"] + $termly_report_data["physical_health_education_second_ca_score"] + $termly_report_data["physical_health_education_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -948,11 +848,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["basic_technology_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["basic_technology_first_ca_score"] + $termly_report_data["basic_technology_second_ca_score"] + $termly_report_data["basic_technology_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -981,11 +877,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["basic_science_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["basic_science_first_ca_score"] + $termly_report_data["basic_science_second_ca_score"] + $termly_report_data["basic_science_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1014,11 +906,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["social_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["social_studies_first_ca_score"] + $termly_report_data["social_studies_second_ca_score"] + $termly_report_data["social_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1047,11 +935,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["home_economics_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["home_economics_first_ca_score"] + $termly_report_data["home_economics_second_ca_score"] + $termly_report_data["home_economics_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1080,11 +964,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["creative_arts_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["creative_arts_first_ca_score"] + $termly_report_data["creative_arts_second_ca_score"] + $termly_report_data["creative_arts_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1113,11 +993,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["agricultural_science_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["agricultural_science_first_ca_score"] + $termly_report_data["agricultural_science_second_ca_score"] + $termly_report_data["agricultural_science_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1149,11 +1025,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["english_language_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1182,11 +1054,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["mathematics_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "mathematics") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1215,11 +1083,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["christian_religious_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "christian_religious_studies") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["christian_religious_studies_first_ca_score"] + $termly_report_data["christian_religious_studies_second_ca_score"] + $termly_report_data["christian_religious_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1241,39 +1105,42 @@ if (isset($_SESSION['termly_report_id'])) {
                       </td>
                       <td class="cs-text_center"><?php echo $subject_grade ?></td>
                     </tr>
-                    <tr>
-                      <td>Creative Arts</td>
-                      <td><?php echo $termly_report_data["creative_arts_first_ca_score"] ?></td>
-                      <td><?php echo $termly_report_data["creative_arts_second_ca_score"] ?></td>
-                      <td><?php echo $termly_report_data["creative_arts_examination_score"] ?></td>
-                      <td>
-                        <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "creative_arts") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
-                        $subject_score = $termly_report_data["creative_arts_first_ca_score"] + $termly_report_data["creative_arts_second_ca_score"] + $termly_report_data["creative_arts_examination_score"];
-                        if ($subject_score <= 30) {
-                          $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 39) {
-                          $subject_grade = "E";
-                        } else if ($subject_score >= 40 && $subject_score <= 49) {
-                          $subject_grade = "D";
-                        } else if ($subject_score >= 50 && $subject_score <= 59) {
-                          $subject_grade = "C";
-                        } else if ($subject_score >= 60 && $subject_score <= 69) {
-                          $subject_grade = "B";
-                        } else if ($subject_score >= 70 && $subject_score <= 80) {
-                          $subject_grade = "A";
-                        } else if ($subject_score >= 81) {
-                          $subject_grade = "A1";
-                        }
-                        echo $subject_score;
-                        ?>
-                      </td>
-                      <td class="cs-text_center"><?php echo $subject_grade ?></td>
-                    </tr>
+                    <?php
+
+                    if ($termly_report_data["class_placement"] == "Primary 4" || $termly_report_data["class_placement"] == "Primary 5") {
+                    ?>
+                      <tr>
+                        <td>Creative Arts</td>
+                        <td><?php echo $termly_report_data["creative_arts_first_ca_score"] ?></td>
+                        <td><?php echo $termly_report_data["creative_arts_second_ca_score"] ?></td>
+                        <td><?php echo $termly_report_data["creative_arts_examination_score"] ?></td>
+                        <td>
+                          <?php
+
+                          $subject_score = $termly_report_data["creative_arts_first_ca_score"] + $termly_report_data["creative_arts_second_ca_score"] + $termly_report_data["creative_arts_examination_score"];
+                          if ($subject_score <= 30) {
+                            $subject_grade = "F";
+                          } else if ($subject_score >= 31 && $subject_score <= 39) {
+                            $subject_grade = "E";
+                          } else if ($subject_score >= 40 && $subject_score <= 49) {
+                            $subject_grade = "D";
+                          } else if ($subject_score >= 50 && $subject_score <= 59) {
+                            $subject_grade = "C";
+                          } else if ($subject_score >= 60 && $subject_score <= 69) {
+                            $subject_grade = "B";
+                          } else if ($subject_score >= 70 && $subject_score <= 80) {
+                            $subject_grade = "A";
+                          } else if ($subject_score >= 81) {
+                            $subject_grade = "A1";
+                          }
+                          echo $subject_score;
+                          ?>
+                        </td>
+                        <td class="cs-text_center"><?php echo $subject_grade ?></td>
+                      </tr>
+                    <?php
+                    }
+                    ?>
                     <tr>
                       <td>Basic Science & Technology</td>
                       <td><?php echo $termly_report_data["basic_science_and_technology_first_ca_score"] ?></td>
@@ -1281,11 +1148,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["basic_science_and_technology_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "basic_science_and_technology") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["basic_science_and_technology_first_ca_score"] + $termly_report_data["basic_science_and_technology_second_ca_score"] + $termly_report_data["basic_science_and_technology_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1314,11 +1177,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["national_values_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "national_values") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["national_values_first_ca_score"] + $termly_report_data["national_values_second_ca_score"] + $termly_report_data["national_values_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1347,11 +1206,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["pre_vocational_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "pre_vocational_studies") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["pre_vocational_studies_first_ca_score"] + $termly_report_data["pre_vocational_studies_second_ca_score"] + $termly_report_data["pre_vocational_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1373,39 +1228,43 @@ if (isset($_SESSION['termly_report_id'])) {
                       </td>
                       <td class="cs-text_center"><?php echo $subject_grade ?></td>
                     </tr>
-                    <tr>
-                      <td>History</td>
-                      <td><?php echo $termly_report_data["history_first_ca_score"] ?></td>
-                      <td><?php echo $termly_report_data["history_second_ca_score"] ?></td>
-                      <td><?php echo $termly_report_data["history_examination_score"] ?></td>
-                      <td>
-                        <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "history") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
-                        $subject_score = $termly_report_data["history_first_ca_score"] + $termly_report_data["history_second_ca_score"] + $termly_report_data["history_examination_score"];
-                        if ($subject_score <= 30) {
-                          $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 39) {
-                          $subject_grade = "E";
-                        } else if ($subject_score >= 40 && $subject_score <= 49) {
-                          $subject_grade = "D";
-                        } else if ($subject_score >= 50 && $subject_score <= 59) {
-                          $subject_grade = "C";
-                        } else if ($subject_score >= 60 && $subject_score <= 69) {
-                          $subject_grade = "B";
-                        } else if ($subject_score >= 70 && $subject_score <= 80) {
-                          $subject_grade = "A";
-                        } else if ($subject_score >= 81) {
-                          $subject_grade = "A1";
-                        }
-                        echo $subject_score;
-                        ?>
-                      </td>
-                      <td class="cs-text_center"><?php echo $subject_grade ?></td>
-                    </tr>
+
+                    <?php
+                    if ($termly_report_data["class_placement"] == "Primary 4" || $termly_report_data["class_placement"] == "Primary 5") {
+                    ?>
+
+                      <tr>
+                        <td>History</td>
+                        <td><?php echo $termly_report_data["history_first_ca_score"] ?></td>
+                        <td><?php echo $termly_report_data["history_second_ca_score"] ?></td>
+                        <td><?php echo $termly_report_data["history_examination_score"] ?></td>
+                        <td>
+                          <?php
+
+                          $subject_score = $termly_report_data["history_first_ca_score"] + $termly_report_data["history_second_ca_score"] + $termly_report_data["history_examination_score"];
+                          if ($subject_score <= 30) {
+                            $subject_grade = "F";
+                          } else if ($subject_score >= 31 && $subject_score <= 39) {
+                            $subject_grade = "E";
+                          } else if ($subject_score >= 40 && $subject_score <= 49) {
+                            $subject_grade = "D";
+                          } else if ($subject_score >= 50 && $subject_score <= 59) {
+                            $subject_grade = "C";
+                          } else if ($subject_score >= 60 && $subject_score <= 69) {
+                            $subject_grade = "B";
+                          } else if ($subject_score >= 70 && $subject_score <= 80) {
+                            $subject_grade = "A";
+                          } else if ($subject_score >= 81) {
+                            $subject_grade = "A1";
+                          }
+                          echo $subject_score;
+                          ?>
+                        </td>
+                        <td class="cs-text_center"><?php echo $subject_grade ?></td>
+                      </tr>
+                    <?php
+                    }
+                    ?>
                   <?php
                   } else if ($termly_report_data["class_placement"] == "JSS. 1" || $termly_report_data["class_placement"] == "JSS. 2" || $termly_report_data["class_placement"] == "JSS. 3") {
                   ?>
@@ -1416,11 +1275,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["english_language_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1449,11 +1304,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["mathematics_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1482,11 +1333,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["christian_religious_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["christian_religious_studies_first_ca_score"] + $termly_report_data["christian_religious_studies_second_ca_score"] + $termly_report_data["christian_religious_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1515,11 +1362,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["computer_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["computer_studies_first_ca_score"] + $termly_report_data["computer_studies_second_ca_score"] + $termly_report_data["computer_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1548,11 +1391,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["national_values_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["national_values_first_ca_score"] + $termly_report_data["national_values_second_ca_score"] + $termly_report_data["national_values_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1581,11 +1420,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["basic_science_and_technology_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["basic_science_and_technology_first_ca_score"] + $termly_report_data["basic_science_and_technology_second_ca_score"] + $termly_report_data["basic_science_and_technology_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1614,11 +1449,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["pre_vocational_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["pre_vocational_studies_first_ca_score"] + $termly_report_data["pre_vocational_studies_second_ca_score"] + $termly_report_data["pre_vocational_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1647,11 +1478,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["history_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["history_first_ca_score"] + $termly_report_data["history_second_ca_score"] + $termly_report_data["history_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1680,11 +1507,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["business_studies_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["business_studies_first_ca_score"] + $termly_report_data["business_studies_second_ca_score"] + $termly_report_data["business_studies_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
@@ -1713,11 +1536,7 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["literature_examination_score"] ?></td>
                       <td>
                         <?php
-                        // foreach ($termly_report_data as $key => $value) {
-                        //   if ($value == "-" || $value == "Absent" && strpos($key, "english_language") === 0) {
-                        //     $termly_report_data[$key] = 0;
-                        //   }
-                        // }
+
                         $subject_score = $termly_report_data["literature_first_ca_score"] + $termly_report_data["literature_second_ca_score"] + $termly_report_data["literature_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
