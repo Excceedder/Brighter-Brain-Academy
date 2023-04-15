@@ -1248,11 +1248,11 @@ if (isset($_SESSION['termly_report_id'])) {
                       <td><?php echo $termly_report_data["creative_arts_examination_score"] ?></td>
                       <td>
                         <?php
-                        foreach ($termly_report_data as $key => $value) {
-                          if ($value == "-" || $value == "Absent" && strpos($key, "creative_arts") === 0) {
-                            $termly_report_data[$key] = 0;
-                          }
-                        }
+                        // foreach ($termly_report_data as $key => $value) {
+                        //   if ($value == "-" || $value == "Absent" && strpos($key, "creative_arts") === 0) {
+                        //     $termly_report_data[$key] = 0;
+                        //   }
+                        // }
                         $subject_score = $termly_report_data["creative_arts_first_ca_score"] + $termly_report_data["creative_arts_second_ca_score"] + $termly_report_data["creative_arts_examination_score"];
                         if ($subject_score <= 30) {
                           $subject_grade = "F";
