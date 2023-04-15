@@ -85,22 +85,7 @@
                             return false;
                         }
                     ?>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card" style="border: 1px dashed #343a40;">
-                                    <div class="card-body">
-                                        <form action="<?php echo htmlspecialchars(pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . '?' . $_SERVER['QUERY_STRING']) ?>" method="post">
-                                            <label for="full_names" class="form-label">Update Full Names</label>
-                                            <div class="input-group">
-                                                <input type="text" name="full_names" value="<?php echo $termly_report_data['full_names'] ?>" id="full_names" required class="form-control">
-                                                <input type="hidden" name="termly_report_id" value="<?php echo $termly_report_id ?>">
-                                                <button class="btn btn-outline-secondary" name="update_student_full_names" type="submit"><i class='bx bx-check-double fw-bold'></i></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card" style="border: 1px dashed #343a40;">
