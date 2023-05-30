@@ -63,8 +63,8 @@
                             <nav class="mainmenu-nav">
                                 <ul class="mainmenu">
                                     <li class="nav-item"><a href="#">Home</a></li>
+                                    <li class="nav-item"><a href="#">About Us</a></li>
                                     <li class="nav-item"><a href="#">Academics</a></li>
-
                                     <li class="has-droupdown"><a href="#">Tutorials</a>
                                         <ul class="submenu">
                                             <li><a href="#">JAMB</a></li>
@@ -73,6 +73,7 @@
                                             <li><a href="#">POST UTME</a></li>
                                         </ul>
                                     </li>
+                                    <li class="nav-item"><a href="#">Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>
