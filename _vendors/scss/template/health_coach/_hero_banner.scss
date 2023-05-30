@@ -40,10 +40,6 @@
                             left: -257px;
                             top: 70px;
                         }
-                        &.shape-4 {
-                            bottom: 25%;
-                            left: -330px;
-                        }
                     }
                 }
             }
@@ -166,6 +162,16 @@
                     top: 35px;
                     left: 39%;
                 }
+                &.shape-4 {
+                    bottom: 25%;
+                    left: 100px;
+                    @media #{$custom-lg-device-six} {
+                        left: 2px;
+                    }
+                    @media (max-width:1400px) {
+                        display: none;
+                    }
+                }
                 &.shape-5 {
                     right: 38.5%;
                     bottom: 12.6%;
@@ -179,7 +185,3 @@
         }
     }
 }
-  
-
-  
-  

@@ -166,6 +166,14 @@ button {
                 color: var(--color-white);
             }
         }
+        &.btn-round {
+            background-color: var(--color-white);
+            color: var(--color-heading) !important;
+            border-radius: 30px;
+            &:hover {
+                color: var(--color-white) !important;
+            }
+        }
     }
 }
 

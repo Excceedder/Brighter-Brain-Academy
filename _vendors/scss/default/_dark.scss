@@ -75,7 +75,11 @@ body.dark-mode {
     .header-action .search-bar .input-group .search-btn,
     .hero-banner.hero-style-8 .banner-content .banner-search .input-group .search-btn,
     .categorie-grid.categorie-style-3 .content .title,
-    .categorie-area-5 .categorie-grid .content .title {
+    .categorie-area-5 .categorie-grid .content .title,
+    .edu-course-area .course-style-10 .content .title a,
+    .header-photography .header-mainmenu.edu-sticky .mainmenu-nav .mainmenu > li > a,
+    .course-style-11 .content .title a,
+    .header-photography .header-mainmenu.edu-sticky .header-action li.icon a {
         color: var(--color-white);
     }
 
@@ -132,6 +136,8 @@ body.dark-mode {
     .bg-lighten04,
     .counterup-area-2:before,
     .hero-banner.hero-style-5,
+    .edu-course-area.course-area-10,
+    .hero-style-10,
     .testimonial-area-3,
     .testimonial-area-9,
     .hero-banner.hero-style-6:before,
@@ -143,10 +149,33 @@ body.dark-mode {
     .hero-banner.hero-style-1,
     .brand-area-6,
     .course-area-8,
-    .brand-area-2 {
+    .testimonial-area-10,
+    .brand-area-2,
+    .hero-style-11.remote-training,
+    .remote-brand,
+    .edu-sorting-area .sorting-right .edu-sorting .edu-select option,
+    .faq-style-7 {
         background-color: var(--dark-bg-color);
     }
-
+    .photography-about-style::before {
+        background: var(--dark-bg-color);
+    }
+    .remote-training .header-right .header-action .search-bar .input-group {
+        background: transparent;
+        border: 1px solid #333a44;
+    }
+    .header-style-7 .header-mainmenu {
+        background-color: transparent !important;
+    }
+    .header-style-7 .header-mainmenu.edu-sticky {
+        background-color: var(--bg-color-2) !important;
+    }
+    .header-photography .header-mainmenu .header-right::after {
+        background-color: rgba(255, 255, 255, 0.302) !important;
+    }
+    .header-photography .header-mainmenu.edu-sticky .header-action .mobile-menu-bar .hamberger-button {
+        color: var(--color-white);
+    }
     .counterup-area-7 .counterup-box-wrap .counterup-box:before,
     .counterup-area-7 .counterup-box-wrap .counterup-box:after,
     .course-details-content .course-enroll-box .single-item:after,
@@ -162,11 +191,22 @@ body.dark-mode {
     .counterup-area-7 .counterup-box-wrap .counterup-box.counterup-box-1 {
         border-bottom: 0.8px solid var(--dark-color-border);
     }
-
+    .edu-course-area .course-style-10 .content {
+        background: var(--dark-color-bg-body);
+    }
     .product-details-area .content .product-action .add-to-cart-btn .wishlist-btn:hover {
         border-color: var(--color-secondary);
     }
-    
+    .hero-style-11 .banner-thumbnail .shape-group li.shape-2 {
+        filter: opacity(0.2);
+    }
+    .photography-testimonial .shape-group li.shape-2 img {
+        filter: brightness(0) saturate(100%) invert(10%) sepia(5%) saturate(4893%) hue-rotate(178deg) brightness(92%) contrast(78%);
+    }
+    .language-about .about-image-gallery .shape-group li.shape-2 img,
+    .faq-style-6 .edu-faq-gallery .shape-group li.shape-4 img {
+        filter: opacity(1) !important;
+    }
     .edu-campus-area .campus-image-gallery .shape-1 span,
     .edu-campus-area .campus-content .shape-4 span,
     .edu-event-area .shape-group li.shape-2 span,
@@ -223,14 +263,24 @@ body.dark-mode {
     .course-sidebar-2 .edu-course-widget .inner,
     .hero-banner.hero-style-8 .shape-group li.shape-5 span,
     .course-area-8 .shape-group li.shape-2 span,
+    .hero-banner.hero-style-9 .slider .container .shape-group li.shape-1 span,
     button.edu-btn.btn-border,
-    .edu-footer.footer-style-7 .copyright-area {
+    .edu-footer.footer-style-7 .copyright-area,
+    .edu-course-area.course-area-10 .shape-group li.shape-4 span,
+    .testimonial-area-10 .shape-group .shape-5 span,
+    .faq-style-6 .faq-accordion .accordion-item .accordion-button.collapsed,
+    .testimonial-area-10 .shape-group li.shape-3 span,
+    .about-counterup .shape-group li.shape-1 span,
+    .testimonial-area-11 .shape-group li.shape-3 span,
+    .photography-about-style .shape-group li.shape-8 span {
         border-color: var(--dark-color-border);
     }
     .pv-demo-counterup .counterup-wrap .edu-counterup.border-end {
         border-color: var(--dark-color-border) !important;
+    } 
+    .hero-style-10 .banner-content .shape-group li.shape-1 span {
+        border-color: rgba(28, 36, 47, .2);
     }
-
     .tpd-visible-frame-left .tpd-frame-left:before,
     .tpd-visible-frame-right .tpd-frame-left:before,
     .tpd-visible-frame-right .tpd-frame-left:after {
@@ -240,14 +290,54 @@ body.dark-mode {
     .tpd-visible-frame-right .tpd-frame-right:after {
         border-left: 13px solid var(--color-black);
     }
+    .about-counterup .about-course .about-course-style-2,
     .hero-banner.hero-style-8 .banner-content .banner-search .input-group .form-control,
-    .hero-banner.hero-style-8 .banner-content .banner-search .input-group .search-btn,
-    .edu-course-area.course-area-9 ul .course-view-all a.edu-btn {
+    .hero-banner.hero-style-8 .banner-content .banner-search .input-group .search-btn {
         background-color: var(--bg-color-2);
     }
     .hero-banner.hero-style-8 .banner-thumbnail .shape-group li.shape-1 img {
         filter: opacity(0.03);
         -webkit-filter: opacity(0.03);
+    }
+    .video-area-5 .video-gallery .thumbnail .video-play-btn i {
+        color: var(--color-secondary);
+    }
+    .hero-style-10 .wave-bottom-bg img,
+    .language-about .about-image-gallery .main-img-3{
+        filter: brightness(0) saturate(100%) invert(6%) sepia(10%) saturate(3102%) hue-rotate(176deg) brightness(96%) contrast(93%);
+    }
+    .video-area-5::after {
+        filter: brightness(0) saturate(100%) invert(4%) sepia(14%) saturate(6549%) hue-rotate(193deg) brightness(83%) contrast(100%);
+    }
+    .features-area-6::after {
+        filter: brightness(0) saturate(100%) invert(7%) sepia(8%) saturate(2950%) hue-rotate(173deg) brightness(97%) contrast(95%);
+    }
+    .features-area-6 .shape-group li.shape-2 img,
+    .testimonial-area-11 .shape-group .shape-5 img {
+        filter: brightness(0) saturate(100%) invert(16%) sepia(6%) saturate(1952%) hue-rotate(178deg) brightness(94%) contrast(92%);
+    }
+    .language-about .about-image-gallery .main-img-wrapper .main-img-inner::after {
+        background: var(--dark-color-border);
+        opacity: .99;
+    }
+    .edu-course-area .course-style-10 .content .title a:hover {
+        color: var(--color-primary);
+    }
+    .hero-style-10 .banner-thumbnail .shape-group li.shape-5 img,
+    .hero-style-10 .banner-thumbnail .shape-group li.shape-6 img {
+        filter: opacity(.05);
+    }
+    .faq-style-6 .edu-faq-gallery .shape-group li.shape-1 span,
+    .faq-style-6 .edu-faq-gallery .shape-group li.shape-2 span {
+        filter: opacity(0.05);
+    }
+    .hero-style-11::before,
+    .remote-brand::after,
+    .faq-style-7::after {
+        display: none;
+    }
+    .about-counterup .about-course .about-course-style-2 .certificate {
+        background-color: #24353c;
     }
     .hero-banner.hero-style-9 .slider .health-slider-content .swiper-slide .inner p,
     .testimonial-area-9 .home-health-testimonial-activator .testimonial-grid .content p,
@@ -256,11 +346,41 @@ body.dark-mode {
     .edu-footer.footer-style-7 .footer-top .edu-footer-widget .inner .footer-link a,
     .edu-footer.footer-style-7 .footer-top .edu-footer-widget .inner .widget-information ul li,
     .edu-footer.footer-style-7 .footer-top .edu-footer-widget .inner .widget-information ul li a,
-    .edu-footer.footer-style-7 .copyright-area a {
+    .edu-footer.footer-style-7 .copyright-area a,
+    .testimonial-area-10 .home-language-testimonial-activator .testimonial-grid .content p,
+    .about-counterup .about-course .about-course-style-2 .content p,
+    .photography-about-style .about-content p,
+    .photography-testimonial .photography-testimonial-activator .testimonial-grid .content p,
+    .footer-for-photography .description,
+    .footer-for-photography .information-list li,
+    .footer-for-photography .information-list li a {
         color: var(--color-title);
     }
-    .features-area-5 .features-box.color-extra06-style .icon {
-        background-color: #0b3648;
+    .footer-for-photography .copyright-area {
+        background-color: var(--dark-color-bg-body);
+        border: 1px solid var(--dark-color-border);
+    }
+    .pv-cta-area .cta-content .button-group .btn-bg-white,
+    .remote-training-wrapper .edu-cta-banner .section-title .subs-button .btn-medium {
+        color: var(--color-black) !important;
+    }
+    .course-style-11 .content {
+        background: var(--dark-color-bg-body);
+    }
+    .features-area-5 .features-box {
+        &:hover {
+           .icon {
+            border: 7px solid var(--color-white);
+           }
+        }
+    }
+    .features-area-5 .features-box.color-primary-style {
+        &:hover {
+           .icon {
+            background-color: var(--color-primary);
+            border: 7px solid var(--color-white);
+           }
+        }
     }
     .features-area-5 .features-box.color-extra06-style {
         &:hover {
@@ -268,17 +388,24 @@ body.dark-mode {
             background-color: var(--color-extra06);
            }
         }
-    }
+    }      
     .features-box,
     .edu-course-area.course-area-9 .edu-course.course-style-5 {
         background-color: transparent;
+    }
+    .features-area-5 .features-box .icon {
+        background-color: rgb(28, 36, 47);
+        border: 7px solid rgb(46, 53, 63);
+        box-shadow: none;
     }
     .features-area-5 .features-box .content {
         background: var(--bg-color-2);
         box-shadow: none;
     }
-    .categorie-area-5 .section-title .title {
-        color: var(--color-heading);
+    .about-counterup .about-course .about-course-style-2,
+    .faq-style-6 .faq-accordion .accordion-item .accordion-body,
+    .video-area-5 .video-gallery .thumbnail img {
+        box-shadow: none;
     }
     .testimonial-area-9 .bg-thumbnail .shape-group li.shape-4 img {
         filter: opacity(0.09);
@@ -297,12 +424,52 @@ body.dark-mode {
     .edu-footer.footer-style-7 .footer-top .edu-footer-widget .logo a img.logo-dark {
         display: inline-block;
     }
-    .cta-banner-7 .section-title .title,
+    .home-photography-course ul .course-view-all a.edu-btn {
+        color: var(--color-heading) !important;
+    }
+    .home-photography-course ul .course-view-all a:hover {
+        color: var(--color-white) !important;
+    }
     .health-coach-wrapper.cta-banner-7 .input-group input {
         color: var(--color-heading);
     }
-}
+    .cta-banner-7::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(2, 11, 23, 0.8);
+        z-index: 1;
+    }
+    .categorie-area-5 .container,
+    .cta-banner-7 .container {
+        position: relative;
+        z-index: 2;
+    }
+    .categorie-area-5::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(2, 11, 23, 0.8);
+        z-index: 1;
+    }
+    .edu-course-area.course-area-9 ul .course-view-all a.edu-btn {
+        color: var(--color-primary) !important;
 
+        &:hover {
+            color: var(--color-white) !important;
+        }
+    }
+} 
 .dark-mode {
     p {
         color: var(--color-title);
@@ -492,7 +659,7 @@ body.dark-mode {
     }
     .edu-breadcrumb-area {
         background-color: var(--dark-bg-color);
-
+        z-index: -1;
         .course-meta {
             li {
                 &::after {
@@ -586,6 +753,7 @@ body.dark-mode {
             }
         }
     }
+    .brand-area-2 .brand-grid-wrap .brand-grid:first-child,
     .brand-area-4 .brand-grid-wrap .brand-grid:first-child,
     .brand-area-5 .brand-grid-wrap .brand-grid:first-child,
     .brand-area-6 .brand-grid-wrap .brand-grid:first-child,
@@ -612,11 +780,6 @@ body.dark-mode {
         }
         &.blog-style-list {
             background-color: var(--bg-color-2);
-        }
-        .thumbnail {
-            .video-play-btn {
-                background-color: var(--color-white);
-            }
         }
     }
     .blog-meta {
@@ -698,7 +861,7 @@ body.dark-mode {
             background-size: cover;
             background-repeat: no-repeat;
             filter: brightness(0) saturate(100%) invert(6%) sepia(18%) saturate(1959%) hue-rotate(173deg) brightness(98%) contrast(97%);
-}
+        }
     }
     .cta-banner-2 {
         background-color: var(--dark-bg-color);
@@ -949,6 +1112,9 @@ body.dark-mode {
             background-color: var(--bg-color-2);
         }
     }
+    .edu-sorting-area .sorting-right .edu-sorting .edu-select {
+        background-color: var(--bg-color-2);
+    }
 
     /*-------------------------
         Landing Page Dark Styles  
@@ -1123,7 +1289,7 @@ body.dark-mode {
                 border-bottom: 13px solid var(--dark-bg-color);
             }
         }
-        &.course-style-8 {
+        &.course-style-14 {
             &:hover {
                 background-color: var(--bg-color-2);
             }
@@ -1912,6 +2078,14 @@ body.dark-mode {
         .header-mainmenu {
             background-color: var(--bg-color-2);
         }
+        &.header-photography {
+            .header-mainmenu {
+                background-color: transparent;
+                &.edu-sticky {
+                    background-color: var(--bg-color-2);
+                }
+            }
+        }
         &.pv-header-style {
             .header-mainmenu {
                 background-color: transparent;
@@ -1934,6 +2108,20 @@ body.dark-mode {
                     display: inline-block;
                 }
             }
+        }
+        &.header-photography {
+            .header-brand {
+                img {
+                    &.logo-light {
+                        display: inline-block;
+                    }
+        
+                    &.logo-dark {
+                        display: none;
+                    }
+                }
+            }
+
         }
     }
     .header-top-bar {

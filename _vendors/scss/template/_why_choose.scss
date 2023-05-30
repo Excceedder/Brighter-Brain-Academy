@@ -346,6 +346,17 @@
                     display: block;
                 }
             }
+            &.shape-3 {
+                right: -45px;
+                bottom: -27px;
+                span {
+                    display: block;
+                    height: 101px;
+                    width: 101px;
+                    border: 15px solid var(--color-tertiary);
+                    border-radius: 50%;
+                }
+            }
         }
     }
 }

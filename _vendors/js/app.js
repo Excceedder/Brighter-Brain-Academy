@@ -32,8 +32,8 @@
             eduJs.ToolTip();
             eduJs.contactForm();
             eduJs.sitePreloader();
-            eduJs.countdownInit('.countdown', '2022/12/30');
-            eduJs.countdownInit('.coming-countdown', '2022/12/30');
+            eduJs.countdownInit('.countdown', '2023/12/30');
+            eduJs.countdownInit('.coming-countdown', '2023/12/30');
         },
 
         bgMarque: function () {
@@ -198,6 +198,39 @@
                   $(this).css("background", "url(" + $(this).data("background") + ")");
                 }
               });
+              const swiperbanner2 = new Swiper('.photography-activator', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+                pagination: false,
+                grabCursor: true,
+                draggable: true,
+                effect: "fade",
+                speed: 1000,
+                autoplay: {
+                    delay: 8000
+                },
+                navigation: {
+                    nextEl: ".slide-next",
+                    prevEl: ".slide-prev",
+                },
+                lazy: {      
+                    loadPrevNext: true,
+                    loadPrevNextAmount: 1,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    type: "fraction",
+                },
+            });
+            $('.photography-activator .swiper-slide img').each(function(){
+                var  _this_transform_origin=$(this).data('transform-origin');      
+                if(_this_transform_origin!=undefined){
+                  $(this).css({
+                    'transform-origin': _this_transform_origin
+                  });
+                }
+            });
 
             const swiperTestimonial1 = new Swiper('.home-one-testimonial-activator', {
                 slidesPerView: 1,
@@ -339,6 +372,91 @@
                     prevEl: ".swiper-btn-prv",
                   },
             });
+            const swiperTestimonial8 = new Swiper('.home-language-testimonial-activator', {
+                slidesPerView: 1,
+                centeredSlides: true,
+                loop: true,
+                loopedSlides: 3,
+                speed: 1000,
+                autoplay: {
+                    delay: 5000
+                },
+                thumbs: {
+                    swiper: testimonialThumbs
+                }
+            });
+            var testimonialThumbs = new Swiper(".testimonial-thumbs", {
+                slidesPerView: 3,
+                spaceBetween: 0,
+                centeredSlides: true,
+                loop: true,
+                slideToClickedSlide: true
+            });
+            swiperTestimonial8.controller.control = testimonialThumbs;
+            testimonialThumbs.controller.control = swiperTestimonial8;
+
+            const swiperTestimonial9 = new Swiper('.home-remote-testimonial-activator', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+                grabCursor: true,
+                speed: 1000,
+                autoplay: {
+                    delay: 3000
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: true
+                }
+            });
+            const swiperTestimonial20 = new Swiper('.photography-testimonial-activator', {
+                slidesPerView: 1,
+                centeredSlides: true,
+                loop: true,
+                loopedSlides: 3,
+                speed: 500,
+                autoplay: {
+                    delay: 3000
+                },
+                thumbs: {
+                    swiper: photographyTestimonialThumbs
+                },
+                navigation: {
+                    nextEl: ".slide-next",
+                    prevEl: ".slide-prev",
+                }
+            });
+            var photographyTestimonialThumbs = new Swiper(".photography-testimonial-thumbs", {
+                slidesPerView: 3,
+                spaceBetween: 0,
+                centeredSlides: true,
+                loop: true,
+                slideToClickedSlide: true,
+            });
+            swiperTestimonial20.controller.control = photographyTestimonialThumbs;
+            photographyTestimonialThumbs.controller.control = swiperTestimonial20;
+
+            const swiperTestimonial21 = new Swiper('.business-testimonial-activation', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+                grabCursor: true,
+                speed: 1000,
+                autoplay: {
+                    delay: 3000
+                },
+                navigation: {
+                    nextEl: ".swiper-btn-nxt",
+                    prevEl: ".swiper-btn-prv",
+                  },
+                breakpoints: {
+                  577: {
+                    slidesPerView: 2,
+                  }
+                }
+              });
+
             const swiperCouesr1 = new Swiper('.course-activation', {
                 slidesPerView: 1,
                 spaceBetween: 0,

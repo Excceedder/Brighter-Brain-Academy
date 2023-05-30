@@ -26,7 +26,7 @@ if (isset($_SESSION['termly_report_id'])) {
 
 <body>
   <div class="cs-container">
-    <div class="cs-invoice cs-style1">
+    <div class="cs-invoice cs-style1" style="border: 1px dashed #000;">
       <div class="cs-invoice_head cs-type1 cs-mb25">
         <div class="cs-invoice_left">
           <p>

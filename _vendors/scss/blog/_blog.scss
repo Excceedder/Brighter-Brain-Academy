@@ -567,3 +567,19 @@
         padding: 0 0 30px !important;
     }
 }
+    .blog-style-1 {
+        &.remote-traning-sytle {
+            .thumbnail {
+                a {
+                    border-radius: 10px 10px 0 0;
+                    img {
+                        border-radius: 10px 10px 0 0; 
+                    }
+                }
+            }
+            .content {
+                padding: 25px 30px 30px;
+                border-radius: 0 0 10px 10px;
+            }
+        }
+    }

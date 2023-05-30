@@ -2,6 +2,7 @@
     Header Styles  
 --------------------------*/
 .edu-header {
+    z-index: 99;
     .header-mainmenu {
         background-color: var(--color-white);
         box-shadow: 0 6px 15px 0 rgba(0, 0, 0, .05);
@@ -108,7 +109,6 @@
 --------------------------*/
 .header-style-1 {
     position: relative;
-    z-index: 1234;
 
     .header-top {
         .header-top-left {
@@ -337,7 +337,6 @@
 --------------------------*/
 .header-style-4 {
     position: relative;
-    z-index: 5;
     &:before {
         content: url(../images/others/shape-19.png);
         position: absolute;
@@ -399,6 +398,283 @@
                 @media only screen and (max-width: 1699px) {
                     display: block;
                 }
+            }
+        }
+    }
+}
+/*------------------------
+    Header Style Seven  
+--------------------------*/
+.header-style-7 {
+    .header-mainmenu {
+        background-color: transparent;
+        box-shadow: none;
+        z-index: 3;
+        padding-left: 120px;
+        padding-right: 120px;
+        @media #{$smlg-device} {
+            line-height: 90px;
+        }
+        @media only screen and (max-width: 1350px) {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        @media only screen and (max-width: 767px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &.edu-sticky {
+            box-shadow: 0 6px 15px 0 rgba(0, 0, 0, .05);
+        }
+    }
+    // &.header-fullwidth-1,
+    
+    input[type="text"], input[type="password"], 
+    input[type="email"], input[type="number"], 
+    input[type="tel"], textarea {
+        background-color: transparent;
+    }
+    .header-action {
+        li {
+            &.search-icon {
+                display: none;
+                @media (max-width:1699px) {
+                    display: block;
+                }
+            }
+        }
+    }
+    .mainmenu-nav {
+        .mainmenu {
+            li {
+                ul {
+                  &.mega-menu{
+                    @media (min-width:1350px) and (max-width:1599px) {
+                        left: -430px;
+                    }
+                    @media (max-width:1350px) {
+                        left: -345px;
+                    }
+                  }  
+                }
+            }
+        }
+    }
+
+    &.header-business {
+        .header-mainmenu {
+            &.edu-sticky {
+                box-shadow: 0 6px 15px 0 rgba(0, 0, 0, .05);
+                .header-brand {
+                    img {
+                        &.logo-dark {
+                            display: block;
+                        }
+                        &.logo-light {
+                            display: none;
+                        }
+                    }
+                }
+                .header-action {
+                    li{
+                        &.icon {
+                            a {
+                                color: var(--color-heading);
+                                .count {
+                                    background-color: var(--color-primary);
+                                    color: var(--color-white);
+                                }
+                            }
+                        }
+                    }
+                    .search-bar {
+                        .input-group {
+                            border: 1px solid #e5e5e5;
+                        }
+                    }
+                    .mobile-menu-bar {
+                        .hamberger-button {
+                            color: var(--color-heading);
+                        }
+                    }
+                }
+                .mainmenu-nav {
+                    .mainmenu {
+                        >li {
+                            >a {
+                                color: var(--color-heading);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mainmenu-nav {
+            .mainmenu {
+                > li {
+                    > a {
+                        color: var(--color-white);
+                    }
+                }
+            }
+        }
+        .header-action {
+            li {
+                &.icon {
+                    a {
+                        color: var(--color-white);
+
+                        .count {
+                            background-color: var(--color-white);
+                            color: var(--color-heading);
+                        }
+                    }
+                }
+                &.search-icon {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+//remote-training 
+.remote-training {
+    .header-mainmenu {
+        padding-left: 90px;
+        padding-right: 90px;
+
+        @media (max-width:1250px) {
+          padding-left: 40px;
+          padding-right: 40px;  
+        }
+        @media #{$sm-layout} {
+            padding-left: 15px;
+            padding-right: 15px;
+        } 
+
+        &.edu-sticky {
+            .header-action {
+                .search-bar {
+                    .input-group {
+                        border: 1px solid #e5e5e5;
+                    }
+                }
+            }
+        } 
+    }
+    .header-right {
+        .header-action {
+            .search-bar {
+                .input-group {
+                    background: var(--color-white);
+                    border: none;
+                }
+            }
+        }
+    }
+}
+/*------------------------
+    Photography  
+--------------------------*/
+.header-photography {
+    position: relative;
+    .header-mainmenu {
+        background-color: transparent;
+        padding-left: 90px;
+        padding-right: 90px;
+        box-shadow: none;
+
+        @media (max-width:1250px) {
+          padding-left: 40px;
+          padding-right: 40px;  
+        }
+        @media #{$sm-layout} {
+            padding-left: 15px;
+            padding-right: 15px;
+        } 
+
+        .mainmenu-nav {
+            .mainmenu {
+                >li {
+                    >a {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+
+        &.edu-sticky {
+            box-shadow: 0 6px 15px 0 rgba(0, 0, 0, .05);
+            .header-brand {
+                img {
+                    &.logo-dark {
+                        display: block;
+                    }
+                    &.logo-light {
+                        display: none;
+                    }
+                }
+            }
+            .header-action {
+                li{
+                    &.icon {
+                        a {
+                            color: var(--color-heading);
+                            .count {
+                                background-color: var(--color-primary);
+                            }
+                        }
+                    }
+                }
+                .search-bar {
+                    .input-group {
+                        border: 1px solid #e5e5e5;
+                    }
+                }
+                .mobile-menu-bar {
+                    .hamberger-button {
+                        color: var(--color-heading);
+                    }
+                }
+            }
+            .mainmenu-nav {
+                .mainmenu {
+                    >li {
+                        >a {
+                            color: var(--color-heading);
+                        }
+                    }
+                }
+            }
+        } 
+        .header-right {
+            &::after {
+                background-color: rgba(255, 255, 255, 0.302);
+            }
+        }
+    }
+    .header-right {
+        .header-action {
+            li{
+                &.icon {
+                    a {
+                        color: #ffffff;
+                        .count {
+                            background-color: var(--color-primary);
+                        }
+                    }
+                }
+            }
+            .mobile-menu-bar {
+                .hamberger-button {
+                    color: var(--color-white);
+                }
+            }
+        }
+        &::after {
+            @media #{$smlg-device} {
+               display: none; 
             }
         }
     }

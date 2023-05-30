@@ -20,9 +20,11 @@
                 font-size: 22px;
                 color: var(--color-heading);
                 position: relative;
+                height: 90px;
+                line-height: 94px;
                 .count {
                     position: absolute;
-                    top: -9px;
+                    top: 24px;
                     right: -10px;
                     display: block;
                     text-align: center;

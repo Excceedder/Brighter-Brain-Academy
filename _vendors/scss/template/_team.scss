@@ -246,6 +246,27 @@
             padding: 30px 0 25px;
         }
     }
+    &.team-style-7 {
+        @media #{$md-layout-1} {
+            margin-bottom: 20px;
+        }
+        .thumbnail {
+            a {
+                &::after {
+                    border-radius: 50%;
+                    background-color: rgba(24, 24, 24, .3);
+                }
+                img {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+.team-area-7 {
+    .g-custom-5 {
+        --bs-gutter-x: 10rem;
+    }
 }
 
 .team-area-3 {

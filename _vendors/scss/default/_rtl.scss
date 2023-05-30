@@ -26,6 +26,7 @@ html[dir="rtl"]{
                         top: 10%;
                     }
                     &.header-btn {
+                        padding: 0 0 0 30px !important;
                         .edu-btn {
                             i {
                                 font-size: 16px;
@@ -57,6 +58,9 @@ html[dir="rtl"]{
        }
        
     }
+    .header-action li.icon.cart-icon {
+        margin-right: 10px;
+    }
     .header-category .mainmenu-nav .mainmenu li {
         margin-right: 0;
     }
@@ -66,6 +70,25 @@ html[dir="rtl"]{
     }
     .edu-header .header-category .mainmenu li.has-droupdown > a {
         padding: 0 20px 0 40px;
+    }
+    .edu-header .header-brand .logo {
+        margin-right: 0;
+        margin-left: 40px;
+    }
+    .header-style-4 .header-navbar .header-mainnav {
+        margin-left: 0;
+        margin-right: 25px;
+    }
+    .header-style-4 .mainmenu-nav .mainmenu li ul.mega-menu {
+        right: -145px;
+    }
+    .header-style-2 .mainmenu-nav .mainmenu li ul.mega-menu, 
+    .header-style-3 .mainmenu-nav .mainmenu li ul.mega-menu {
+        right: -500px;
+    }
+    .header-style-7 .mainmenu-nav .mainmenu li ul.mega-menu {
+        left: inherit;
+        right: -210px;
     }
     .header-style-2 {
         .header-mainmenu {
@@ -117,6 +140,10 @@ html[dir="rtl"]{
             margin: 0;
         }
     }
+    .header-style-7 .header-brand .logo {
+        margin-right: 0;
+        margin-left: 40px;
+    }
     .header-action {
         .search-bar {
             .input-group {
@@ -156,16 +183,24 @@ html[dir="rtl"]{
 
                         .menu-title {
                             padding-left: 0;
-                            padding-right: 100px;
+                            padding-right: 70px;
                         }
                         .submenu {
-                            padding: 20px 50px 0 0;
+                            padding: 0px 35px 0 0;
                         }
 
                         > li {
                             border-right: 1px solid var(--color-border);
                             &:first-child {
                                 border-right: 0;
+                            }
+                        }
+                    }
+                    &.mega-menu-one {
+                        > li {
+                            border-right: 1px solid var(--color-border);
+                            &:nth-child(3) {
+                                border-right: none;
                             }
                         }
                     }
@@ -503,7 +538,447 @@ html[dir="rtl"]{
             }
         }
     }
+    .hero-style-9 .slider .health-slider-content {
+        margin-right: 0;
+    }
+    .hero-style-9 .health-slider-main {
+        left: inherit;
+        right: calc(60% - 80px);
+    }
+    .hero-style-9 .hero-slider-bg-controls .slide-prev {
+        right: 70px;
+        top: 0;
+    }
+    .hero-style-9 .hero-slider-bg-controls {
+        left: inherit;
+        right: 0;
+    }
+    .hero-style-9 .slider .container .shape-group li.shape-1 {
+        left: inherit;
+        right: -460px;
+    }
+    .hero-style-9 .slider .container .shape-group li.shape-2 {
+        left: inherit;
+        right: -257px;
+    }
+    .hero-style-9 .shape-group li.shape-3 {
+        left: inherit;
+        right: 39%;
+    }
+    .hero-style-9 .shape-group li.shape-4 {
+        left: inherit;
+        right: 100px;
+        @media #{$custom-lg-device-six} {
+            right: 2px;
+        }
+    }
+    .hero-style-9 .shape-group li.shape-5 {
+        right: inherit;
+        left: 38.5%;
+    }
+    .hero-style-9 .shape-group li.shape-6 {
+        right: inherit;
+        left: 42.5%;
+    }
+    .hero-style-10 .banner-content p {
+        padding-right: inherit;
+        padding-left: 85px;
+        @media #{$md-layout-1} {
+            padding-left: 0;
+        }
+    }
+    .hero-style-10 .banner-content .shape-group li.shape-1 {
+        left: 106%;
+        right: inherit;
+    }
+    .hero-style-10 .banner-content .shape-group li.shape-2 {
+        left: inherit;
+        top: -18px;
+        right: -209px;
+    }
+    .hero-style-10 .shape-group li.shape-8 {
+        right: inherit;
+        left: 0;
+    }
+    .hero-style-10 .banner-thumbnail {
+        margin-right: 0;
+        margin-bottom: -170px;
+        margin-left: -190px;
+        @media #{$smlg-device} {
+           margin-left: -100px; 
+        }
+        @media #{$md-layout-1} {
+            margin-left: -13px;
+            margin-bottom: 0; 
+        }
+        @media #{$large-mobile} {
+            margin-bottom: -15px;
+            margin-left: 0; 
+        }
+    }
+    .hero-style-10 .banner-thumbnail .instructor-info {
+        bottom: 210px;
+        left: inherit;
+        right: -1px;
+    }
+    .hero-style-10 .banner-thumbnail .instructor-info .inner {
+        padding: 26px 40px 44px;
+    }
+    .hero-style-10 .banner-thumbnail .shape-group li.shape-3 {
+        top: 0;
+        left: inherit;
+        right: -20%;
+    }
+    .hero-style-10 .banner-thumbnail .shape-group li.shape-4 {
+        top: -20px;
+        left: inherit;
+        right: -100px;
+    }
+    .hero-style-10 .banner-thumbnail .shape-group li.shape-5 {
+        right: inherit;
+        left: 65px;
+    }
+    .hero-style-10 .banner-thumbnail .shape-group li.shape-6 {
+        right: inherit;
+        left: 110px;
+    }
+    .hero-style-10 .banner-thumbnail .shape-group li.shape-7 {
+        right: inherit;
+        bottom: 215px;
+        left: 171px;
+    }
+    .hero-style-11 .banner-content p {
+        padding-left: 20px;
+    }
+    .hero-style-11 .banner-content .shape-group li.shape-1 {
+        left: inherit;
+        right: -218px;
+    }
+    .hero-style-11 .banner-thumbnail .shape-group li.shape-2 {
+        left: inherit;
+        right: -72px;
+    }
+    .hero-style-11 .banner-thumbnail .shape-group li.shape-3 {
+        right: 100px;
+        bottom: -60px;
+        top: inherit;
+        left: inherit;
+    }
+    .hero-style-11 .banner-thumbnail .shape-group li.shape-4 {
+        left: -106px;
+        right: inherit;
+    }
+    .hero-style-11 .banner-thumbnail .shape-group li.shape-5 {
+        left: -134px;
+        bottom: inherit;
+        right: inherit;
+    }
+    .photography-banner .thumbnail-bg-content .banner-content {
+        left: inherit;
+        right: 0;
+        @media #{$smlg-device} {
+            max-width: 100%;
+            width: 100%;
+            right: inherit;
+        }
+    }
+    .about-style-3 .shape-group li.shape-5 {
+        left: inherit;
+        right: 110px;
+    }
+    .about-style-3 .shape-group li.shape-6 {
+        left: inherit;
+        right: 80px;
+    }
+    .about-counterup .about-course .about-course-style-2 {
+        padding: 0 30px;
+        text-align: right;
+        padding-right: 30px;
+    }
+    .about-counterup .about-course .about-course-style-2 .content .title {
+        margin-right: 40px;
+    }
+    .about-counterup .about-course .about-course-style-2.remote-course {
+        margin-right: 50px;
+    }
+    .about-counterup::after {
+        left: 638px;
+    }
+    .photography-about-style .shape-group li.shape-1 {
+        right: inherit;
+        left: -263px;
+    }
+    .photography-about-style .shape-group li.shape-2 {
+        right: inherit;
+        left: -260px;
+    }
+    .photography-about-style .shape-group li.shape-4 {
+        left: inherit;
+        right: -245px;
+        @media (max-width:1650px) {
+            right: 0;
+        }
+    }
+    .photography-about-style .shape-group li.shape-5 {
+        left: inherit;
+        right: -65px;
+        @media (max-width:1650px) {
+            right: 170px;
+        }
+    }
+    .photography-about-style .shape-group li.shape-6 {
+        right: inherit;
+        left: -169px;
+        @media (max-width:1650px) {
+            left: 0;
+        }
+    }
+    .photography-about-style .shape-group li.shape-7 {
+        left: inherit;
+        right: 98px;
+    }
+    .photography-about-style .shape-group li.shape-8 {
+        left: inherit;
+        right: -98px;
+    }
+    .photography-about-style .shape-group li.shape-9 {
+        left: inherit;
+        right: 257px;
+    }
+    .home-photography-course {
+        .section-title {
+            display: inline-block;
+            margin-top: 0px;
+            @media #{$md-layout-1} {
+                display: block;
+                text-align: center !important;
+            }
+        }
+    }
+    .home-photography-course ul .course-view-all {
+        text-align: left;
+        @media #{$md-layout-1} {
+            margin-top: -15px;
+            margin-bottom: 33px;
+            text-align: center;
+        }
+    }
+    .edu-course-area .course-style-11 .content {
+        padding: 30px 0 0 0;
+    }
+    .edu-course-area .course-style-11 .course-price {
+        left: inherit;
+        right: 20px;
+    }
+    .edu-course-area.course-area-11 .course-price {
+        left: inherit;
+        right: 20px;
+    }
+    .edu-course-area.course-area-11 .course-style-5 .inner .thumbnail .course-meta {
+        left: inherit;
+        right: 0;
+        padding-left: inherit;
+        padding-right: 10px;
+    }
+    .edu-course-area .course-style-11 .inner .thumbnail .course-meta {
+        left: inherit;
+        right: 0;
+        padding-left: inherit;
+        padding-right: 10px;
+    }
+    .faq-style-7 .edu-faq-gallery .thumbnail-1 {
+        margin-right: -277px;
+        margin-left: inherit;
+    }
+    .faq-style-7 .edu-faq-gallery .shape-group li.shape-1 {
+        left: inherit;
+        right: -37px;
+    }
+    
+    .faq-style-7 .edu-faq-gallery .thumbnail-1 {
+        @media only screen and (min-width: 1401px) and (max-width: 1750px) {
+            margin-right: -140px;
+            margin-left: inherit;
+        }
+        @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+            margin-left: -60px;
+            margin-right: 10px;
+        }
+        @media only screen and (max-width: 1199px) {
+            margin-right: -70px;
+        }
+        @media only screen and (max-width: 991px) {
+            margin-right: 0;
+        }
+    }
+    .edu-course-area.course-area-11 .content {
+        padding: 20px 0 0 40px;
+    }
+    .language-about .about-content {
+        padding-left: 0;
+        padding-right: 40px;
+        @media #{$sm-layout} {
+            padding-right: 0;
+        }
+    }
+    .language-about .about-image-gallery {
+        padding: 80px 0px 20px 30px !important;
+        @media #{$md-layout-1} {
+            text-align: center !important;
+        }
+        @media #{$large-mobile} {
+            padding: 80px 0 20px 0 !important;
+        }
 
+    }
+    .language-about .about-image-gallery .main-img-wrapper .main-img-inner {
+        left: 32px;
+        right: inherit;
+        @media #{$lg-layout} {
+            left: -72px;
+        }
+        @media #{$md-layout-1} {
+            left: -80px;
+        }
+    }
+    .language-about .about-image-gallery .main-img-wrapper .main-img-inner::after {
+        right: inherit;
+        left: 20px;
+        @media #{$md-layout-1} {
+           left: 134px; 
+        }
+        @media #{$sm-layout} {
+            left: 20px;
+        }
+    }
+    .faq-style-6 .edu-faq-gallery {
+        bottom: -115px;
+        @media #{$smlg-device} {
+            left: 0px; 
+        }
+        @media #{$md-layout-1} {
+            bottom: 0px; 
+        }
+    }
+    .faq-style-6 .edu-faq-gallery .thumbnail-1 {
+        text-align: left;
+        @media #{$md-layout-1} {
+            text-align: center;
+        }
+    }
+    .faq-style-6 .edu-faq-gallery .shape-group li.shape-1 {
+        top: -127px;
+        left: inherit;
+        right: 0;
+    }
+    .faq-style-6 .edu-faq-gallery .shape-group li.shape-2 {
+        top: -74px;
+        left: inherit;
+        right: 52px;
+    }
+    .faq-style-6 .edu-faq-gallery .shape-group li.shape-3 {
+        left: inherit;
+        right: 367px;
+    }
+    .faq-style-6 .edu-faq-gallery .shape-group li.shape-4 {
+        right: inherit;
+        left: -38px;
+    }
+    .faq-style-6 .edu-faq-gallery .shape-group li.shape-5 {
+        left: inherit;
+        right: -20px;
+    }
+    .edu-course-area.course-area-10 .course-price {
+        left: inherit;
+        right: 20px;
+    }
+    .edu-course-area.course-area-10 .flag-wrap {
+        right: inherit;
+        left: 30px;
+    }
+    .categorie-area-5 .categorie-grid {
+        text-align: right;
+    }
+    .categorie-area-5 .categorie-grid .content {
+        margin-left: inherit;
+        margin-right: 20px;
+    }
+    .edu-course-area.course-area-8 ul .course-view-all,
+    .edu-course-area.course-area-9 ul .course-view-all {
+        text-align: left;
+    }
+    .edu-course-area.course-area-9 .edu-course.course-style-5 .inner .thumbnail .course-price {
+        left: inherit;
+        right: 20px;
+    }
+    .edu-course-area.course-area-9 .edu-course.course-style-5 .inner .thumbnail .read-more-btn {
+        right: inherit;
+        left: 30px;
+    }
+    .edu-course-area.course-area-9 .edu-course.course-style-5 .inner .instructor .instructor-name {
+        margin-left: inherit;
+        margin-right: 15px;
+    }
+    .edu-course-area.course-area-9 .edu-course.course-style-5 .inner .content {
+        padding: 0px 0px 10px 50px;
+    }
+    .testimonial-area-9 .testimonial-heading-area {
+        padding-left: 0;
+    }
+    .testimonial-area-9 .home-health-testimonial-activator .swiper-navigation {
+        left: inherit; 
+        right: 34px;
+        @media #{$md-layout-1} {
+            right: 0;
+        }
+    }
+    .testimonial-area-9 .shape-group li.shape-1 {
+        left: inherit;
+        right: -169px;
+    }
+    .testimonial-area-9 .shape-group li.shape-2 {
+        right: inherit;
+        left: -150px;
+    }
+    .testimonial-area-9 .bg-thumbnail .shape-group li.shape-3 {
+        left: inherit;
+        right: -41px;
+    }
+    .testimonial-area-9 .bg-thumbnail .shape-group li.shape-4 {
+        right: inherit;
+        left: -105px;
+    }
+    .testimonial-area-9 .bg-thumbnail .shape-group li.shape-5 {
+        left: inherit;
+        right: -54px;
+    }
+    .testimonial-area-10 .testimonial-thumb-wrap {
+        left: inherit;
+        right: 20px;
+    }
+    .photography-testimonial .photo-testimonial-thumb-wrap {
+        left: inherit;
+        right: 20px;
+    }
+    .photography-testimonial .testimonial-heading-area {
+        padding-left: 0;
+    }
+    .counterup-area-11 .counterup-style-6 .counterup-wrapper {
+        margin-right: 20px;
+        text-align: right;
+    }
+    .counterup-area-11 .counterup-style-6 .counterup-wrapper .count-number {
+        text-align: right;
+    }
+    .event-area-4 .event-view-all-btn a.btn-transparent i {
+        padding-right: 6px;
+        top: 0px;
+        font-size: 20px;
+    }
+    .health-coach-wrapper.cta-banner-7 .input-group input {
+        margin-left: 20px;
+        margin-right: inherit;
+    }
     //about 
     .edu-about-area {
         .about-content {
@@ -822,6 +1297,32 @@ html[dir="rtl"]{
                 }
             }
         }
+    }
+    .about-style-9 .about-image-gallery .author-box {
+        right: inherit;
+        left: 38px;
+    }
+    .about-style-9 .about-content {
+        padding-right: 45px;
+        @media #{$md-layout-1} {
+           padding-right: 0; 
+        }
+    }
+    .about-style-9 .about-image-gallery .shape-group li.shape-1 {
+        left: inherit;
+        right: -126px;
+    }
+    .about-style-9 .about-image-gallery .shape-group li.shape-2 {
+        left: inherit;
+        right: -63px;
+    }  
+    .about-style-9 .about-image-gallery .shape-group li.shape-3 {
+        right: inherit;
+        left: -5px;
+    }  
+    .about-style-9 .shape-group li.shape-4 {
+        right: inherit;
+        left: -150px;
     }
     //brand 
     .brand-grid-wrap {
