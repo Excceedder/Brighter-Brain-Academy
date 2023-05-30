@@ -151,12 +151,6 @@
                     <div class="close-button">
                         <button class="close-trigger"><i class="icon-73"></i></button>
                     </div>
-                    <div class="inner">
-                        <form class="search-form" action="#">
-                            <input type="text" class="edublink-search-popup-field" placeholder="Search Here...">
-                            <button class="submit-button"><i class="icon-2"></i></button>
-                        </form>
-                    </div>
                 </div>
             </div>
             <!-- End Search Popup  -->
@@ -179,10 +173,10 @@
                     <div class="col-lg-6">
                         <div class="banner-gallery">
                             <div class="thumbnail thumbnail-1" data-sal-delay="500" data-sal="slide-up" data-sal-duration="1000">
-                                <img src="./_vendors/images/banner/girl-2.webp" alt="Girl Image">
+                                <img src="https://lsuonline-static.s3.amazonaws.com/media/images/2020/03/27/girl-feature.jpg" alt="Girl Image">
                             </div>
                             <div class="thumbnail thumbnail-2" data-sal-delay="500" data-sal="slide-down" data-sal-duration="1000">
-                                <img src="./_vendors/images/banner/man-1.webp" alt="Girl Image">
+                                <img src="https://images.ctfassets.net/p0qf7j048i0q/2Bci8LSXnyuxPYqRBeRdLN/a2d70821235c8c1271753e23b4c257a4/G1045322212.png?w=3840&q=75&h=3840&fm=webp" alt="Girl Image">
                             </div>
                             <div class="online-support" data-sal-delay="600" data-sal="slide-right" data-sal-duration="1000">
                                 <div class="inner">
@@ -376,245 +370,39 @@
                     <h2 class="title">Pick A Course To Get Started</h2>
                     <span class="shape-line"><i class="icon-19"></i></span>
                 </div>
-                <div class="row g-5">
-                    <!-- Start Single Course  -->
-                    <div class="col-md-6 col-lg-4" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
-                        <div class="edu-course course-style-2 hover-button-bg-white">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <a href="course-details.html">
-                                        <img src="./_vendors/images/course/course-01.jpg" alt="Course Meta">
-                                    </a>
-                                    <div class="time-top">
-                                        <span class="duration"><i class="icon-61"></i>3 Weeks</span>
+                <div class="video-area-1">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <div class="video-gallery">
+                                    <div class="thumbnail">
+                                        <img src="./_vendors/images/others/video-01.webp" alt="Thumb">
+                                        <a href="https://www.youtube.com/watch?v=PICj5tr9hcc" class="video-play-btn video-popup-activation">
+                                            <i class="icon-18"></i>
+                                        </a>
                                     </div>
-                                </div>
-                                <div class="content">
-                                    <span class="course-level">Beginner</span>
-                                    <h5 class="title">
-                                        <a href="#">Build Responsive Real- World Websites with HTML and CSS</a>
-                                    </h5>
-                                    <div class="course-rating">
-                                        <div class="rating">
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                        </div>
-                                        <span class="rating-count">(5.0 /7 Rating)</span>
-                                    </div>
-                                    <div class="course-price">$29.00</div>
-                                    <ul class="course-meta">
-                                        <li><i class="icon-24"></i>8 Lessons</li>
-                                        <li><i class="icon-25"></i>20 Students</li>
+                                    <ul class="shape-group">
+                                        <li class="shape-1 scene">
+                                            <img data-depth="2" class="rotateit" src="./_vendors/images/about/shape-37.png" alt="Shape">
+                                        </li>
+                                        <li class="shape-2 scene">
+                                            <img data-depth="-2" src="./_vendors/images/faq/shape-04.png" alt="Shape">
+                                        </li>
+                                        <li class="shape-3 scene shape-light">
+                                            <img data-depth="2" src="./_vendors/images/faq/shape-14.png" alt="Shape">
+                                        </li>
+                                        <li class="shape-3 scene shape-dark">
+                                            <img data-depth="2" src="./_vendors/images/faq/dark-shape-14.png" alt="Shape">
+                                        </li>
                                     </ul>
-                                </div>
-                            </div>
-                            <div class="course-hover-content-wrapper">
-                                <button class="wishlist-btn"><i class="icon-22"></i></button>
-                            </div>
-                            <div class="course-hover-content">
-                                <div class="content">
-                                    <button class="wishlist-btn"><i class="icon-22"></i></button>
-                                    <span class="course-level">Beginner</span>
-                                    <h5 class="title">
-                                        <a href="course-details.html">Build Responsive Real- World Websites with HTML and CSS</a>
-                                    </h5>
-                                    <div class="course-rating">
-                                        <div class="rating">
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                        </div>
-                                        <span class="rating-count">(5.0 /7 Rating)</span>
-                                    </div>
-                                    <div class="course-price">$29.00</div>
-                                    <p>Lorem ipsum dolor sit amet consectur adpis elit sed eiusmod tempor incididunt labore dolore magna aliquaenim.</p>
-                                    <ul class="course-meta">
-                                        <li><i class="icon-24"></i>8 Lessons</li>
-                                        <li><i class="icon-25"></i>20 Students</li>
-                                    </ul>
-                                    <a href="course-details.html" class="edu-btn btn-secondary btn-small">Enrolled <i class="icon-4"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- End Single Course  -->
-                    <!-- Start Single Course  -->
-                    <div class="col-md-6 col-lg-4" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-                        <div class="edu-course course-style-2 hover-button-bg-white">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <a href="course-details.html">
-                                        <img src="./_vendors/images/course/course-02.jpg" alt="Course Meta">
-                                    </a>
-                                    <div class="time-top">
-                                        <span class="duration"><i class="icon-61"></i>8 Weeks</span>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <span class="course-level">Advanced</span>
-                                    <h5 class="title">
-                                        <a href="#">Java Programming Masterclass for Software Developers</a>
-                                    </h5>
-                                    <div class="course-rating">
-                                        <div class="rating">
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                        </div>
-                                        <span class="rating-count">(4.5 /9 Rating)</span>
-                                    </div>
-                                    <div class="course-price">$49.00</div>
-                                    <ul class="course-meta">
-                                        <li><i class="icon-24"></i>15 Lessons</li>
-                                        <li><i class="icon-25"></i>35 Students</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="course-hover-content-wrapper">
-                                <button class="wishlist-btn"><i class="icon-22"></i></button>
-                            </div>
-                            <div class="course-hover-content">
-                                <div class="content">
-                                    <button class="wishlist-btn"><i class="icon-22"></i></button>
-                                    <span class="course-level">Advanced</span>
-                                    <h5 class="title">
-                                        <a href="course-details.html">Java Programming Masterclass for Software Developers</a>
-                                    </h5>
-                                    <div class="course-rating">
-                                        <div class="rating">
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                        </div>
-                                        <span class="rating-count">(4.5 /9 Rating)</span>
-                                    </div>
-                                    <div class="course-price">$49.00</div>
-                                    <p>Lorem ipsum dolor sit amet consectur adpis elit sed eiusmod tempor incididunt labore dolore magna aliquaenim.</p>
-                                    <ul class="course-meta">
-                                        <li><i class="icon-24"></i>15 Lessons</li>
-                                        <li><i class="icon-25"></i>35 Students</li>
-                                    </ul>
-                                    <a href="course-details.html" class="edu-btn btn-secondary btn-small">Enrolled <i class="icon-4"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Course  -->
-                    <!-- Start Single Course  -->
-                    <div class="col-md-6 col-lg-4" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">
-                        <div class="edu-course course-style-2 hover-button-bg-white">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <a href="course-details.html">
-                                        <img src="./_vendors/images/course/course-03.jpg" alt="Course Meta">
-                                    </a>
-                                    <div class="time-top">
-                                        <span class="duration"><i class="icon-61"></i>3 Weeks</span>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <span class="course-level">Intermediate</span>
-                                    <h5 class="title">
-                                        <a href="#">The Complete Camtasia Course for Content Creators</a>
-                                    </h5>
-                                    <div class="course-rating">
-                                        <div class="rating">
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                        </div>
-                                        <span class="rating-count">(4.9 /7 Rating)</span>
-                                    </div>
-                                    <div class="course-price">$35.00</div>
-                                    <ul class="course-meta">
-                                        <li><i class="icon-24"></i>13 Lessons</li>
-                                        <li><i class="icon-25"></i>18 Students</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="course-hover-content-wrapper">
-                                <button class="wishlist-btn"><i class="icon-22"></i></button>
-                            </div>
-                            <div class="course-hover-content">
-                                <div class="content">
-                                    <button class="wishlist-btn"><i class="icon-22"></i></button>
-                                    <span class="course-level">Intermediate</span>
-                                    <h5 class="title">
-                                        <a href="course-details.html">The Complete Camtasia Course for Content Creators</a>
-                                    </h5>
-                                    <div class="course-rating">
-                                        <div class="rating">
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                            <i class="icon-23"></i>
-                                        </div>
-                                        <span class="rating-count">(4.9 /7 Rating)</span>
-                                    </div>
-                                    <div class="course-price">$35.00</div>
-                                    <p>Lorem ipsum dolor sit amet consectur adpis elit sed eiusmod tempor incididunt labore dolore magna aliquaenim.</p>
-                                    <ul class="course-meta">
-                                        <li><i class="icon-24"></i>13 Lessons</li>
-                                        <li><i class="icon-25"></i>18 Students</li>
-                                    </ul>
-                                    <a href="course-details.html" class="edu-btn btn-secondary btn-small">Enrolled <i class="icon-4"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Course  -->
-                </div>
-                <div class="course-view-all" data-sal-delay="100" data-sal="slide-up" data-sal-duration="1200">
-                    <a href="course-one.html" class="edu-btn">Browse more courses <i class="icon-4"></i></a>
                 </div>
             </div>
         </div>
         <!-- End Course Area -->
-        <!--=====================================-->
-        <!--=       Video Area Start      		=-->
-        <!--=====================================-->
-        <div class="video-area-1">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-9">
-                        <div class="video-gallery">
-                            <div class="thumbnail">
-                                <img src="./_vendors/images/others/video-01.webp" alt="Thumb">
-                                <a href="https://www.youtube.com/watch?v=PICj5tr9hcc" class="video-play-btn video-popup-activation">
-                                    <i class="icon-18"></i>
-                                </a>
-                            </div>
-                            <ul class="shape-group">
-                                <li class="shape-1 scene">
-                                    <img data-depth="2" class="rotateit" src="./_vendors/images/about/shape-37.png" alt="Shape">
-                                </li>
-                                <li class="shape-2 scene">
-                                    <img data-depth="-2" src="./_vendors/images/faq/shape-04.png" alt="Shape">
-                                </li>
-                                <li class="shape-3 scene shape-light">
-                                    <img data-depth="2" src="./_vendors/images/faq/shape-14.png" alt="Shape">
-                                </li>
-                                <li class="shape-3 scene shape-dark">
-                                    <img data-depth="2" src="./_vendors/images/faq/dark-shape-14.png" alt="Shape">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!--=====================================-->
         <!--=       CounterUp Area Start      	=-->
         <!--=====================================-->
@@ -1104,7 +892,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="inner text-center">
-                                <p>Copyright 2023 <a href="https://1.envato.market/5bQ022" target="_blank">EduBlink</a> Designed By <a href="https://1.envato.market/YgGJbj" target="_blank">DevsBlink</a>. All Rights Reserved</p>
+                                <p>Copyright 2023 <a href="https://www.brighterbrainacademy.com">Brighter Brain Academy</a> All Rights Reserved</p>
                             </div>
                         </div>
                     </div>
