@@ -64,15 +64,24 @@
                                 <ul class="mainmenu">
                                     <li class="nav-item"><a href="#">Home</a></li>
                                     <li class="nav-item"><a href="#">About Us</a></li>
-                                    <li class="nav-item"><a href="#">Academics</a></li>
-                                    <li class="has-droupdown"><a href="#">Tutorials</a>
+                                    <li class="has-droupdown"><a href="#">Academics</a>
                                         <ul class="submenu">
-                                            <li><a href="#">JAMB</a></li>
-                                            <li><a href="#">WAEC</a></li>
-                                            <li><a href="#">NECO</a></li>
-                                            <li><a href="#">POST UTME</a></li>
+                                            <li><a href="#">Nursery Section</a></li>
+                                            <li><a href="#">Primary Section</a></li>
+                                            <li><a href="#">Secondary Section</a></li>
                                         </ul>
                                     </li>
+                                    <li class="nav-item"><a href="#">Gallery</a></li>
+                                    <li class="has-droupdown"><a href="#">Tutorials</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">GCE Tutorials</a></li>
+                                            <li><a href="#">WAEC Tutorials</a></li>
+                                            <li><a href="#">NECO Tutorials</a></li>
+                                            <li><a href="#">JAMB Tutorials</a></li>
+                                            <li><a href="#">POST UTME Tutorials</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item"><a href="#">FAQs</a></li>
                                     <li class="nav-item"><a href="#">Contact Us</a></li>
                                 </ul>
                             </nav>
