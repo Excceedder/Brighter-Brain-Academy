@@ -89,7 +89,7 @@
                         <div class="header-right">
                             <ul class="header-action">
                                 <li class="header-btn">
-                                    <a href="contact-us.html" class="edu-btn btn-medium btn-gradient">Result Checker <i class="icon-4"></i></a>
+                                    <a href="./termly_report/" target="_blank" class="edu-btn btn-medium btn-gradient">Result Checker <i class="icon-4"></i></a>
                                 </li>
                                 <li class="mobile-menu-bar d-block d-xl-none">
                                     <button class="hamberger-button">
