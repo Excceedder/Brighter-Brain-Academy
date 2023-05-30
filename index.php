@@ -296,7 +296,7 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-7">
                         <div class="about-image-gallery">
-                            <img class="main-img-1" src="./_vendors/images/about/about-03.webp" alt="About Image">
+                            <img class="main-img-1" src="https://images.ctfassets.net/p0qf7j048i0q/2Bci8LSXnyuxPYqRBeRdLN/a2d70821235c8c1271753e23b4c257a4/G1045322212.png?w=3840&q=75&h=3840&fm=webp" alt="About Image">
                             <div class="author-box" data-parallax='{"x": 0, "y": -120}'>
                                 <div class="inner">
                                     <div class="thumb">
@@ -372,7 +372,7 @@
                             <div class="col-lg-9">
                                 <div class="video-gallery">
                                     <div class="thumbnail">
-                                        <img src="./_vendors/images/others/video-01.webp" alt="Thumb">
+                                        <img src="https://lsuonline-static.s3.amazonaws.com/media/images/2020/03/27/girl-feature.jpg" alt="Thumb">
                                         <a href="https://www.youtube.com/watch?v=PICj5tr9hcc" class="video-play-btn video-popup-activation">
                                             <i class="icon-18"></i>
                                         </a>
@@ -606,22 +606,22 @@
                             <div class="row g-5">
                                 <div class="col-6" data-sal-delay="50" data-sal="slide-right" data-sal-duration="800">
                                     <div class="faq-thumbnail thumbnail-1">
-                                        <img src="./_vendors/images/faq/faq-01.jpg" alt="Faq Images">
+                                        <img src="https://lsuonline-static.s3.amazonaws.com/media/images/2020/03/27/girl-feature.jpg" alt="Faq Images">
                                     </div>
                                 </div>
                                 <div class="col-6" data-sal-delay="100" data-sal="slide-left" data-sal-duration="800">
                                     <div class="faq-thumbnail thumbnail-2">
-                                        <img src="./_vendors/images/faq/faq-02.jpg" alt="Faq Images">
+                                        <img src="https://images.ctfassets.net/p0qf7j048i0q/2Bci8LSXnyuxPYqRBeRdLN/a2d70821235c8c1271753e23b4c257a4/G1045322212.png?w=3840&q=75&h=3840&fm=webp" alt="Faq Images">
                                     </div>
                                 </div>
                                 <div class="col-6" data-sal-delay="50" data-sal="slide-right" data-sal-duration="800">
                                     <div class="faq-thumbnail thumbnail-3">
-                                        <img src="./_vendors/images/faq/faq-03.jpg" alt="Faq Images">
+                                        <img src="https://images.ctfassets.net/p0qf7j048i0q/2Bci8LSXnyuxPYqRBeRdLN/a2d70821235c8c1271753e23b4c257a4/G1045322212.png?w=3840&q=75&h=3840&fm=webp" alt="Faq Images">
                                     </div>
                                 </div>
                                 <div class="col-6" data-sal-delay="100" data-sal="slide-left" data-sal-duration="800">
                                     <div class="faq-thumbnail thumbnail-4">
-                                        <img src="./_vendors/images/faq/faq-04.webp" alt="Faq Images">
+                                        <img src="https://lsuonline-static.s3.amazonaws.com/media/images/2020/03/27/girl-feature.jpg" alt="Faq Images">
                                     </div>
                                 </div>
                             </div>
@@ -704,108 +704,6 @@
                 </div>
             </div>
         </div>
-        <!--=====================================-->
-        <!--=      		Blog Area Start   		=-->
-        <!--=====================================-->
-        <!-- Start Blog Area  -->
-        <div class="edu-blog-area blog-area-2 svg-image--2 bg-image gap-bottom-equal">
-            <div class="container">
-                <div class="section-title section-center" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
-                    <span class="pre-title">Latest Articles</span>
-                    <h2 class="title">Get News with EduBlink</h2>
-                    <span class="shape-line"><i class="icon-19"></i></span>
-                </div>
-                <div class="row g-5">
-                    <!-- Start Blog Grid  -->
-                    <div class="col-lg-4 col-md-6 col-12" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
-                        <div class="edu-blog blog-style-1">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <a href="blog-details.html">
-                                        <img src="./_vendors/images/blog/blog-01.jpg" alt="Blog Images">
-                                    </a>
-                                </div>
-                                <div class="content position-top">
-                                    <div class="read-more-btn">
-                                        <a class="btn-icon-round" href="blog-details.html"><i class="icon-4"></i></a>
-                                    </div>
-                                    <div class="category-wrap">
-                                        <a href="#" class="blog-category">ONLINE</a>
-                                    </div>
-                                    <h5 class="title"><a href="blog-details.html">Become a Better Blogger: Content Planning</a></h5>
-                                    <ul class="blog-meta">
-                                        <li><i class="icon-27"></i>Oct 10, 2021</li>
-                                        <li><i class="icon-28"></i>Com 09</li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet cons tetur adipisicing sed.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Blog Grid  -->
-                    <!-- Start Blog Grid  -->
-                    <div class="col-lg-4 col-md-6 col-12" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
-                        <div class="edu-blog blog-style-1">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <a href="blog-details.html">
-                                        <img src="./_vendors/images/blog/blog-02.jpg" alt="Blog Images">
-                                    </a>
-                                </div>
-                                <div class="content position-top">
-                                    <div class="read-more-btn">
-                                        <a class="btn-icon-round" href="blog-details.html"><i class="icon-4"></i></a>
-                                    </div>
-                                    <div class="category-wrap">
-                                        <a href="#" class="blog-category">LECTURE</a>
-                                    </div>
-                                    <h5 class="title"><a href="blog-details.html">Become a Better Blogger: Content Planning</a></h5>
-                                    <ul class="blog-meta">
-                                        <li><i class="icon-27"></i>Oct 10, 2021</li>
-                                        <li><i class="icon-28"></i>Com 09</li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet cons tetur adipisicing sed do eiusmod ux tempor incid idunt labore dol oremagna aliqua.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Blog Grid  -->
-                    <!-- Start Blog Grid  -->
-                    <div class="col-lg-4 col-md-6 col-12" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">
-                        <div class="edu-blog blog-style-1">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <a href="blog-details.html">
-                                        <img src="./_vendors/images/blog/blog-03.jpg" alt="Blog Images">
-                                    </a>
-                                </div>
-                                <div class="content position-top">
-                                    <div class="read-more-btn">
-                                        <a class="btn-icon-round" href="blog-details.html"><i class="icon-4"></i></a>
-                                    </div>
-                                    <div class="category-wrap">
-                                        <a href="#" class="blog-category">BUSINESS</a>
-                                    </div>
-                                    <h5 class="title"><a href="blog-details.html">Become a Better Blogger: Content Planning</a></h5>
-                                    <ul class="blog-meta">
-                                        <li><i class="icon-27"></i>Oct 10, 2021</li>
-                                        <li><i class="icon-28"></i>Com 09</li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet cons tetur adipisicing sed do eiusmod ux tempor incid idunt.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Blog Grid  -->
-                </div>
-            </div>
-            <ul class="shape-group">
-                <li class="shape-1">
-                    <img src="./_vendors/images/about/shape-25.png" alt="Shape">
-                </li>
-            </ul>
-        </div>
-        <!-- End Blog Area  -->
         <!--=====================================-->
         <!--=        Footer Area Start       	=-->
         <!--=====================================-->
