@@ -9,22 +9,22 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./_vendors/images/favicon.png">
     <!-- CSS
 	============================================ -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/icomoon.css">
-    <link rel="stylesheet" href="assets/css/vendor/remixicon.css">
-    <link rel="stylesheet" href="assets/css/vendor/magnifypopup.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/odometer.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/lightbox.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/animation.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/jqueru-ui-min.css">
-    <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/tipped.min.css">
+    <link rel="stylesheet" href="./_vendors/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="./_vendors/css/vendor/icomoon.css">
+    <link rel="stylesheet" href="./_vendors/css/vendor/remixicon.css">
+    <link rel="stylesheet" href="./_vendors/css/vendor/magnifypopup.min.css">
+    <link rel="stylesheet" href="./_vendors/css/vendor/odometer.min.css">
+    <link rel="stylesheet" href="./_vendors/css/vendor/lightbox.min.css">
+    <link rel="stylesheet" href="./_vendors/css/vendor/animation.min.css">
+    <link rel="stylesheet" href="./_vendors/css/vendor/jqueru-ui-min.css">
+    <link rel="stylesheet" href="./_vendors/css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./_vendors/css/vendor/tipped.min.css">
 
     <!-- Site Stylesheet -->
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="./_vendors/css/app.css">
 
 </head>
 
@@ -57,8 +57,8 @@
                         <div class="header-brand">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img class="logo-light" src="assets/images/logo/logo-dark.png" alt="Corporate Logo">
-                                    <img class="logo-dark" src="assets/images/logo/logo-white.png" alt="Corporate Logo">
+                                    <img class="logo-light" src="./_vendors/images/logo/logo-dark.png" alt="Corporate Logo">
+                                    <img class="logo-dark" src="./_vendors/images/logo/logo-white.png" alt="Corporate Logo">
                                 </a>
                             </div>
                             <div class="header-category">
@@ -114,7 +114,7 @@
                                                 <ul class="submenu mega-sub-menu-01">
                                                     <li>
                                                         <a href="https://1.envato.market/5bQ022">
-                                                            <img src="assets/images/others/mega-menu-image.webp" alt="advertising Image">
+                                                            <img src="./_vendors/images/others/mega-menu-image.webp" alt="advertising Image">
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -233,8 +233,8 @@
                     <div class="header-top">
                         <div class="logo">
                             <a href="index.html">
-                                <img class="logo-light" src="assets/images/logo/logo-dark.png" alt="Corporate Logo">
-                                <img class="logo-dark" src="assets/images/logo/logo-white.png" alt="Corporate Logo">
+                                <img class="logo-light" src="./_vendors/images/logo/logo-dark.png" alt="Corporate Logo">
+                                <img class="logo-dark" src="./_vendors/images/logo/logo-white.png" alt="Corporate Logo">
                             </a>
                         </div>
                         <div class="close-menu">
@@ -272,7 +272,7 @@
                                     <ul class="submenu mega-sub-menu-01">
                                         <li>
                                             <a href="https://1.envato.market/5bQ022">
-                                                <img src="assets/images/others/mega-menu-image.webp" alt="advertising Image">
+                                                <img src="./_vendors/images/others/mega-menu-image.webp" alt="advertising Image">
                                             </a>
                                         </li>
                                     </ul>
@@ -358,8 +358,8 @@
             <div class="edu-search-popup">
                 <div class="content-wrap">
                     <div class="site-logo">
-                        <img class="logo-light" src="assets/images/logo/logo-dark.png" alt="Corporate Logo">
-                        <img class="logo-dark" src="assets/images/logo/logo-white.png" alt="Corporate Logo">
+                        <img class="logo-light" src="./_vendors/images/logo/logo-dark.png" alt="Corporate Logo">
+                        <img class="logo-dark" src="./_vendors/images/logo/logo-white.png" alt="Corporate Logo">
                     </div>
                     <div class="close-button">
                         <button class="close-trigger"><i class="icon-73"></i></button>
@@ -392,10 +392,10 @@
                     <div class="col-lg-6">
                         <div class="banner-gallery">
                             <div class="thumbnail thumbnail-1" data-sal-delay="500" data-sal="slide-up" data-sal-duration="1000">
-                                <img src="assets/images/banner/girl-2.webp" alt="Girl Image">
+                                <img src="./_vendors/images/banner/girl-2.webp" alt="Girl Image">
                             </div>
                             <div class="thumbnail thumbnail-2" data-sal-delay="500" data-sal="slide-down" data-sal-duration="1000">
-                                <img src="assets/images/banner/man-1.webp" alt="Girl Image">
+                                <img src="./_vendors/images/banner/man-1.webp" alt="Girl Image">
                             </div>
                             <div class="online-support" data-sal-delay="600" data-sal="slide-right" data-sal-duration="1000">
                                 <div class="inner">
@@ -410,22 +410,22 @@
                             </div>
                             <ul class="shape-group">
                                 <li class="shape-1 scene shape-light" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                                    <img data-depth="2" src="assets/images/faq/shape-13.png" alt="Shape">
+                                    <img data-depth="2" src="./_vendors/images/faq/shape-13.png" alt="Shape">
                                 </li>
                                 <li class="shape-1 scene shape-dark" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                                    <img data-depth="2" src="assets/images/faq/dark-shape-13.png" alt="Shape">
+                                    <img data-depth="2" src="./_vendors/images/faq/dark-shape-13.png" alt="Shape">
                                 </li>
                                 <li class="shape-2 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                                    <img data-depth="-2" src="assets/images/faq/shape-12.png" alt="Shape">
+                                    <img data-depth="-2" src="./_vendors/images/faq/shape-12.png" alt="Shape">
                                 </li>
                                 <li class="shape-3 scene shape-light" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                                    <img data-depth="2" src="assets/images/faq/shape-09.png" alt="Shape">
+                                    <img data-depth="2" src="./_vendors/images/faq/shape-09.png" alt="Shape">
                                 </li>
                                 <li class="shape-3 scene shape-dark" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                                    <img data-depth="2" src="assets/images/faq/dark-shape-09.png" alt="Shape">
+                                    <img data-depth="2" src="./_vendors/images/faq/dark-shape-09.png" alt="Shape">
                                 </li>
                                 <li class="shape-4 scene" data-sal-delay="1000" data-sal="fade" data-sal-duration="1000">
-                                    <img data-depth="-2" src="assets/images/cta/shape-04.png" alt="Shape">
+                                    <img data-depth="-2" src="./_vendors/images/cta/shape-04.png" alt="Shape">
                                 </li>
                             </ul>
                         </div>
@@ -450,7 +450,7 @@
                     <div class="col-lg-3 col-sm-6" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
                         <div class="categorie-grid categorie-style-1 color-primary-style edublink-svg-animate">
                             <div class="icon">
-                                <img class="svgInject" src="assets/images/animated-svg-icons/online-degree.svg" alt="animated icon">
+                                <img class="svgInject" src="./_vendors/images/animated-svg-icons/online-degree.svg" alt="animated icon">
                                 <!-- <i class="icon-9"></i> -->
                             </div>
                             <div class="content">
@@ -465,7 +465,7 @@
                     <div class="col-lg-3 col-sm-6" data-sal-delay="200" data-sal="slide-up" data-sal-duration="800">
                         <div class="categorie-grid categorie-style-1 color-secondary-style edublink-svg-animate">
                             <div class="icon">
-                                <img class="svgInject" src="assets/images/animated-svg-icons/non-degree-programs.svg" alt="animated icon">
+                                <img class="svgInject" src="./_vendors/images/animated-svg-icons/non-degree-programs.svg" alt="animated icon">
                                 <!-- <i class="icon-10"></i> -->
                             </div>
                             <div class="content">
@@ -480,7 +480,7 @@
                     <div class="col-lg-3 col-sm-6" data-sal-delay="300" data-sal="slide-up" data-sal-duration="800">
                         <div class="categorie-grid categorie-style-1 color-extra08-style edublink-svg-animate">
                             <div class="icon">
-                                <img class="svgInject" src="assets/images/animated-svg-icons/off-campus-programs.svg" alt="animated icon">
+                                <img class="svgInject" src="./_vendors/images/animated-svg-icons/off-campus-programs.svg" alt="animated icon">
                                 <!-- <i class="icon-11"></i> -->
                             </div>
                             <div class="content">
@@ -495,7 +495,7 @@
                     <div class="col-lg-3 col-sm-6" data-sal-delay="400" data-sal="slide-up" data-sal-duration="800">
                         <div class="categorie-grid categorie-style-1 color-extra05-style edublink-svg-animate">
                             <div class="icon">
-                                <img class="svgInject" src="assets/images/animated-svg-icons/hybrid-distance-programs.svg" alt="animated icon">
+                                <img class="svgInject" src="./_vendors/images/animated-svg-icons/hybrid-distance-programs.svg" alt="animated icon">
                                 <!-- <i class="icon-12"></i> -->
                             </div>
                             <div class="content">
@@ -519,11 +519,11 @@
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-7">
                         <div class="about-image-gallery">
-                            <img class="main-img-1" src="assets/images/about/about-03.webp" alt="About Image">
+                            <img class="main-img-1" src="./_vendors/images/about/about-03.webp" alt="About Image">
                             <div class="author-box" data-parallax='{"x": 0, "y": -120}'>
                                 <div class="inner">
                                     <div class="thumb">
-                                        <img src="assets/images/about/shape-03.png" alt="Shape Image">
+                                        <img src="./_vendors/images/about/shape-03.png" alt="Shape Image">
                                     </div>
                                     <div class="content">
                                         <h4 class="title">Ray Sanchez</h4>
@@ -544,13 +544,13 @@
                             </div>
                             <ul class="shape-group">
                                 <li class="shape-1 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                                    <img data-depth="2" src="assets/images/about/shape-38.png" alt="Shape">
+                                    <img data-depth="2" src="./_vendors/images/about/shape-38.png" alt="Shape">
                                 </li>
                                 <li class="shape-2 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                                    <img data-depth="-2" src="assets/images/about/shape-37.png" alt="Shape">
+                                    <img data-depth="-2" src="./_vendors/images/about/shape-37.png" alt="Shape">
                                 </li>
                                 <li class="shape-3 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                                    <img data-depth="1.8" src="assets/images/about/shape-04.png" alt="Shape">
+                                    <img data-depth="1.8" src="./_vendors/images/about/shape-04.png" alt="Shape">
                                 </li>
                             </ul>
                         </div>
@@ -596,7 +596,7 @@
                             <div class="inner">
                                 <div class="thumbnail">
                                     <a href="course-details.html">
-                                        <img src="assets/images/course/course-01.jpg" alt="Course Meta">
+                                        <img src="./_vendors/images/course/course-01.jpg" alt="Course Meta">
                                     </a>
                                     <div class="time-top">
                                         <span class="duration"><i class="icon-61"></i>3 Weeks</span>
@@ -662,7 +662,7 @@
                             <div class="inner">
                                 <div class="thumbnail">
                                     <a href="course-details.html">
-                                        <img src="assets/images/course/course-02.jpg" alt="Course Meta">
+                                        <img src="./_vendors/images/course/course-02.jpg" alt="Course Meta">
                                     </a>
                                     <div class="time-top">
                                         <span class="duration"><i class="icon-61"></i>8 Weeks</span>
@@ -728,7 +728,7 @@
                             <div class="inner">
                                 <div class="thumbnail">
                                     <a href="course-details.html">
-                                        <img src="assets/images/course/course-03.jpg" alt="Course Meta">
+                                        <img src="./_vendors/images/course/course-03.jpg" alt="Course Meta">
                                     </a>
                                     <div class="time-top">
                                         <span class="duration"><i class="icon-61"></i>3 Weeks</span>
@@ -804,23 +804,23 @@
                     <div class="col-lg-9">
                         <div class="video-gallery">
                             <div class="thumbnail">
-                                <img src="assets/images/others/video-01.webp" alt="Thumb">
+                                <img src="./_vendors/images/others/video-01.webp" alt="Thumb">
                                 <a href="https://www.youtube.com/watch?v=PICj5tr9hcc" class="video-play-btn video-popup-activation">
                                     <i class="icon-18"></i>
                                 </a>
                             </div>
                             <ul class="shape-group">
                                 <li class="shape-1 scene">
-                                    <img data-depth="2" class="rotateit" src="assets/images/about/shape-37.png" alt="Shape">
+                                    <img data-depth="2" class="rotateit" src="./_vendors/images/about/shape-37.png" alt="Shape">
                                 </li>
                                 <li class="shape-2 scene">
-                                    <img data-depth="-2" src="assets/images/faq/shape-04.png" alt="Shape">
+                                    <img data-depth="-2" src="./_vendors/images/faq/shape-04.png" alt="Shape">
                                 </li>
                                 <li class="shape-3 scene shape-light">
-                                    <img data-depth="2" src="assets/images/faq/shape-14.png" alt="Shape">
+                                    <img data-depth="2" src="./_vendors/images/faq/shape-14.png" alt="Shape">
                                 </li>
                                 <li class="shape-3 scene shape-dark">
-                                    <img data-depth="2" src="assets/images/faq/dark-shape-14.png" alt="Shape">
+                                    <img data-depth="2" src="./_vendors/images/faq/dark-shape-14.png" alt="Shape">
                                 </li>
                             </ul>
                         </div>
@@ -893,7 +893,7 @@
                                 <div class="swiper-slide">
                                     <div class="testimonial-grid">
                                         <div class="thumbnail">
-                                            <img src="assets/images/testimonial/testimonial-01.png" alt="Testimonial">
+                                            <img src="./_vendors/images/testimonial/testimonial-01.png" alt="Testimonial">
                                             <span class="qoute-icon"><i class="icon-26"></i></span>
 
                                         </div>
@@ -914,7 +914,7 @@
                                 <div class="swiper-slide">
                                     <div class="testimonial-grid">
                                         <div class="thumbnail">
-                                            <img src="assets/images/testimonial/testimonial-02.png" alt="Testimonial">
+                                            <img src="./_vendors/images/testimonial/testimonial-02.png" alt="Testimonial">
                                             <span class="qoute-icon"><i class="icon-26"></i></span>
 
                                         </div>
@@ -935,7 +935,7 @@
                                 <div class="swiper-slide">
                                     <div class="testimonial-grid">
                                         <div class="thumbnail">
-                                            <img src="assets/images/testimonial/testimonial-03.png" alt="Testimonial">
+                                            <img src="./_vendors/images/testimonial/testimonial-03.png" alt="Testimonial">
                                             <span class="qoute-icon"><i class="icon-26"></i></span>
 
                                         </div>
@@ -956,7 +956,7 @@
                                 <div class="swiper-slide">
                                     <div class="testimonial-grid">
                                         <div class="thumbnail">
-                                            <img src="assets/images/testimonial/testimonial-04.png" alt="Testimonial">
+                                            <img src="./_vendors/images/testimonial/testimonial-04.png" alt="Testimonial">
                                             <span class="qoute-icon"><i class="icon-26"></i></span>
 
                                         </div>
@@ -990,36 +990,36 @@
             <div class="container edublink-animated-shape">
                 <div class="brand-grid-wrap brand-style-2">
                     <div class="brand-grid">
-                        <img src="assets/images/brand/brand-01.png" alt="Brand Logo">
+                        <img src="./_vendors/images/brand/brand-01.png" alt="Brand Logo">
                     </div>
                     <div class="brand-grid">
-                        <img src="assets/images/brand/brand-02.png" alt="Brand Logo">
+                        <img src="./_vendors/images/brand/brand-02.png" alt="Brand Logo">
                     </div>
                     <div class="brand-grid">
-                        <img src="assets/images/brand/brand-03.png" alt="Brand Logo">
+                        <img src="./_vendors/images/brand/brand-03.png" alt="Brand Logo">
                     </div>
                     <div class="brand-grid">
-                        <img src="assets/images/brand/brand-04.png" alt="Brand Logo">
+                        <img src="./_vendors/images/brand/brand-04.png" alt="Brand Logo">
                     </div>
                     <div class="brand-grid">
-                        <img src="assets/images/brand/brand-05.png" alt="Brand Logo">
+                        <img src="./_vendors/images/brand/brand-05.png" alt="Brand Logo">
                     </div>
                     <div class="brand-grid">
-                        <img src="assets/images/brand/brand-06.png" alt="Brand Logo">
+                        <img src="./_vendors/images/brand/brand-06.png" alt="Brand Logo">
                     </div>
                 </div>
                 <ul class="shape-group">
                     <li class="shape-1 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                        <img data-depth="-2" src="assets/images/about/shape-37.png" alt="Shape">
+                        <img data-depth="-2" src="./_vendors/images/about/shape-37.png" alt="Shape">
                     </li>
                 </ul>
             </div>
             <ul class="shape-group">
                 <li class="shape-2 scene shape-light" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                    <img data-depth="-2" src="assets/images/about/shape-41.png" alt="Shape">
+                    <img data-depth="-2" src="./_vendors/images/about/shape-41.png" alt="Shape">
                 </li>
                 <li class="shape-2 scene shape-dark" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                    <img data-depth="-2" src="assets/images/about/dark-shape-41.png" alt="Shape">
+                    <img data-depth="-2" src="./_vendors/images/about/dark-shape-41.png" alt="Shape">
                 </li>
             </ul>
         </div>
@@ -1035,40 +1035,40 @@
                             <div class="row g-5">
                                 <div class="col-6" data-sal-delay="50" data-sal="slide-right" data-sal-duration="800">
                                     <div class="faq-thumbnail thumbnail-1">
-                                        <img src="assets/images/faq/faq-01.jpg" alt="Faq Images">
+                                        <img src="./_vendors/images/faq/faq-01.jpg" alt="Faq Images">
                                     </div>
                                 </div>
                                 <div class="col-6" data-sal-delay="100" data-sal="slide-left" data-sal-duration="800">
                                     <div class="faq-thumbnail thumbnail-2">
-                                        <img src="assets/images/faq/faq-02.jpg" alt="Faq Images">
+                                        <img src="./_vendors/images/faq/faq-02.jpg" alt="Faq Images">
                                     </div>
                                 </div>
                                 <div class="col-6" data-sal-delay="50" data-sal="slide-right" data-sal-duration="800">
                                     <div class="faq-thumbnail thumbnail-3">
-                                        <img src="assets/images/faq/faq-03.jpg" alt="Faq Images">
+                                        <img src="./_vendors/images/faq/faq-03.jpg" alt="Faq Images">
                                     </div>
                                 </div>
                                 <div class="col-6" data-sal-delay="100" data-sal="slide-left" data-sal-duration="800">
                                     <div class="faq-thumbnail thumbnail-4">
-                                        <img src="assets/images/faq/faq-04.webp" alt="Faq Images">
+                                        <img src="./_vendors/images/faq/faq-04.webp" alt="Faq Images">
                                     </div>
                                 </div>
                             </div>
                             <ul class="shape-group">
                                 <li class="shape-1 scene shape-light" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                                    <img data-depth="2" src="assets/images/faq/shape-02.png" alt="Shape Images">
+                                    <img data-depth="2" src="./_vendors/images/faq/shape-02.png" alt="Shape Images">
                                 </li>
                                 <li class="shape-1 scene shape-dark" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                                    <img data-depth="1.5" src="assets/images/faq/dark-shape-02.png" alt="Shape Images">
+                                    <img data-depth="1.5" src="./_vendors/images/faq/dark-shape-02.png" alt="Shape Images">
                                 </li>
                                 <li class="shape-2 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                                    <img data-depth="-2" src="assets/images/faq/shape-03.png" alt="Shape Images">
+                                    <img data-depth="-2" src="./_vendors/images/faq/shape-03.png" alt="Shape Images">
                                 </li>
                                 <li class="shape-3 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                                    <img data-depth="2" src="assets/images/faq/shape-04.png" alt="Shape Images">
+                                    <img data-depth="2" src="./_vendors/images/faq/shape-04.png" alt="Shape Images">
                                 </li>
                                 <li class="shape-4 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                                    <img data-depth="-2" src="assets/images/faq/shape-05.png" alt="Shape Images">
+                                    <img data-depth="-2" src="./_vendors/images/faq/shape-05.png" alt="Shape Images">
                                 </li>
                             </ul>
                         </div>
@@ -1122,7 +1122,7 @@
                             </div>
                             <ul class="shape-group">
                                 <li class="shape-1 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
-                                    <img data-depth="1.5" src="assets/images/about/shape-02.png" alt="Shape Images">
+                                    <img data-depth="1.5" src="./_vendors/images/about/shape-02.png" alt="Shape Images">
                                 </li>
                                 <li class="shape-2 scene" data-sal-delay="500" data-sal="fade" data-sal-duration="200">
                                     <span data-depth="-2.2"></span>
@@ -1151,7 +1151,7 @@
                             <div class="inner">
                                 <div class="thumbnail">
                                     <a href="blog-details.html">
-                                        <img src="assets/images/blog/blog-01.jpg" alt="Blog Images">
+                                        <img src="./_vendors/images/blog/blog-01.jpg" alt="Blog Images">
                                     </a>
                                 </div>
                                 <div class="content position-top">
@@ -1178,7 +1178,7 @@
                             <div class="inner">
                                 <div class="thumbnail">
                                     <a href="blog-details.html">
-                                        <img src="assets/images/blog/blog-02.jpg" alt="Blog Images">
+                                        <img src="./_vendors/images/blog/blog-02.jpg" alt="Blog Images">
                                     </a>
                                 </div>
                                 <div class="content position-top">
@@ -1205,7 +1205,7 @@
                             <div class="inner">
                                 <div class="thumbnail">
                                     <a href="blog-details.html">
-                                        <img src="assets/images/blog/blog-03.jpg" alt="Blog Images">
+                                        <img src="./_vendors/images/blog/blog-03.jpg" alt="Blog Images">
                                     </a>
                                 </div>
                                 <div class="content position-top">
@@ -1230,7 +1230,7 @@
             </div>
             <ul class="shape-group">
                 <li class="shape-1">
-                    <img src="assets/images/about/shape-25.png" alt="Shape">
+                    <img src="./_vendors/images/about/shape-25.png" alt="Shape">
                 </li>
             </ul>
         </div>
@@ -1247,7 +1247,7 @@
                             <div class="edu-footer-widget">
                                 <div class="logo">
                                     <a href="index.html">
-                                        <img class="logo-light" src="assets/images/logo/logo-white.png" alt="Corporate Logo">
+                                        <img class="logo-light" src="./_vendors/images/logo/logo-white.png" alt="Corporate Logo">
                                     </a>
                                 </div>
                                 <p class="description">Lorem ipsum dolor amet consecto adi pisicing elit sed eiusm tempor incidid unt labore dolore.</p>
@@ -1339,30 +1339,30 @@
     <!-- JS
 	============================================ -->
     <!-- Modernizer JS -->
-    <script src="assets/js/vendor/modernizr.min.js"></script>
+    <script src="./_vendors/js/vendor/modernizr.min.js"></script>
     <!-- Jquery Js -->
-    <script src="assets/js/vendor/jquery.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/sal.min.js"></script>
-    <script src="assets/js/vendor/backtotop.min.js"></script>
-    <script src="assets/js/vendor/magnifypopup.min.js"></script>
-    <script src="assets/js/vendor/jquery.countdown.min.js"></script>
-    <script src="assets/js/vendor/odometer.min.js"></script>
-    <script src="assets/js/vendor/isotop.min.js"></script>
-    <script src="assets/js/vendor/imageloaded.min.js"></script>
-    <script src="assets/js/vendor/lightbox.min.js"></script>
-    <script src="assets/js/vendor/paralax.min.js"></script>
-    <script src="assets/js/vendor/paralax-scroll.min.js"></script>
-    <script src="assets/js/vendor/jquery-ui.min.js"></script>
-    <script src="assets/js/vendor/swiper-bundle.min.js"></script>
-    <script src="assets/js/vendor/svg-inject.min.js"></script>
-    <script src="assets/js/vendor/vivus.min.js"></script>
-    <script src="assets/js/vendor/tipped.min.js"></script>
-    <script src="assets/js/vendor/smooth-scroll.min.js"></script>
-    <script src="assets/js/vendor/isInViewport.jquery.min.js"></script>
+    <script src="./_vendors/js/vendor/jquery.min.js"></script>
+    <script src="./_vendors/js/vendor/bootstrap.min.js"></script>
+    <script src="./_vendors/js/vendor/sal.min.js"></script>
+    <script src="./_vendors/js/vendor/backtotop.min.js"></script>
+    <script src="./_vendors/js/vendor/magnifypopup.min.js"></script>
+    <script src="./_vendors/js/vendor/jquery.countdown.min.js"></script>
+    <script src="./_vendors/js/vendor/odometer.min.js"></script>
+    <script src="./_vendors/js/vendor/isotop.min.js"></script>
+    <script src="./_vendors/js/vendor/imageloaded.min.js"></script>
+    <script src="./_vendors/js/vendor/lightbox.min.js"></script>
+    <script src="./_vendors/js/vendor/paralax.min.js"></script>
+    <script src="./_vendors/js/vendor/paralax-scroll.min.js"></script>
+    <script src="./_vendors/js/vendor/jquery-ui.min.js"></script>
+    <script src="./_vendors/js/vendor/swiper-bundle.min.js"></script>
+    <script src="./_vendors/js/vendor/svg-inject.min.js"></script>
+    <script src="./_vendors/js/vendor/vivus.min.js"></script>
+    <script src="./_vendors/js/vendor/tipped.min.js"></script>
+    <script src="./_vendors/js/vendor/smooth-scroll.min.js"></script>
+    <script src="./_vendors/js/vendor/isInViewport.jquery.min.js"></script>
 
     <!-- Site Scripts -->
-    <script src="assets/js/app.js"></script>
+    <script src="./_vendors/js/app.js"></script>
 </body>
 
 </html>
