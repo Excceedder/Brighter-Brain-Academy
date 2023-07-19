@@ -10,13 +10,13 @@ if (isset($_POST['authenticate_login'])) {
     authenticate_login($_POST);
 }
 
-if (isset($_POST['retrieve_access_token'])) {
-    retrieve_access_token($_POST);
-}
+// if (isset($_POST['retrieve_access_token'])) {
+//     retrieve_access_token($_POST);
+// }
 
-if (isset($_POST['authorize_login'])) {
-    authorize_login($_POST);
-}
+// if (isset($_POST['authorize_login'])) {
+//     authorize_login($_POST);
+// }
 
 if (isset($_POST['recover_password'])) {
     recover_password($_POST);

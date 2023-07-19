@@ -1,7 +1,7 @@
 <?php
 
 $db_conn_details = [
-    'host' => 'sql710.main-hosting.eu',
+    'host' => 'srv710.hstgr.io',
     'user' => 'u107856230_bba_data',
     'password' => 'Southecured@072##@!',
     'database' => 'u107856230_bba_data',

@@ -134,7 +134,8 @@ function authenticate_login($form_data)
         $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
 
         if (password_verify($form_data["password"], $manager_pass['password'])) {
-            $_SESSION['manager_id'] = $row['manager_id'];
+            $_SESSION['authorized'] = $row['manager_id'];
+            header("location: ./");
             return true;
         } else {
             $_SESSION['feedback'] = "Error: Password is invalid.";
@@ -148,73 +149,73 @@ function authenticate_login($form_data)
     }
 }
 
-function retrieve_access_token($form_data)
-{
-    $db_conn = connect_to_database();
+// function retrieve_access_token($form_data)
+// {
+//     $db_conn = connect_to_database();
 
-    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE JSON_EXTRACT(UNHEX(`manager_pass`), '$.username') = ? OR JSON_EXTRACT(UNHEX(`manager_pass`), '$.email_address') = ?");
-    $stmt->bind_param("ss", $form_data["account_holder"], $form_data["account_holder"]);
-    $stmt->execute();
-    $result = $stmt->get_result();
+//     $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE JSON_EXTRACT(UNHEX(`manager_pass`), '$.username') = ? OR JSON_EXTRACT(UNHEX(`manager_pass`), '$.email_address') = ?");
+//     $stmt->bind_param("ss", $form_data["account_holder"], $form_data["account_holder"]);
+//     $stmt->execute();
+//     $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
+//     if ($result->num_rows > 0) {
+//         $row = mysqli_fetch_assoc($result);
+//         $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
 
-        $access_token = $manager_pass['access_token'];
-        $access_token = password_hash($access_token, PASSWORD_BCRYPT);
-        $access_token = urlencode($access_token);
+//         $access_token = $manager_pass['access_token'];
+//         $access_token = password_hash($access_token, PASSWORD_BCRYPT);
+//         $access_token = urlencode($access_token);
 
-        $encoded_access_token = "https://api.qrserver.com/v1/create-qr-code/?data=$access_token&size=250x250&color=000000";
-        $_SESSION['encoded_access_token'] = $encoded_access_token;
-        return true;
-    } else {
-        $_SESSION['feedback'] = "Error: Invalid account credentials.";
-        $_SESSION['type'] = "warning";
-        return false;
-    }
-}
+//         $encoded_access_token = "https://api.qrserver.com/v1/create-qr-code/?data=$access_token&size=250x250&color=000000";
+//         $_SESSION['encoded_access_token'] = $encoded_access_token;
+//         return true;
+//     } else {
+//         $_SESSION['feedback'] = "Error: Invalid account credentials.";
+//         $_SESSION['type'] = "warning";
+//         return false;
+//     }
+// }
 
-function authorize_login($form_data)
-{
-    $db_conn = connect_to_database();
+// function authorize_login($form_data)
+// {
+//     $db_conn = connect_to_database();
 
-    $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `manager_id` = ?");
-    $stmt->bind_param("s", $form_data["manager_id"]);
-    $stmt->execute();
-    $result = $stmt->get_result();
+//     $stmt = $db_conn->prepare("SELECT * FROM `managers_accounts` WHERE `manager_id` = ?");
+//     $stmt->bind_param("s", $form_data["manager_id"]);
+//     $stmt->execute();
+//     $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
+//     if ($result->num_rows > 0) {
+//         $row = mysqli_fetch_assoc($result);
+//         $manager_pass = json_decode(hex2bin($row['manager_pass']), true);
 
-        if (password_verify($manager_pass["access_token"], $form_data['authorize_login'])) {
-            $access_token = bin2hex(random_bytes(32));
+//         if (password_verify($manager_pass["access_token"], $form_data['authorize_login'])) {
+//             $access_token = bin2hex(random_bytes(32));
 
-            $stmt = $db_conn->prepare("UPDATE `managers_accounts` SET `manager_pass` = HEX(JSON_SET(UNHEX(`manager_pass`), '$.access_token', ?)) WHERE manager_id = ?");
-            $stmt->bind_param("ss", $access_token, $form_data['manager_id']);
-            $stmt->execute();
+//             $stmt = $db_conn->prepare("UPDATE `managers_accounts` SET `manager_pass` = HEX(JSON_SET(UNHEX(`manager_pass`), '$.access_token', ?)) WHERE manager_id = ?");
+//             $stmt->bind_param("ss", $access_token, $form_data['manager_id']);
+//             $stmt->execute();
 
-            if ($stmt->affected_rows > 0) {
-                $_SESSION['authorized'] = $form_data['manager_id'];
-                header("location: ./");
-                return true;
-            } else {
-                $_SESSION['feedback'] = "Error: Unable to update data.";
-                $_SESSION['type'] = "warning";
-                return false;
-            }
-        } else {
-            $_SESSION['feedback'] = "Error: Access token is invalid.";
-            $_SESSION['type'] = "warning";
-            return false;
-        }
-    } else {
-        $_SESSION['feedback'] = "Error: Account does not exist in the system.";
-        $_SESSION['type'] = "warning";
-        return false;
-    }
-}
+//             if ($stmt->affected_rows > 0) {
+//                 $_SESSION['authorized'] = $form_data['manager_id'];
+//                 header("location: ./");
+//                 return true;
+//             } else {
+//                 $_SESSION['feedback'] = "Error: Unable to update data.";
+//                 $_SESSION['type'] = "warning";
+//                 return false;
+//             }
+//         } else {
+//             $_SESSION['feedback'] = "Error: Access token is invalid.";
+//             $_SESSION['type'] = "warning";
+//             return false;
+//         }
+//     } else {
+//         $_SESSION['feedback'] = "Error: Account does not exist in the system.";
+//         $_SESSION['type'] = "warning";
+//         return false;
+//     }
+// }
 
 function recover_password($form_data)
 {
