@@ -403,35 +403,55 @@ if (isset($_SESSION['termly_report_id'])) {
                       </td>
                       <td class="cs-text_center"><?php echo $subject_grade ?></td>
                     </tr>
-                    <tr>
-                      <td>Nature Studies</td>
-                      <td><?php echo $termly_report_data["nature_studies_first_ca_score"] ?></td>
-                      <td><?php echo $termly_report_data["nature_studies_second_ca_score"] ?></td>
-                      <td><?php echo $termly_report_data["nature_studies_examination_score"] ?></td>
-                      <td>
-                        <?php
+                    <?php
 
-                        $subject_score = $termly_report_data["nature_studies_first_ca_score"] + $termly_report_data["nature_studies_second_ca_score"] + $termly_report_data["nature_studies_examination_score"];
-                        if ($subject_score <= 30) {
-                          $subject_grade = "F";
-                        } else if ($subject_score >= 31 && $subject_score <= 39) {
-                          $subject_grade = "E";
-                        } else if ($subject_score >= 40 && $subject_score <= 49) {
-                          $subject_grade = "D";
-                        } else if ($subject_score >= 50 && $subject_score <= 59) {
-                          $subject_grade = "C";
-                        } else if ($subject_score >= 60 && $subject_score <= 69) {
-                          $subject_grade = "B";
-                        } else if ($subject_score >= 70 && $subject_score <= 80) {
-                          $subject_grade = "A";
-                        } else if ($subject_score >= 81) {
-                          $subject_grade = "A1";
-                        }
-                        echo $subject_score;
-                        ?>
-                      </td>
-                      <td class="cs-text_center"><?php echo $subject_grade ?></td>
-                    </tr>
+                    if ($termly_report_data["class_placement"] == "Kindergarten 2") {
+                    ?>
+                      <tr>
+                        <td>Nature Studies</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>
+                          -
+                        </td>
+                        <td class="cs-text_center">-</td>
+                      </tr>
+                    <?php
+                    } else {
+                    ?>
+                      <tr>
+                        <td>Nature Studies</td>
+                        <td><?php echo $termly_report_data["nature_studies_first_ca_score"] ?></td>
+                        <td><?php echo $termly_report_data["nature_studies_second_ca_score"] ?></td>
+                        <td><?php echo $termly_report_data["nature_studies_examination_score"] ?></td>
+                        <td>
+                          <?php
+
+                          $subject_score = $termly_report_data["nature_studies_first_ca_score"] + $termly_report_data["nature_studies_second_ca_score"] + $termly_report_data["nature_studies_examination_score"];
+                          if ($subject_score <= 30) {
+                            $subject_grade = "F";
+                          } else if ($subject_score >= 31 && $subject_score <= 39) {
+                            $subject_grade = "E";
+                          } else if ($subject_score >= 40 && $subject_score <= 49) {
+                            $subject_grade = "D";
+                          } else if ($subject_score >= 50 && $subject_score <= 59) {
+                            $subject_grade = "C";
+                          } else if ($subject_score >= 60 && $subject_score <= 69) {
+                            $subject_grade = "B";
+                          } else if ($subject_score >= 70 && $subject_score <= 80) {
+                            $subject_grade = "A";
+                          } else if ($subject_score >= 81) {
+                            $subject_grade = "A1";
+                          }
+                          echo $subject_score;
+                          ?>
+                        </td>
+                        <td class="cs-text_center"><?php echo $subject_grade ?></td>
+                      </tr>
+                    <?php
+                    }
+                    ?>
                     <tr>
                       <td>Christian Religious Studies</td>
                       <td><?php echo $termly_report_data["christian_religious_studies_first_ca_score"] ?></td>
