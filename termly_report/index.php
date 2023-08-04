@@ -1757,8 +1757,8 @@ if (isset($_SESSION['termly_report_id'])) {
 
           </div>
         </div>
-        <div class="">
-          <span style="font-size: large; color: #000; margin-top: 25px;">Promotion Status: Promoted</span>
+        <div class="" style="margin-top: 25px;">
+          <span style="font-size: large; color: #000;">Promotion Status: Promoted</span>
         </div>
       </div>
     </div>
