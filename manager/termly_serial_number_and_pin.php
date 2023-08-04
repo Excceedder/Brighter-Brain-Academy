@@ -109,7 +109,7 @@
                                                     $termly_report_id = $row['termly_report_id'];
                                                     $termly_report_data = json_decode(hex2bin($row['termly_report_data']), true);
                                             ?>
-                                                    <form action="../termly_report/verify_credentials" target="_blank" method="post">
+                                                    <form action="../termly_report/verify_credentials" method="post">
                                                         <tr>
                                                             <td><?php echo $termly_report_data["full_names"] ?></td>
                                                             <td><?php echo $termly_report_data["class_placement"] ?></td>
