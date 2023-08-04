@@ -1731,6 +1731,10 @@ if (isset($_SESSION['termly_report_id'])) {
                   <td style="font-weight: bold; border: 1px solid #000;">
                     <?php
 
+                    $english_language_subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
+
+                    $mathematics_subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
+
                     if ($average < 30) {
                       $overall_grade = "F";
                       $remark = "Fail";
@@ -1739,19 +1743,15 @@ if (isset($_SESSION['termly_report_id'])) {
                       $overall_grade = "E";
                       $remark = "Fair";
 
-                      $english_language_subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
-
-                      $mathematics_subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
-
-                      if ($english_language_subject_score > 40 || $mathematics_subject_score > 40) {
-                        $director_remark = "Adviced to repeat current class!";
-                      } else {
+                      if ($english_language_subject_score > 40 && $mathematics_subject_score > 40) {
                         $director_remark = "Promoted on <b>Probatioon</b> to " . promoteToNextClass($termly_report_data["class_placement"]);
+                      } else {
+                        $director_remark = "Adviced to repeat current class!";
                       }
                     } else if ($average < 45) {
+                      $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
                       $overall_grade = "D";
                       $remark = "Pass";
-                      $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
                     } else if ($average < 55) {
                       $overall_grade = "C";
                       $remark = "Credit";
@@ -1785,17 +1785,18 @@ if (isset($_SESSION['termly_report_id'])) {
     <?php
     if ($termly_report_data["term_tag"] == "3rd Term") {
     ?>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card" style="background-color: #6ad8d9; border: 1px dashed #000">
-            <div class="card-body">
-              <p class="mb-2" style="font-size: 16px;"><b class="initialism">Director's Remark:</b> <?php echo $director_remark ?></p>
-              <hr>
-              <p class="mb-0" style="font-size: 16px;"><b class="initialism">Head Teacher's Remark:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis tenetur in, sint dolorum necessitatibus ex mollitia quo accusantium maiores, quibusdam, pariatur vitae voluptatum aperiam animi! Lorem ipsum dolor sit amet.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th style="border-right: 1px solid #000;" scope="row">Director's Remark:</th>
+            <td><?php echo $director_remark ?></td>
+          </tr>
+          <tr>
+            <th scope="row" style="border-right: 1px solid #000;">Head Teacher's Remark:</th>
+            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius molestias quidem, veritatis rem sapiente corrupti quisquam accusamus ea sint quia!</td>
+          </tr>
+        </tbody>
+      </table>
     <?php
     }
     ?>
