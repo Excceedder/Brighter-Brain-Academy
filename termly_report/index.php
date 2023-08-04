@@ -1802,7 +1802,7 @@ if (isset($_SESSION['termly_report_id'])) {
           </tr>
           <tr>
             <th scope="row" style="border-right: 1px solid #000;">Head Teacher's Remark:</th>
-            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius molestias quidem, veritatis rem sapiente corrupti quisquam accusamus ea sint quia!</td>
+            <td><?php echo $head_teacher_remark ?></td>
           </tr>
         </tbody>
       </table>
