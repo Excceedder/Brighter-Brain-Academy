@@ -1755,9 +1755,9 @@ if (isset($_SESSION['termly_report_id'])) {
               </table>
             </div>
 
-            <div class="">
-              Promotion Status: Promoted
-            </div>
+          </div>
+          <div class="">
+            Promotion Status: Promoted
           </div>
         </div>
 
