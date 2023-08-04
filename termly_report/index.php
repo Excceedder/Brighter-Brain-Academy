@@ -1701,6 +1701,29 @@ if (isset($_SESSION['termly_report_id'])) {
                         + $termly_report_data["literature_examination_score"];
                       $average = $overall_score / 10;
                     }
+
+                    function promoteToNextClass($previousClass)
+                    {
+                      $promotions = [
+                        'Pre Kindergarten' => 'Kindergarten 1',
+                        'Kindergarten 1' => 'Kindergarten 2',
+                        'Kindergarten 2' => 'Kindergarten 3',
+                        'Kindergarten 3' => 'Primary 1',
+                        'Primary 1' => 'Primary 2',
+                        'Primary 2' => 'Primary 3',
+                        'Primary 3' => 'Primary 4',
+                        'Primary 4' => 'Primary 5',
+                        'Primary 5' => 'JSS. 1',
+                        'JSS. 1' => 'JSS. 2',
+                        'JSS. 2' => 'JSS. 3',
+                        'JSS. 3' => 'SSS. 1',
+                        'SSS. 2' => 'SSS. 2',
+                        'SSS. 2' => 'JSS. 3',
+                      ];
+
+                      return $promotions[$previousClass] ?? 'Invalid previous class';
+                    }
+
                     ?>
                   </td>
                   <td style="font-weight: bold; border: 1px solid #000;"><?php echo $overall_score ?></td>
@@ -1711,24 +1734,40 @@ if (isset($_SESSION['termly_report_id'])) {
                     if ($average < 30) {
                       $overall_grade = "F";
                       $remark = "Fail";
+                      $director_remark = "Adviced to repeat current class!";
                     } else if ($average < 35) {
                       $overall_grade = "E";
                       $remark = "Fair";
+
+                      $english_language_subject_score = $termly_report_data["english_language_first_ca_score"] + $termly_report_data["english_language_second_ca_score"] + $termly_report_data["english_language_examination_score"];
+
+                      $mathematics_subject_score = $termly_report_data["mathematics_first_ca_score"] + $termly_report_data["mathematics_second_ca_score"] + $termly_report_data["mathematics_examination_score"];
+
+                      if ($english_language_subject_score > 40 || $mathematics_subject_score > 40) {
+                        $director_remark = "Adviced to repeat current class!";
+                      } else {
+                        $director_remark = "Promoted on <b>Probatioon</b> to " . promoteToNextClass($termly_report_data["class_placement"]);
+                      }
                     } else if ($average < 45) {
                       $overall_grade = "D";
                       $remark = "Pass";
+                      $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
                     } else if ($average < 55) {
                       $overall_grade = "C";
                       $remark = "Credit";
+                      $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
                     } else if ($average < 69) {
                       $overall_grade = "B";
                       $remark = "Very Good";
+                      $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
                     } else if ($average < 79) {
                       $overall_grade = "A";
                       $remark = "Excellent";
+                      $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
                     } else if ($average > 80) {
                       $overall_grade = "A1";
                       $remark = "Distinction";
+                      $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
                     }
                     echo $overall_grade;
 
@@ -1744,34 +1783,13 @@ if (isset($_SESSION['termly_report_id'])) {
     </table>
 
     <?php
-    function promoteToNextClass($previousClass)
-    {
-      $promotions = [
-        'Pre Kindergarten' => 'Kindergarten 1',
-        'Kindergarten 1' => 'Kindergarten 2',
-        'Kindergarten 2' => 'Kindergarten 3',
-        'Kindergarten 3' => 'Primary 1',
-        'Primary 1' => 'Primary 2',
-        'Primary 2' => 'Primary 3',
-        'Primary 3' => 'Primary 4',
-        'Primary 4' => 'Primary 5',
-        'Primary 5' => 'JSS. 1',
-        'JSS. 1' => 'JSS. 2',
-        'JSS. 2' => 'JSS. 3',
-        'JSS. 3' => 'SSS. 1',
-        'SSS. 2' => 'SSS. 2',
-        'SSS. 2' => 'JSS. 3',
-      ];
-
-      return $promotions[$previousClass] ?? 'Invalid previous class';
-    }
     if ($termly_report_data["term_tag"] == "3rd Term") {
     ?>
       <div class="row">
         <div class="col-md-12">
           <div class="card" style="background-color: #6ad8d9; border: 1px dashed #000">
             <div class="card-body">
-              <p class="mb-2" style="font-size: 16px;"><b class="initialism">Director's Remark:</b> Promoted to <?php echo promoteToNextClass($termly_report_data["class_placement"]) ?></p>
+              <p class="mb-2" style="font-size: 16px;"><b class="initialism">Director's Remark:</b> <?php echo $director_remark ?></p>
 
               <p class="mb-0" style="font-size: 16px;"><b class="initialism">Head Teacher's Remark:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis tenetur in, sint dolorum necessitatibus ex mollitia quo accusantium maiores, quibusdam, pariatur vitae voluptatum aperiam animi! Lorem ipsum dolor sit amet.</p>
             </div>
