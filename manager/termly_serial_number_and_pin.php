@@ -118,8 +118,8 @@
                                                             <td><?php echo $termly_report_data["serial_number"] ?></td>
                                                             <td><?php echo $termly_report_data["unique_pin"] ?></td>
                                                             <td>
-                                                                <input type="text" value="<?php echo $termly_report_data["serial_number"] ?>" name="serial_number" id="serial_number">
-                                                                <input type="text" value="<?php echo $termly_report_data["unique_pin"] ?>" name="unique_pin" id="unique_pin">
+                                                                <input type="hidden" value="<?php echo $termly_report_data["serial_number"] ?>" name="serial_number" id="serial_number">
+                                                                <input type="hidden" value="<?php echo $termly_report_data["unique_pin"] ?>" name="unique_pin" id="unique_pin">
                                                                 <button type="submit" name="verify_credentials" class="badge bg-success p-2 border-0">Download</button>
                                                             </td>
                                                         </tr>
