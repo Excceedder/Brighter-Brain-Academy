@@ -1790,7 +1790,7 @@ if (isset($_SESSION['termly_report_id'])) {
           <div class="card" style="background-color: #6ad8d9; border: 1px dashed #000">
             <div class="card-body">
               <p class="mb-2" style="font-size: 16px;"><b class="initialism">Director's Remark:</b> <?php echo $director_remark ?></p>
-
+              <hr>
               <p class="mb-0" style="font-size: 16px;"><b class="initialism">Head Teacher's Remark:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis tenetur in, sint dolorum necessitatibus ex mollitia quo accusantium maiores, quibusdam, pariatur vitae voluptatum aperiam animi! Lorem ipsum dolor sit amet.</p>
             </div>
           </div>
