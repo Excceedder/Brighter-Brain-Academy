@@ -78,7 +78,6 @@
                                                 <th>Class Placement</th>
                                                 <th>Session Tag</th>
                                                 <th>Term Tag</th>
-                                                <th>Main Campus</th>
                                                 <th>Serial Number</th>
                                                 <th>Unique Pin</th>
                                                 <th>Action</th>
@@ -116,7 +115,6 @@
                                                             <td><?php echo $termly_report_data["class_placement"] ?></td>
                                                             <td><?php echo $termly_report_data["session_tag"] ?></td>
                                                             <td><?php echo $termly_report_data["term_tag"] ?></td>
-                                                            <td><?php echo $termly_report_data["main_campus"] ?></td>
                                                             <td><?php echo $termly_report_data["serial_number"] ?></td>
                                                             <td><?php echo $termly_report_data["unique_pin"] ?></td>
                                                             <td>
