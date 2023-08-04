@@ -1757,9 +1757,16 @@ if (isset($_SESSION['termly_report_id'])) {
 
           </div>
         </div>
-        <div class="" style="margin-top: 25px;">
-          <span style="font-size: large; color: #000;">Promotion Status: Promoted</span>
-        </div>
+
+        <?php
+        if ($termly_report_data["term_tag"] == "3rd Term") {
+        ?>
+          <div class="" style="margin-top: 25px;">
+            <span style="font-size: large; color: #000;">Promotion Status: Promoted</span>
+          </div>
+        <?php
+        }
+        ?>
       </div>
     </div>
   </div>
