@@ -94,7 +94,7 @@ if (isset($_SESSION['termly_report_id'])) {
         </div>
         <div class="cs-table cs-style1">
           <div class="cs-round_border">
-            <div class="cs-table_responsive table table-bordered">
+            <div class="cs-table_responsive table-bordered">
               <table>
                 <thead style="background-color: #6ad8d9ff;">
                   <tr>
@@ -1784,7 +1784,7 @@ if (isset($_SESSION['termly_report_id'])) {
         if ($termly_report_data["term_tag"] == "3rd Term") {
         ?>
           <div style="margin-top: 25px; background-color: #6ad8d9; padding: 20px; border: 1px dashed #000; width: 300px; border-radius: 10px;">
-          <div class=""></div>
+            <div class=""></div>
             <p style="font-size: 20px; color: #000; font-weight: bold;">Promotion Status:</p>
             <p style="font-size: 12px; color: #000; font-weight: bold;"> Promoted to <?php echo promoteToNextClass($termly_report_data["class_placement"]) ?></p>
           </div>
@@ -1811,6 +1811,8 @@ if (isset($_SESSION['termly_report_id'])) {
       download(canvas, filename);
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
