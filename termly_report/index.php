@@ -1759,10 +1759,31 @@ if (isset($_SESSION['termly_report_id'])) {
         </div>
 
         <?php
+        function promoteToNextClass($previousClass)
+        {
+          $promotions = [
+            'Pre Kindergarten' => 'Kindergarten 1',
+            'Kindergarten 1' => 'Kindergarten 2',
+            'Kindergarten 2' => 'Kindergarten 3',
+            'Kindergarten 3' => 'Primary 1',
+            'Primary 1' => 'Primary 2',
+            'Primary 2' => 'Primary 3',
+            'Primary 3' => 'Primary 4',
+            'Primary 4' => 'Primary 5',
+            'Primary 5' => 'JSS. 1',
+            'JSS. 1' => 'JSS. 2',
+            'JSS. 2' => 'JSS. 3',
+            'JSS. 3' => 'SSS. 1',
+            'SSS. 2' => 'SSS. 2',
+            'SSS. 2' => 'JSS. 3',
+          ];
+
+          return $promotions[$previousClass] ?? 'Invalid previous class';
+        }
         if ($termly_report_data["term_tag"] == "3rd Term") {
         ?>
           <div class="" style="margin-top: 25px;">
-            <span style="font-size: large; color: #000;">Promotion Status: Promoted</span>
+            <span style="font-size: large; color: #000;">Promotion Status: <?php echo promoteToNextClass($termly_report_data["class_placement"]) ?></span>
           </div>
         <?php
         }
