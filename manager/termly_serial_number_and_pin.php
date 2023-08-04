@@ -81,6 +81,7 @@
                                                 <th>Main Campus</th>
                                                 <th>Serial Number</th>
                                                 <th>Unique Pin</th>
+                                                <th>Download Report</th>
                                             </tr>
                                         </thead>
 
@@ -118,6 +119,9 @@
                                                             <td><?php echo $termly_report_data["main_campus"] ?></td>
                                                             <td><?php echo $termly_report_data["serial_number"] ?></td>
                                                             <td><?php echo $termly_report_data["unique_pin"] ?></td>
+                                                            <td>
+                                                                <button type="submit" name="verify_credentials" class="badge bg-success">Download</button>
+                                                            </td>
                                                         </tr>
                                                     </form>
                                                 <?php
@@ -126,6 +130,7 @@
                                                 ?>
                                                 <tr>
                                                     <td style="font-weight: bold;">No records found!</td>
+                                                    <td></td>
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>
