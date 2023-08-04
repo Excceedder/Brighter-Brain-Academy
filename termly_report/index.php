@@ -1782,10 +1782,10 @@ if (isset($_SESSION['termly_report_id'])) {
         }
         if ($termly_report_data["term_tag"] == "3rd Term") {
         ?>
-          <div style="margin-top: 25px; background-color: #6ad8d9; padding: 20px; border: 1px dashed #000; width: 200px; border-radius: 10px;">
+          <div style="margin-top: 25px; background-color: #6ad8d9; padding: 20px; border: 1px dashed #000; width: 300px; border-radius: 10px;">
           <div class=""></div>
-            <p style="font-size: large; color: #000; font-weight: bold;">Promotion Status:</p>
-            <p> Promoted to <?php echo promoteToNextClass($termly_report_data["class_placement"]) ?></p>
+            <p style="font-size: 20px; color: #000; font-weight: bold;">Promotion Status:</p>
+            <p style="font-size: 12px; color: #000; font-weight: bold;"> Promoted to <?php echo promoteToNextClass($termly_report_data["class_placement"]) ?></p>
           </div>
         <?php
         }
