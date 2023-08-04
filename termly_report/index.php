@@ -1739,36 +1739,45 @@ if (isset($_SESSION['termly_report_id'])) {
                       $overall_grade = "F";
                       $remark = "Fail";
                       $director_remark = "Adviced to repeat current class!";
+                      $head_teacher_remark = "Keep pushing yourself, work hard and seek extra help if needed. You can improve with dedication and effort.";
                     } else if ($average < 35) {
                       $overall_grade = "E";
                       $remark = "Fair";
 
                       if ($english_language_subject_score > 40 && $mathematics_subject_score > 40) {
                         $director_remark = "Promoted on <b>Probation</b> to " . promoteToNextClass($termly_report_data["class_placement"]);
+                        $head_teacher_remark = "You're showing potential in some subjects. Focus on improving weak areas and maintain progress in strong subjects.";
                       } else {
                         $director_remark = "Adviced to repeat current class!";
+                        $head_teacher_remark = "You have the ability to do better. Seek help from teachers and put in more effort to improve in all subjects.";
                       }
                     } else if ($average < 45) {
-                      $director_remark = "Promoted on <b>Probation</b> to " . promoteToNextClass($termly_report_data["class_placement"]);
                       $overall_grade = "D";
                       $remark = "Pass";
+                      $director_remark = "Promoted on <b>Probation</b> to " . promoteToNextClass($termly_report_data["class_placement"]);
+                      $head_teacher_remark = "Congratulations on passing. Keep up the good work and aim for even better grades next term.";
                     } else if ($average < 55) {
                       $overall_grade = "C";
                       $remark = "Credit";
                       $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
+                      $head_teacher_remark = "You're doing well. Maintain your efforts and continue to excel in your studies.";
                     } else if ($average < 69) {
                       $overall_grade = "B";
                       $remark = "Very Good";
                       $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
+                      $head_teacher_remark = "Well done! Your hard work is paying off. Strive for even higher achievements in the future.";
                     } else if ($average < 79) {
                       $overall_grade = "A";
                       $remark = "Excellent";
                       $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
+                      $head_teacher_remark = "Congratulations on an excellent performance! Keep up the outstanding work and continue to aim high.";
                     } else if ($average > 80) {
                       $overall_grade = "A1";
                       $remark = "Distinction";
                       $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
+                      $head_teacher_remark = "An exceptional achievement! Your dedication and hard work have paid off. Keep up the exceptional performance.";
                     }
+
                     echo $overall_grade;
 
                     ?>
