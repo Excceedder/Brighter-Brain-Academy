@@ -1744,12 +1744,12 @@ if (isset($_SESSION['termly_report_id'])) {
                       $remark = "Fair";
 
                       if ($english_language_subject_score > 40 && $mathematics_subject_score > 40) {
-                        $director_remark = "Promoted on <b>Probatioon</b> to " . promoteToNextClass($termly_report_data["class_placement"]);
+                        $director_remark = "Promoted on <b>Probation</b> to " . promoteToNextClass($termly_report_data["class_placement"]);
                       } else {
                         $director_remark = "Adviced to repeat current class!";
                       }
                     } else if ($average < 45) {
-                      $director_remark = "Promoted to " . promoteToNextClass($termly_report_data["class_placement"]);
+                      $director_remark = "Promoted on <b>Probation</b> to " . promoteToNextClass($termly_report_data["class_placement"]);
                       $overall_grade = "D";
                       $remark = "Pass";
                     } else if ($average < 55) {
