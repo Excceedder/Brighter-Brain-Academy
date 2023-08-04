@@ -81,7 +81,7 @@
                                                 <th>Main Campus</th>
                                                 <th>Serial Number</th>
                                                 <th>Unique Pin</th>
-                                                <th>Download Report</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
 
@@ -120,7 +120,7 @@
                                                             <td><?php echo $termly_report_data["serial_number"] ?></td>
                                                             <td><?php echo $termly_report_data["unique_pin"] ?></td>
                                                             <td>
-                                                                <button type="submit" name="verify_credentials" class="badge bg-success">Download</button>
+                                                                <button type="submit" name="verify_credentials" class="badge bg-success p-2 border-0">Download</button>
                                                             </td>
                                                         </tr>
                                                     </form>
