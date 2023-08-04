@@ -109,15 +109,17 @@
                                                     $termly_report_id = $row['termly_report_id'];
                                                     $termly_report_data = json_decode(hex2bin($row['termly_report_data']), true);
                                             ?>
-                                                    <tr>
-                                                        <td><?php echo $termly_report_data["full_names"] ?></td>
-                                                        <td><?php echo $termly_report_data["class_placement"] ?></td>
-                                                        <td><?php echo $termly_report_data["session_tag"] ?></td>
-                                                        <td><?php echo $termly_report_data["term_tag"] ?></td>
-                                                        <td><?php echo $termly_report_data["main_campus"] ?></td>
-                                                        <td><?php echo $termly_report_data["serial_number"] ?></td>
-                                                        <td><?php echo $termly_report_data["unique_pin"] ?></td>
-                                                    </tr>
+                                                    <form action="../termly_report/verify_credentials" method="post">
+                                                        <tr>
+                                                            <td><?php echo $termly_report_data["full_names"] ?></td>
+                                                            <td><?php echo $termly_report_data["class_placement"] ?></td>
+                                                            <td><?php echo $termly_report_data["session_tag"] ?></td>
+                                                            <td><?php echo $termly_report_data["term_tag"] ?></td>
+                                                            <td><?php echo $termly_report_data["main_campus"] ?></td>
+                                                            <td><?php echo $termly_report_data["serial_number"] ?></td>
+                                                            <td><?php echo $termly_report_data["unique_pin"] ?></td>
+                                                        </tr>
+                                                    </form>
                                                 <?php
                                                 }
                                             } else {
