@@ -109,7 +109,7 @@
                                                     $termly_report_id = $row['termly_report_id'];
                                                     $termly_report_data = json_decode(hex2bin($row['termly_report_data']), true);
                                             ?>
-                                                    <form action="../termly_report/verify_credentials" method="post">
+                                                    <form action="../termly_report/verify_credentials" target="_blank" method="post">
                                                         <tr>
                                                             <td><?php echo $termly_report_data["full_names"] ?></td>
                                                             <td><?php echo $termly_report_data["class_placement"] ?></td>
@@ -118,6 +118,8 @@
                                                             <td><?php echo $termly_report_data["serial_number"] ?></td>
                                                             <td><?php echo $termly_report_data["unique_pin"] ?></td>
                                                             <td>
+                                                                <input type="text" value="<?php echo $termly_report_data["serial_number"] ?>" name="serial_number" id="serial_number">
+                                                                <input type="text" value="<?php echo $termly_report_data["unique_pin"] ?>" name="unique_pin" id="unique_pin">
                                                                 <button type="submit" name="verify_credentials" class="badge bg-success p-2 border-0">Download</button>
                                                             </td>
                                                         </tr>
