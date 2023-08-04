@@ -94,7 +94,7 @@ if (isset($_SESSION['termly_report_id'])) {
         </div>
         <div class="cs-table cs-style1">
           <div class="cs-round_border">
-            <div class="cs-table_responsive table-bordered">
+            <div class="table table_responsive table-bordered">
               <table>
                 <thead style="background-color: #6ad8d9ff;">
                   <tr>
